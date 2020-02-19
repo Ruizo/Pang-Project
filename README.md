@@ -1,10 +1,10 @@
 # Proyecto 1
  Equipo Knekro
 Mi contribución
-<iframe width="560" height="315" src="https://www.youtube.com/watch?v=exyHslIckOo">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/exyHslIckOo">
  </iframe>
  
- <iframe width="560" height="315" src="https://www.youtube.com/watch?v=81jSUJCHEaY">
+ <iframe width="560" height="315" src="https://www.youtube.com/embed/81jSUJCHEaY">
  </iframe>
  
 <iframe width="560" height="315" src="https://www.youtube.com/embed/vQGKAIaUlpk">
