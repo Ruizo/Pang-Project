@@ -28,9 +28,14 @@ int Entity::GetX()
 {
 	return x;
 }
-void Entity::ShutDown()
+void Entity::SwapState()
 {
-	is_alive = false;
+	if (is_alive == true) {
+		is_alive = false;
+	}
+	else if (is_alive == false) {
+		is_alive = true;
+	}
 }
 bool Entity::IsAlive()
 {
