@@ -30,11 +30,11 @@ ModulePlayer::ModulePlayer()
 
 	//move right
 
-	//rightAnim.PushBack({ 26,0,30,32 });
-	rightAnim.PushBack({ 56,0,30,31 });
-	rightAnim.PushBack({ 86,0,30,31 });
-	rightAnim.PushBack({ 116,0,28,31 });
-	rightAnim.PushBack({ 144,0,28,31 });
+	rightAnim.PushBack({ 26,0,30,32 });
+	rightAnim.PushBack({ 56,0,30,32 });
+	rightAnim.PushBack({ 86,0,28,32 });
+	rightAnim.PushBack({ 114,0,29,32 });
+
 
 	rightAnim.loop = true;
 	rightAnim.speed = 0.1f;
