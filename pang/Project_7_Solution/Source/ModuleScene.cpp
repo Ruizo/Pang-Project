@@ -27,13 +27,11 @@ bool ModuleScene::Start()
 	bgTexture = App->textures->Load("Assets/background.png");
 	//App->audio->PlayMusic("Assets/stage1.ogg", 1.0f);
 
-	//Bottomside collider
-	App->collisions->AddCollider({ 0, 224, 3930, 16 }, Collider::Type::WALL);
-
-	//First two columns colliders
-	App->collisions->AddCollider({ 1375, 0, 111, 96 }, Collider::Type::WALL);
-	App->collisions->AddCollider({ 1375, 145, 111, 96 }, Collider::Type::WALL);
-
+	//Walls colliders
+	App->collisions->AddCollider({ 0, 0, 384, 10 }, Collider::Type::WALL);
+	App->collisions->AddCollider({ 0, 231, 384, 9 }, Collider::Type::WALL);
+	App->collisions->AddCollider({ 0, 10, 9, 221 }, Collider::Type::WALL);
+	App->collisions->AddCollider({ 375, 10, 9, 221 }, Collider::Type::WALL);
 	
 
 	// TODO 1: Add a new wave of red birds

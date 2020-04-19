@@ -28,16 +28,27 @@ ModulePlayer::ModulePlayer()
 	downAnim.loop = false;
 	downAnim.speed = 0.1f;
 
-	//move right
+	// Move right
 
 	rightAnim.PushBack({ 26,0,30,32 });
 	rightAnim.PushBack({ 56,0,30,32 });
 	rightAnim.PushBack({ 86,0,28,32 });
 	rightAnim.PushBack({ 114,0,29,32 });
-
-
 	rightAnim.loop = true;
 	rightAnim.speed = 0.1f;
+
+	// Move left
+	leftAnim.PushBack({ 145,0,30,32 });
+	leftAnim.PushBack({ 175,0,30,32 });
+	leftAnim.PushBack({ 205,0,28,32 });
+	leftAnim.PushBack({ 233,0,30,32 });
+	leftAnim.loop = true;
+	leftAnim.speed = 0.1f;
+
+	// Shoot
+	shootAnim.PushBack({ 0,35,27,29 });
+	shootAnim.loop = false;
+	shootAnim.speed = 0.1f;
 }
 
 ModulePlayer::~ModulePlayer()
@@ -57,26 +68,25 @@ bool ModulePlayer::Start()
 	laserFx = App->audio->LoadFx("Assets/laser.wav");
 	explosionFx = App->audio->LoadFx("Assets/explosion.wav");
 
-	position.x = 150;
+	position.x = 170;
 	position.y = 200;
 
-	collider = App->collisions->AddCollider({ position.x, position.y, 32, 16 }, Collider::Type::PLAYER, this);
+	collider = App->collisions->AddCollider({ position.x, position.y, 28, 32 }, Collider::Type::PLAYER, this);
 
 	return ret;
 }
 
 update_status ModulePlayer::Update()
 {
-
-
-
 	if (App->input->keys[SDL_SCANCODE_A] == KEY_STATE::KEY_REPEAT)
 	{
 		position.x -= speed;
-		
-		
+		if (currentAnimation != &leftAnim)
+		{
+			leftAnim.Reset();
+			currentAnimation = &leftAnim;
+		}	
 	}
-
 	if (App->input->keys[SDL_SCANCODE_D] == KEY_STATE::KEY_REPEAT)
 	{
 		position.x += speed;
@@ -107,16 +117,25 @@ update_status ModulePlayer::Update()
 		}
 	}*/
 
-	/*if (App->input->keys[SDL_SCANCODE_SPACE] == KEY_STATE::KEY_DOWN)
+	if (App->input->keys[SDL_SCANCODE_SPACE] == KEY_STATE::KEY_DOWN)
 	{
-		App->particles->AddParticle(App->particles->laser, position.x + 20, position.y, Collider::Type::PLAYER_SHOT);
+		if (currentAnimation != &shootAnim)
+		{
+			position.y = 203;
+			shootAnim.Reset();
+			currentAnimation = &shootAnim;
+		}
+		App->particles->AddParticle(App->particles->laser, position.x + 12, position.y + 20, Collider::Type::PLAYER_SHOT);
 		App->audio->PlayFx(laserFx);
-	}*/
-
+	}
 
 	if (App->input->keys[SDL_SCANCODE_A] == KEY_STATE::KEY_IDLE
-		&& App->input->keys[SDL_SCANCODE_D] == KEY_STATE::KEY_IDLE)
+		&& App->input->keys[SDL_SCANCODE_D] == KEY_STATE::KEY_IDLE
+		&& App->input->keys[SDL_SCANCODE_SPACE] == KEY_STATE::KEY_IDLE)
+	{
 		currentAnimation = &idleAnim;
+		position.y = 200;
+	}
 
 	collider->SetPos(position.x, position.y);
 

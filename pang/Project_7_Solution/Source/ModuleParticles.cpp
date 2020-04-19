@@ -32,13 +32,32 @@ bool ModuleParticles::Start()
 	explosion.anim.PushBack({419, 296, 33, 30});
 	explosion.anim.PushBack({457, 296, 33, 30});
 	explosion.anim.loop = false;
-	explosion.anim.speed = 0.3f;
+	explosion.anim.speed = 0.05f;
 
-	laser.anim.PushBack({ 232, 103, 16, 12 });
-	laser.anim.PushBack({ 249, 103, 16, 12 });
-	laser.speed.x = 5;
-	laser.lifetime = 180;
-	laser.anim.speed = 0.2f;
+	laser.anim.PushBack({ 0, 0, 10, 11 });
+	laser.anim.PushBack({ 12, 0, 10, 25 });
+	laser.anim.PushBack({ 0, 0, 10, 39 });
+	laser.anim.PushBack({ 12, 0, 10, 53 });
+	laser.anim.PushBack({ 0, 0, 10, 67 });
+	laser.anim.PushBack({ 12, 0, 10, 81 });
+	laser.anim.PushBack({ 0, 0, 10, 95 });
+	laser.anim.PushBack({ 12, 0, 10, 109 }); 
+	laser.anim.PushBack({ 0, 0, 10, 123 });
+	laser.anim.PushBack({ 12, 0, 10, 137 });
+	laser.anim.PushBack({ 0, 0, 10, 151 });
+	laser.anim.PushBack({ 12, 0, 10, 165 });
+	laser.anim.PushBack({ 0, 0, 10, 179 });
+	laser.anim.PushBack({ 12, 0, 10, 193 }); 
+	laser.anim.PushBack({ 0, 0, 10, 207 });
+	laser.anim.PushBack({ 12, 0, 10, 221 }); 
+	laser.anim.PushBack({ 0, 0, 10, 235 });
+	laser.anim.PushBack({ 12, 0, 10, 249 }); 
+	laser.anim.PushBack({ 0, 0, 10, 263 });
+	laser.anim.PushBack({ 27, 0, 10, 267 });
+	laser.anim.PushBack({ 40, 0, 10, 267 });
+	laser.speed.y = -3;
+	laser.lifetime = 360;
+	laser.anim.speed = 0.21f;
 
 	return true;
 }
