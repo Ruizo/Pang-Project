@@ -1,0 +1,4 @@
+﻿  Menu.cpp
+D:\Descargas\Pang-Project-master (1)\Pang-Project-master\Pang-Project-master\pang\Project_7_Solution\Source\Animation.h(54,19): warning C4244: 'inicializando': conversión de 'const float' a 'int'; posible pérdida de datos
+D:\Descargas\Pang-Project-master (1)\Pang-Project-master\Pang-Project-master\pang\Project_7_Solution\Source\Animation.h(56,30): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
+  Project_7_Solution.vcxproj -> D:\Descargas\Pang-Project-master (1)\Pang-Project-master\Pang-Project-master\pang\Debug\Project_7_Solution.exe
