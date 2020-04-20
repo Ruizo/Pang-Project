@@ -1,0 +1,26 @@
+﻿  Balls.cpp
+C:\Users\MakinillaChan\Desktop\Pang-Project-master\pang\Project_7_Solution\Source\Animation.h(54,19): warning C4244: 'inicializando': conversión de 'const float' a 'int'; posible pérdida de datos
+C:\Users\MakinillaChan\Desktop\Pang-Project-master\pang\Project_7_Solution\Source\Animation.h(56,30): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Users\MakinillaChan\Desktop\Pang-Project-master\pang\Project_7_Solution\Source\Balls.cpp(33,23): warning C4244: '+=': conversión de 'TYPE' a 'TYPE'; posible pérdida de datos
+          with
+          [
+              TYPE=float
+          ]
+          and
+          [
+              TYPE=int
+          ]
+C:\Users\MakinillaChan\Desktop\Pang-Project-master\pang\Project_7_Solution\Source\Balls.cpp(34,23): warning C4244: '+=': conversión de 'TYPE' a 'TYPE'; posible pérdida de datos
+          with
+          [
+              TYPE=float
+          ]
+          and
+          [
+              TYPE=int
+          ]
+  ModuleEnemies.cpp
+C:\Users\MakinillaChan\Desktop\Pang-Project-master\pang\Project_7_Solution\Source\Animation.h(54,19): warning C4244: 'inicializando': conversión de 'const float' a 'int'; posible pérdida de datos
+C:\Users\MakinillaChan\Desktop\Pang-Project-master\pang\Project_7_Solution\Source\Animation.h(56,30): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
+  Generando código...
+  Project_7_Solution.vcxproj -> C:\Users\MakinillaChan\Desktop\Pang-Project-master\pang\Debug\Project_7_Solution.exe
