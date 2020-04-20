@@ -8,7 +8,7 @@
 
 #include "Enemy.h"
 #include "Enemy_RedBird.h"
-#include "Enemy_BrownShip.h"
+#include "BALL.h"
 #include "Enemy_Mech.h"
 
 #define SPAWN_MARGIN 50
@@ -27,7 +27,7 @@ ModuleEnemies::~ModuleEnemies()
 
 bool ModuleEnemies::Start()
 {
-	texture = App->textures->Load("Assets/enemies.png");
+	texture = App->textures->Load("Assets/bola.png");
 	enemyDestroyedFx = App->audio->LoadFx("Assets/explosion.wav");
 
 	return true;
@@ -103,13 +103,11 @@ void ModuleEnemies::HandleEnemiesSpawn()
 		if (spawnQueue[i].type != ENEMY_TYPE::NO_TYPE)
 		{
 			// Spawn a new enemy if the screen has reached a spawn position
-			if (spawnQueue[i].x * SCREEN_SIZE < App->render->camera.x + (App->render->camera.w * SCREEN_SIZE) + SPAWN_MARGIN)
-			{
-				LOG("Spawning enemy at %d", spawnQueue[i].x * SCREEN_SIZE);
+			
+			LOG("Spawning enemy at %d", spawnQueue[i].x * SCREEN_SIZE);
 
-				SpawnEnemy(spawnQueue[i]);
-				spawnQueue[i].type = ENEMY_TYPE::NO_TYPE; // Removing the newly spawned enemy from the queue
-			}
+			SpawnEnemy(spawnQueue[i]);
+			spawnQueue[i].type = ENEMY_TYPE::NO_TYPE; // Removing the newly spawned enemy from the queue
 		}
 	}
 }
@@ -142,15 +140,10 @@ void ModuleEnemies::SpawnEnemy(const EnemySpawnpoint& info)
 		{
 			switch (info.type)
 			{
-				case ENEMY_TYPE::REDBIRD:
+				case ENEMY_TYPE::BALL:
 					enemies[i] = new Enemy_RedBird(info.x, info.y);
 					break;
-				case ENEMY_TYPE::BROWNSHIP:
-					enemies[i] = new Enemy_BrownShip(info.x, info.y);
-					break;
-				case ENEMY_TYPE::MECH:
-					enemies[i] = new Enemy_Mech(info.x, info.y);
-					break;
+				
 			}
 			enemies[i]->texture = texture;
 			enemies[i]->destroyedFx = enemyDestroyedFx;

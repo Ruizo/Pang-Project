@@ -61,6 +61,8 @@ public:
 
 	//Template particle for a laser
 	Particle laser;
+
+
 };
 
 #endif // !__MODULEPARTICLES_H__

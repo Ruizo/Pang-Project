@@ -71,7 +71,7 @@ bool ModulePlayer::Start()
 	position.x = 170;
 	position.y = 200;
 
-	collider = App->collisions->AddCollider({ position.x, position.y, 28, 32 }, Collider::Type::PLAYER, this);
+	collider = App->collisions->AddCollider({ position.x, position.y, 28, 28 }, Collider::Type::PLAYER, this);
 
 	return ret;
 }
@@ -162,18 +162,29 @@ update_status ModulePlayer::PostUpdate()
 	return update_status::UPDATE_CONTINUE;
 }
 
-/*void ModulePlayer::OnCollision(Collider* c1, Collider* c2)
+void ModulePlayer::OnCollision(Collider* c1, Collider* c2)
 {
 	if (c1 == collider && destroyed == false)
 	{
-		App->particles->AddParticle(App->particles->explosion, position.x, position.y, Collider::Type::NONE, 9);
+		/*App->particles->AddParticle(App->particles->explosion, position.x, position.y, Collider::Type::NONE, 9);
 		App->particles->AddParticle(App->particles->explosion, position.x + 8, position.y + 11, Collider::Type::NONE, 14);
 		App->particles->AddParticle(App->particles->explosion, position.x - 7, position.y + 12, Collider::Type::NONE, 40);
 		App->particles->AddParticle(App->particles->explosion, position.x + 5, position.y - 5, Collider::Type::NONE, 28);
-		App->particles->AddParticle(App->particles->explosion, position.x - 4, position.y - 4, Collider::Type::NONE, 21);
-		
-		App->audio->PlayFx(explosionFx);
+		App->particles->AddParticle(App->particles->explosion, position.x - 4, position.y - 4, Collider::Type::NONE, 21);*/
 
-		destroyed = true;
+
+		
+		if (position.x <= 162) {
+			position.x += 1;
+		}
+		else {
+			position.x -= 1;
+		}
+		
+		
+
+		//App->audio->PlayFx(explosionFx);
+
+		/*destroyed = true;*/
 	}
-}*/
+}

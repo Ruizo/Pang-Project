@@ -67,6 +67,8 @@ public:
 	uint laserFx = 0;
 	uint explosionFx = 0;
 
+	void ModulePlayer::OnCollision(Collider* c1, Collider* c2);
+
 };
 
 #endif //!__MODULE_PLAYER_H__
