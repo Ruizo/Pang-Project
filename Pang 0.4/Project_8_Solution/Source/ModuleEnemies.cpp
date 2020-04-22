@@ -9,6 +9,7 @@
 
 #include "Enemy.h"
 #include "Balls.h"
+#include "Med_Balls.h"
 
 
 
@@ -28,7 +29,7 @@ ModuleEnemies::~ModuleEnemies()
 
 bool ModuleEnemies::Start()
 {
-	texture = App->textures->Load("Assets/Sprites/bola.png");
+	texture = App->textures->Load("Assets/Sprites/enemies.png");
 	enemyDestroyedFx = App->audio->LoadFx("Assets/Fx/explosion.wav");
 
 	return true;
@@ -146,12 +147,9 @@ void ModuleEnemies::SpawnEnemy(const EnemySpawnpoint& info)
 				case Enemy_Type::Big_Ball:
 					enemies[i] = new Balls(info.x, info.y);
 					break;
-				/*case Enemy_Type::BROWNSHIP:
-					enemies[i] = new Enemy_BrownShip(info.x, info.y);
+				case Enemy_Type::Med_Ball:
+					enemies[i] = new Med_Balls(info.x, info.y);
 					break;
-				case Enemy_Type::MECH:
-					enemies[i] = new Enemy_Mech(info.x, info.y);
-					break;*/
 			}
 			enemies[i]->texture = texture;
 			enemies[i]->destroyedFx = enemyDestroyedFx;
@@ -197,9 +195,6 @@ void ModuleEnemies::OnCollision(Collider* c1, Collider* c2)
 			delete enemies[i];
 			enemies[i] = nullptr;
 			break;
-
 		}
-		
-
 	}
 }

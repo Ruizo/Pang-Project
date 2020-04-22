@@ -1,61 +1,67 @@
 ﻿  Application.cpp
-C:\Users\MakinillaChan\Desktop\Pang 0.4\Project_8_Solution\Source\Animation.h(54,19): warning C4244: 'inicializando': conversión de 'const float' a 'int'; posible pérdida de datos
-C:\Users\MakinillaChan\Desktop\Pang 0.4\Project_8_Solution\Source\Animation.h(56,30): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
-  Collider.cpp
+C:\Users\theex\Desktop\Ignasi\GitHub\Proyecto-1\Pang 0.4\Project_8_Solution\Source\Animation.h(54,19): warning C4244: 'initializing': conversion from 'const float' to 'int', possible loss of data
   Enemy.cpp
-C:\Users\MakinillaChan\Desktop\Pang 0.4\Project_8_Solution\Source\Animation.h(54,19): warning C4244: 'inicializando': conversión de 'const float' a 'int'; posible pérdida de datos
-C:\Users\MakinillaChan\Desktop\Pang 0.4\Project_8_Solution\Source\Animation.h(56,30): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
-C:\Users\MakinillaChan\Desktop\Pang 0.4\Project_8_Solution\Source\Enemy.h(36,19): warning C4244: 'inicializando': conversión de 'float' a 'const int'; posible pérdida de datos
+C:\Users\theex\Desktop\Ignasi\GitHub\Proyecto-1\Pang 0.4\Project_8_Solution\Source\Animation.h(56,30): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+C:\Users\theex\Desktop\Ignasi\GitHub\Proyecto-1\Pang 0.4\Project_8_Solution\Source\Animation.h(54,19): warning C4244: 'initializing': conversion from 'const float' to 'int', possible loss of data
+C:\Users\theex\Desktop\Ignasi\GitHub\Proyecto-1\Pang 0.4\Project_8_Solution\Source\Animation.h(56,30): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
   Balls.cpp
-C:\Users\MakinillaChan\Desktop\Pang 0.4\Project_8_Solution\Source\Animation.h(54,19): warning C4244: 'inicializando': conversión de 'const float' a 'int'; posible pérdida de datos
-C:\Users\MakinillaChan\Desktop\Pang 0.4\Project_8_Solution\Source\Animation.h(56,30): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
-C:\Users\MakinillaChan\Desktop\Pang 0.4\Project_8_Solution\Source\Enemy.h(36,19): warning C4244: 'inicializando': conversión de 'float' a 'const int'; posible pérdida de datos
-C:\Users\MakinillaChan\Desktop\Pang 0.4\Project_8_Solution\Source\Balls.cpp(20,14): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
-C:\Users\MakinillaChan\Desktop\Pang 0.4\Project_8_Solution\Source\Balls.cpp(22,42): warning C4244: '=': conversión de 'float' a 'TYPE'; posible pérdida de datos
-          with
-          [
-              TYPE=int
-          ]
-C:\Users\MakinillaChan\Desktop\Pang 0.4\Project_8_Solution\Source\Balls.cpp(23,26): warning C4244: '=': conversión de 'float' a 'TYPE'; posible pérdida de datos
-          with
-          [
-              TYPE=int
-          ]
-  Globals.cpp
+C:\Users\theex\Desktop\Ignasi\GitHub\Proyecto-1\Pang 0.4\Project_8_Solution\Source\Enemy.h(36,19): warning C4244: 'initializing': conversion from 'float' to 'const int', possible loss of data
+C:\Users\theex\Desktop\Ignasi\GitHub\Proyecto-1\Pang 0.4\Project_8_Solution\Source\Animation.h(54,19): warning C4244: 'initializing': conversion from 'const float' to 'int', possible loss of data
+C:\Users\theex\Desktop\Ignasi\GitHub\Proyecto-1\Pang 0.4\Project_8_Solution\Source\Animation.h(56,30): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+C:\Users\theex\Desktop\Ignasi\GitHub\Proyecto-1\Pang 0.4\Project_8_Solution\Source\Enemy.h(36,19): warning C4244: 'initializing': conversion from 'float' to 'const int', possible loss of data
+C:\Users\theex\Desktop\Ignasi\GitHub\Proyecto-1\Pang 0.4\Project_8_Solution\Source\Balls.cpp(28,14): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+C:\Users\theex\Desktop\Ignasi\GitHub\Proyecto-1\Pang 0.4\Project_8_Solution\Source\Balls.cpp(35,42): warning C4244: '=': conversion from 'float' to 'TYPE', possible loss of data
+C:\Users\theex\Desktop\Ignasi\GitHub\Proyecto-1\Pang 0.4\Project_8_Solution\Source\Balls.cpp(35,42): warning C4244:         with
+C:\Users\theex\Desktop\Ignasi\GitHub\Proyecto-1\Pang 0.4\Project_8_Solution\Source\Balls.cpp(35,42): warning C4244:         [
+C:\Users\theex\Desktop\Ignasi\GitHub\Proyecto-1\Pang 0.4\Project_8_Solution\Source\Balls.cpp(35,42): warning C4244:             TYPE=int
+C:\Users\theex\Desktop\Ignasi\GitHub\Proyecto-1\Pang 0.4\Project_8_Solution\Source\Balls.cpp(35,42): warning C4244:         ]
+  Med_Balls.cpp
+C:\Users\theex\Desktop\Ignasi\GitHub\Proyecto-1\Pang 0.4\Project_8_Solution\Source\Balls.cpp(36,26): warning C4244: '=': conversion from 'float' to 'TYPE', possible loss of data
+C:\Users\theex\Desktop\Ignasi\GitHub\Proyecto-1\Pang 0.4\Project_8_Solution\Source\Balls.cpp(36,26): warning C4244:         with
+C:\Users\theex\Desktop\Ignasi\GitHub\Proyecto-1\Pang 0.4\Project_8_Solution\Source\Balls.cpp(36,26): warning C4244:         [
+C:\Users\theex\Desktop\Ignasi\GitHub\Proyecto-1\Pang 0.4\Project_8_Solution\Source\Balls.cpp(36,26): warning C4244:             TYPE=int
+C:\Users\theex\Desktop\Ignasi\GitHub\Proyecto-1\Pang 0.4\Project_8_Solution\Source\Balls.cpp(36,26): warning C4244:         ]
+C:\Users\theex\Desktop\Ignasi\GitHub\Proyecto-1\Pang 0.4\Project_8_Solution\Source\Animation.h(54,19): warning C4244: 'initializing': conversion from 'const float' to 'int', possible loss of data
+C:\Users\theex\Desktop\Ignasi\GitHub\Proyecto-1\Pang 0.4\Project_8_Solution\Source\Animation.h(56,30): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+C:\Users\theex\Desktop\Ignasi\GitHub\Proyecto-1\Pang 0.4\Project_8_Solution\Source\Enemy.h(36,19): warning C4244: 'initializing': conversion from 'float' to 'const int', possible loss of data
+C:\Users\theex\Desktop\Ignasi\GitHub\Proyecto-1\Pang 0.4\Project_8_Solution\Source\Med_Balls.cpp(27,14): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+C:\Users\theex\Desktop\Ignasi\GitHub\Proyecto-1\Pang 0.4\Project_8_Solution\Source\Med_Balls.cpp(34,42): warning C4244: '=': conversion from 'float' to 'TYPE', possible loss of data
+C:\Users\theex\Desktop\Ignasi\GitHub\Proyecto-1\Pang 0.4\Project_8_Solution\Source\Med_Balls.cpp(34,42): warning C4244:         with
+C:\Users\theex\Desktop\Ignasi\GitHub\Proyecto-1\Pang 0.4\Project_8_Solution\Source\Med_Balls.cpp(34,42): warning C4244:         [
+C:\Users\theex\Desktop\Ignasi\GitHub\Proyecto-1\Pang 0.4\Project_8_Solution\Source\Med_Balls.cpp(34,42): warning C4244:             TYPE=int
+C:\Users\theex\Desktop\Ignasi\GitHub\Proyecto-1\Pang 0.4\Project_8_Solution\Source\Med_Balls.cpp(34,42): warning C4244:         ]
   ModuleAudio.cpp
   ModuleCollisions.cpp
   ModuleEnemies.cpp
-C:\Users\MakinillaChan\Desktop\Pang 0.4\Project_8_Solution\Source\Animation.h(54,19): warning C4244: 'inicializando': conversión de 'const float' a 'int'; posible pérdida de datos
-C:\Users\MakinillaChan\Desktop\Pang 0.4\Project_8_Solution\Source\Animation.h(56,30): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
-C:\Users\MakinillaChan\Desktop\Pang 0.4\Project_8_Solution\Source\Enemy.h(36,19): warning C4244: 'inicializando': conversión de 'float' a 'const int'; posible pérdida de datos
+C:\Users\theex\Desktop\Ignasi\GitHub\Proyecto-1\Pang 0.4\Project_8_Solution\Source\Med_Balls.cpp(35,26): warning C4244: '=': conversion from 'float' to 'TYPE', possible loss of data
+C:\Users\theex\Desktop\Ignasi\GitHub\Proyecto-1\Pang 0.4\Project_8_Solution\Source\Med_Balls.cpp(35,26): warning C4244:         with
+C:\Users\theex\Desktop\Ignasi\GitHub\Proyecto-1\Pang 0.4\Project_8_Solution\Source\Med_Balls.cpp(35,26): warning C4244:         [
+C:\Users\theex\Desktop\Ignasi\GitHub\Proyecto-1\Pang 0.4\Project_8_Solution\Source\Med_Balls.cpp(35,26): warning C4244:             TYPE=int
+C:\Users\theex\Desktop\Ignasi\GitHub\Proyecto-1\Pang 0.4\Project_8_Solution\Source\Med_Balls.cpp(35,26): warning C4244:         ]
+C:\Users\theex\Desktop\Ignasi\GitHub\Proyecto-1\Pang 0.4\Project_8_Solution\Source\Animation.h(54,19): warning C4244: 'initializing': conversion from 'const float' to 'int', possible loss of data
+C:\Users\theex\Desktop\Ignasi\GitHub\Proyecto-1\Pang 0.4\Project_8_Solution\Source\Animation.h(56,30): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
   ModuleFadeToBlack.cpp
-C:\Users\MakinillaChan\Desktop\Pang 0.4\Project_8_Solution\Source\ModuleFadeToBlack.cpp(79,19): warning C4244: '=': conversión de 'float' a 'Uint32'; posible pérdida de datos
+C:\Users\theex\Desktop\Ignasi\GitHub\Proyecto-1\Pang 0.4\Project_8_Solution\Source\Enemy.h(36,19): warning C4244: 'initializing': conversion from 'float' to 'const int', possible loss of data
   ModuleParticles.cpp
-C:\Users\MakinillaChan\Desktop\Pang 0.4\Project_8_Solution\Source\Animation.h(54,19): warning C4244: 'inicializando': conversión de 'const float' a 'int'; posible pérdida de datos
-C:\Users\MakinillaChan\Desktop\Pang 0.4\Project_8_Solution\Source\Animation.h(56,30): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Users\theex\Desktop\Ignasi\GitHub\Proyecto-1\Pang 0.4\Project_8_Solution\Source\ModuleFadeToBlack.cpp(79,19): warning C4244: '=': conversion from 'float' to 'Uint32', possible loss of data
+C:\Users\theex\Desktop\Ignasi\GitHub\Proyecto-1\Pang 0.4\Project_8_Solution\Source\Animation.h(54,19): warning C4244: 'initializing': conversion from 'const float' to 'int', possible loss of data
   SceneIntro.cpp
-C:\Users\MakinillaChan\Desktop\Pang 0.4\Project_8_Solution\Source\Animation.h(54,19): warning C4244: 'inicializando': conversión de 'const float' a 'int'; posible pérdida de datos
-C:\Users\MakinillaChan\Desktop\Pang 0.4\Project_8_Solution\Source\Animation.h(56,30): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Users\theex\Desktop\Ignasi\GitHub\Proyecto-1\Pang 0.4\Project_8_Solution\Source\Animation.h(56,30): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+C:\Users\theex\Desktop\Ignasi\GitHub\Proyecto-1\Pang 0.4\Project_8_Solution\Source\Animation.h(54,19): warning C4244: 'initializing': conversion from 'const float' to 'int', possible loss of data
   SceneLevel1.cpp
-C:\Users\MakinillaChan\Desktop\Pang 0.4\Project_8_Solution\Source\Animation.h(54,19): warning C4244: 'inicializando': conversión de 'const float' a 'int'; posible pérdida de datos
-C:\Users\MakinillaChan\Desktop\Pang 0.4\Project_8_Solution\Source\Animation.h(56,30): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Users\theex\Desktop\Ignasi\GitHub\Proyecto-1\Pang 0.4\Project_8_Solution\Source\Animation.h(56,30): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+C:\Users\theex\Desktop\Ignasi\GitHub\Proyecto-1\Pang 0.4\Project_8_Solution\Source\Animation.h(54,19): warning C4244: 'initializing': conversion from 'const float' to 'int', possible loss of data
   ModuleInput.cpp
   ModulePlayer.cpp
-C:\Users\MakinillaChan\Desktop\Pang 0.4\Project_8_Solution\Source\Animation.h(54,19): warning C4244: 'inicializando': conversión de 'const float' a 'int'; posible pérdida de datos
-C:\Users\MakinillaChan\Desktop\Pang 0.4\Project_8_Solution\Source\Animation.h(56,30): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Users\theex\Desktop\Ignasi\GitHub\Proyecto-1\Pang 0.4\Project_8_Solution\Source\Animation.h(56,30): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+C:\Users\theex\Desktop\Ignasi\GitHub\Proyecto-1\Pang 0.4\Project_8_Solution\Source\Animation.h(54,19): warning C4244: 'initializing': conversion from 'const float' to 'int', possible loss of data
   ModuleRender.cpp
   ModuleTextures.cpp
   ModuleWindow.cpp
   Main.cpp
-  Module.cpp
-  Particle.cpp
-C:\Users\MakinillaChan\Desktop\Pang 0.4\Project_8_Solution\Source\Animation.h(54,19): warning C4244: 'inicializando': conversión de 'const float' a 'int'; posible pérdida de datos
-C:\Users\MakinillaChan\Desktop\Pang 0.4\Project_8_Solution\Source\Animation.h(56,30): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
-C:\Users\MakinillaChan\Desktop\Pang 0.4\Project_8_Solution\Source\Particle.cpp(39,19): warning C4018: '>=': no coinciden signed/unsigned
-  Generando código...
-  Compilando...
-  Path.cpp
-C:\Users\MakinillaChan\Desktop\Pang 0.4\Project_8_Solution\Source\Animation.h(54,19): warning C4244: 'inicializando': conversión de 'const float' a 'int'; posible pérdida de datos
-C:\Users\MakinillaChan\Desktop\Pang 0.4\Project_8_Solution\Source\Animation.h(56,30): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
-  Generando código...
-  Project_8_Solution.vcxproj -> C:\Users\MakinillaChan\Desktop\Pang 0.4\Debug\Project_8_Solution.exe
+  ScenePreIntro.cpp
+C:\Users\theex\Desktop\Ignasi\GitHub\Proyecto-1\Pang 0.4\Project_8_Solution\Source\Animation.h(56,30): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+C:\Users\theex\Desktop\Ignasi\GitHub\Proyecto-1\Pang 0.4\Project_8_Solution\Source\Animation.h(54,19): warning C4244: 'initializing': conversion from 'const float' to 'int', possible loss of data
+  Generating Code...
+C:\Users\theex\Desktop\Ignasi\GitHub\Proyecto-1\Pang 0.4\Project_8_Solution\Source\Animation.h(56,30): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+  Project_8_Solution.vcxproj -> C:\Users\theex\Desktop\Ignasi\GitHub\Proyecto-1\Pang 0.4\Debug\Project_8_Solution.exe
