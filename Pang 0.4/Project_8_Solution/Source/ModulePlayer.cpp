@@ -77,6 +77,8 @@ bool ModulePlayer::Start()
 	return ret;
 }
 
+
+
 Update_Status ModulePlayer::Update()
 {
 	if (App->input->keys[SDL_SCANCODE_A] == Key_State::KEY_REPEAT)
@@ -145,6 +147,13 @@ Update_Status ModulePlayer::PostUpdate()
 	return Update_Status::UPDATE_CONTINUE;
 }
 
+void ModulePlayer::MovePlayer(int x, int y) {
+	position.x = x;
+	position.y = y;
+
+}
+
+
 void ModulePlayer::OnCollision(Collider* c1, Collider* c2)
 {
 	if (c1 == collider && destroyed == false)
@@ -156,8 +165,7 @@ void ModulePlayer::OnCollision(Collider* c1, Collider* c2)
 			position.x += 1;
 		}
 		else if (c2->type == Collider::Type::ENEMY) {
-			position.x = 65465;
-			position.y = 65465;
+			MovePlayer(555545, 55545455);
 			App->fade->FadeToBlack(this, (Module*)App->sceneOver, 90);
 		}
 	}

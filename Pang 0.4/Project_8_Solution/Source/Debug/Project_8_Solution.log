@@ -1,4 +1,5 @@
-﻿  ModulePlayer.cpp
-C:\Users\MakinillaChan\Desktop\tpm\Project_8_Solution\Source\Animation.h(54,19): warning C4244: 'inicializando': conversión de 'const float' a 'int'; posible pérdida de datos
-C:\Users\MakinillaChan\Desktop\tpm\Project_8_Solution\Source\Animation.h(56,30): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
-  Project_8_Solution.vcxproj -> C:\Users\MakinillaChan\Desktop\tpm\Debug\Project_8_Solution.exe
+﻿  ModuleEnemies.cpp
+C:\Users\MakinillaChan\Documents\GitHub\Pang-Project\Pang 0.4\Project_8_Solution\Source\Animation.h(54,19): warning C4244: 'inicializando': conversión de 'const float' a 'int'; posible pérdida de datos
+C:\Users\MakinillaChan\Documents\GitHub\Pang-Project\Pang 0.4\Project_8_Solution\Source\Animation.h(56,30): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Users\MakinillaChan\Documents\GitHub\Pang-Project\Pang 0.4\Project_8_Solution\Source\Enemy.h(36,19): warning C4244: 'inicializando': conversión de 'float' a 'const int'; posible pérdida de datos
+  Project_8_Solution.vcxproj -> C:\Users\MakinillaChan\Documents\GitHub\Pang-Project\Pang 0.4\Debug\Project_8_Solution.exe

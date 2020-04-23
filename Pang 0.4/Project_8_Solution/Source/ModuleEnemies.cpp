@@ -1,8 +1,10 @@
 #include "ModuleEnemies.h"
 
 #include "Application.h"
+#include "ModuleFadeToBlack.h"
 
 #include "ModuleRender.h"
+#include "ModulePlayer.h"
 #include "ModuleTextures.h"
 #include "ModuleAudio.h"
 #include "Collider.h"
@@ -121,17 +123,10 @@ void ModuleEnemies::HandleEnemiesDespawn()
 	// Iterate existing enemies
 	for (uint i = 0; i < MAX_ENEMIES; ++i)
 	{
-		if (enemies[i] != nullptr)
+		/*if (enemies[i] != nullptr)
 		{
-			// Delete the enemy when it has reached the end of the screen
-			if (enemies[i]->position.x * SCREEN_SIZE < (App->render->camera.x) - SPAWN_MARGIN)
-			{
-				LOG("DeSpawning enemy at %d", enemies[i]->position.x * SCREEN_SIZE);
-
-				delete enemies[i];
-				enemies[i] = nullptr;
-			}
-		}
+			
+		}*/
 	}
 }
 
@@ -157,6 +152,8 @@ void ModuleEnemies::SpawnEnemy(const EnemySpawnpoint& info)
 		}
 	}
 }
+
+
 
 void ModuleEnemies::OnCollision(Collider* c1, Collider* c2)
 {
@@ -193,7 +190,14 @@ void ModuleEnemies::OnCollision(Collider* c1, Collider* c2)
 		{
 			enemies[i]->OnCollision(c2); //Notify the enemy of a collision
 			delete enemies[i];
+			c++;
 			enemies[i] = nullptr;
+			//only 1st lvl
+			if (c == 3) {
+				App->player->MovePlayer(555545, 55545455);
+				App->fade->FadeToBlack(this, (Module*)App->sceneWin, 90);
+
+			}
 			break;
 		}
 		if (enemies[i] != nullptr && enemies[i]->GetCollider() == c1 && c2->type == Collider::Type::PLAYER)

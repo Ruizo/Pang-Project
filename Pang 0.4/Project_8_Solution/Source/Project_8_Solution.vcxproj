@@ -100,6 +100,7 @@
     <ClInclude Include="Path.h" />
     <ClInclude Include="SceneOver.h" />
     <ClInclude Include="ScenePreIntro.h" />
+    <ClInclude Include="SceneWin.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Application.cpp" />
@@ -126,6 +127,7 @@
     <ClCompile Include="Path.cpp" />
     <ClCompile Include="SceneOver.cpp" />
     <ClCompile Include="ScenePreIntro.cpp" />
+    <ClCompile Include="SceneWin.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

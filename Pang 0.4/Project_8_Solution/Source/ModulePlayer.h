@@ -32,6 +32,8 @@ public:
 	// Collision callback, called when the player intersects with another collider
 	void OnCollision(Collider* c1, Collider* c2) override;
 
+	void MovePlayer(int x, int y);
+
 public:
 	// Position of the player in the map
 	iPoint position;
