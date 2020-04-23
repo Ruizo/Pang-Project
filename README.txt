@@ -1,6 +1,6 @@
 # A2_Game_Prototype
 
-The Pang-Project By *Equipo Knekro*
+The Pang-Project By *Equipo TDM*
 
 ## Our github repository for this project:
 
@@ -9,15 +9,14 @@ The Pang-Project By *Equipo Knekro*
 ## Team members:
 
 * [Isaac Digón Donaire](https://github.com/isaac553876299)
-* []()
-* []()
-* []()
+* [Oriol Valverde Agramunt](https://github.com/Makinilla-maker)
+* [Ignasi Pardo Carbó](https://github.com/KuronoaScarlet)
+* [Marc Ruiz Pastor](https://github.com/Ruizo)
 
 ## Description of the game:
 
-```
 The game is about the Buster Brothers: two guys who are requested to save the world from the terrifying threat that a bunch of bouncing baloons are, frightening and destroying several Earth's landmarks. The adventure will take you and our two heroes from the Mt. Fuji to Barcelona, Taj Mahal, and more iconical Earth's locations.
-```
+
 
 ## How to play and controls:
 
