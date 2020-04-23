@@ -98,6 +98,7 @@
     <ClInclude Include="p2Point.h" />
     <ClInclude Include="Particle.h" />
     <ClInclude Include="Path.h" />
+    <ClInclude Include="SceneOver.h" />
     <ClInclude Include="ScenePreIntro.h" />
   </ItemGroup>
   <ItemGroup>
@@ -123,6 +124,7 @@
     <ClCompile Include="Module.cpp" />
     <ClCompile Include="Particle.cpp" />
     <ClCompile Include="Path.cpp" />
+    <ClCompile Include="SceneOver.cpp" />
     <ClCompile Include="ScenePreIntro.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

@@ -2,10 +2,12 @@
 
 #include "Application.h"
 
+
 #include "ModuleRender.h"
 #include "ModuleTextures.h"
 #include "ModuleAudio.h"
 #include "Collider.h"
+#include "ModuleInput.h"
 
 #include "Enemy.h"
 #include "Balls.h"
@@ -123,14 +125,9 @@ void ModuleEnemies::HandleEnemiesDespawn()
 	{
 		if (enemies[i] != nullptr)
 		{
-			// Delete the enemy when it has reached the end of the screen
-			if (enemies[i]->position.x * SCREEN_SIZE < (App->render->camera.x) - SPAWN_MARGIN)
-			{
-				LOG("DeSpawning enemy at %d", enemies[i]->position.x * SCREEN_SIZE);
 
-				delete enemies[i];
-				enemies[i] = nullptr;
-			}
+			
+
 		}
 	}
 }
@@ -174,7 +171,8 @@ void ModuleEnemies::OnCollision(Collider* c1, Collider* c2)
 		{
 			//Classificar pilotes
 			App->enemies->enemies[i]->position.y = 195;
-			App->enemies->enemies[i]->B_Vy *= -1;//Gran
+		
+			App->enemies->enemies[i]->B_Vy =-400;//Gran
 		}
 		if (enemies[i] != nullptr && enemies[i]->GetCollider() == c1 && c2->type == Collider::Type::WALL3)//pared iz
 
@@ -196,5 +194,16 @@ void ModuleEnemies::OnCollision(Collider* c1, Collider* c2)
 			enemies[i] = nullptr;
 			break;
 		}
+		if (enemies[i] != nullptr && enemies[i]->GetCollider() == c1 && c2->type == Collider::Type::PLAYER)
+		{
+			enemies[i]->OnCollision(c2); //Notify the enemy of a collision
+			for (int i = 0; i < MAX_ENEMIES; i++)
+			{
+				delete enemies[i];
+				enemies[i] = nullptr;
+				
+			}
+		}
+
 	}
 }
