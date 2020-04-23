@@ -158,6 +158,7 @@ void ModulePlayer::OnCollision(Collider* c1, Collider* c2)
 		else if (c2->type == Collider::Type::ENEMY) {
 			position.x = 65465;
 			position.y = 65465;
+			App->fade->FadeToBlack(this, (Module*)App->sceneOver, 90);
 		}
 	}
 	

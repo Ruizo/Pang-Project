@@ -1,11 +1,14 @@
 #include "Enemy.h"
 
+#include "ModuleEnemies.h"
 #include "Application.h"
 #include "ModuleCollisions.h"
 #include "ModuleParticles.h"
 #include "ModuleAudio.h"
 #include "ModuleRender.h"
 #include "Module.h"
+#include "Balls.h"
+#include "Med_Balls.h"
 
 Enemy::Enemy(int x, int y) : position(x, y)
 {
@@ -42,7 +45,4 @@ void Enemy::OnCollision(Collider* collider)
 {
 	App->particles->AddParticle(App->particles->explosion, position.x, position.y);
 	App->audio->PlayFx(destroyedFx);
-;
-
-
 }

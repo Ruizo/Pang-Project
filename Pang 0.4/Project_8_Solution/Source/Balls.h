@@ -14,6 +14,9 @@ public:
 	// The enemy is going to perform a sinusoidal movement
 	void Update() override;
 
+	void OnCollision(Collider* collider) override;
+
+
 private:
 	
 	// The original spawning position. The wave will be calculated from that
@@ -26,4 +29,6 @@ private:
 	Animation flyAnim;
 };
 
-#endif // __ENEMY_REDBIRD_H__
+
+
+#endif // _BALLS_H
