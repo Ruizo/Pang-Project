@@ -15,9 +15,8 @@ The Pang-Project By *Equipo Knekro*
 
 ## Description of the game:
 
-```
 The game is about the Buster Brothers: two guys who are requested to save the world from the terrifying threat that a bunch of bouncing baloons are, frightening and destroying several Earth's landmarks. The adventure will take you and our two heroes from the Mt. Fuji to Barcelona, Taj Mahal, and more iconical Earth's locations.
-```
+
 
 ## How to play and controls:
 
