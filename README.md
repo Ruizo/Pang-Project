@@ -1,6 +1,6 @@
 # A2_Game_Prototype
 
-The Pang-Project By *Equipo Knekro*
+The Pang-Project By *Equipo TDM*
 
 ## Our github repository for this project:
 
