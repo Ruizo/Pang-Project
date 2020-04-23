@@ -9,8 +9,7 @@ The Pang-Project By *Equipo Knekro*
 ## Team members:
 
 * [Isaac Digón Donaire](https://github.com/isaac553876299)
-* []()
-* []()
+* [Oriol Valverde](https://github.com/Makinilla-maker)
 * []()
 
 ## Description of the game:
