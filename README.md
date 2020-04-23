@@ -10,7 +10,8 @@ The Pang-Project By *Equipo Knekro*
 
 * [Isaac Digón Donaire](https://github.com/isaac553876299)
 * [Oriol Valverde](https://github.com/Makinilla-maker)
-* []()
+* [Ignasi Pardo Carbó](https://github.com/KuronoaScarlet)
+* [Marc Ruiz ](https://github.com/Ruizo)
 
 ## Description of the game:
 
