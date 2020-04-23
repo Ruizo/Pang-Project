@@ -11,7 +11,7 @@ The Pang-Project By *Equipo TDM*
 * [Isaac Digón Donaire](https://github.com/isaac553876299)
 * [Oriol Valverde Agramunt](https://github.com/Makinilla-maker)
 * [Ignasi Pardo Carbó](https://github.com/KuronoaScarlet)
-* [Marc Ruiz ](https://github.com/Ruizo)
+* [Marc Ruiz Pastor](https://github.com/Ruizo)
 
 ## Description of the game:
 
