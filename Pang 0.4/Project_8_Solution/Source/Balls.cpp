@@ -44,14 +44,12 @@ void Balls::Update()
 	Enemy::Update();
 }
 
-void Balls::OnCollision(Collider* c2)
+void Balls::OnCollision(Collider* collider)
 {
 	App->particles->AddParticle(App->particles->explosion, position.x, position.y);
 	App->audio->PlayFx(destroyedFx);
-	if (c2->type == Collider::Type::PLAYER_SHOT) {
-		App->enemies->AddEnemy(Enemy_Type::Med_Ball, position.x + 10, position.y);
-		App->enemies->AddEnemy(Enemy_Type::Med_Ball, position.x - 10, position.y);
-	}
 
+	App->enemies->AddEnemy(Enemy_Type::Med_Ball, position.x + 10, position.y);
+	App->enemies->AddEnemy(Enemy_Type::Med_Ball, position.x - 10, position.y);
 }
 
