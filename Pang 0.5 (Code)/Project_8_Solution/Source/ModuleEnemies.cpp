@@ -170,7 +170,7 @@ void ModuleEnemies::OnCollision(Collider* c1, Collider* c2)
 
 		{
 			//Classificar pilotes
-			App->enemies->enemies[i]->position.y = 195;
+			App->enemies->enemies[i]->position.y = 150;
 			App->enemies->enemies[i]->B_Vy *= -1 ;//Gran
 		}
 		if (enemies[i] != nullptr && enemies[i]->GetCollider() == c1 && c2->type == Collider::Type::WALL3)//pared iz

@@ -66,8 +66,10 @@ bool ModulePlayer::Start()
 	laserFx = App->audio->LoadFx("Assets/Fx/laser.wav");
 	explosionFx = App->audio->LoadFx("Assets/Fx/explosion.wav");
 
-	position.x = 170;
-	position.y = 200;
+	MovePlayer(200, 180);
+	
+	/*position.x = 200;
+	position.y = 50;*/
 
 	// TODO 4: Retrieve the player when playing a second time
 	destroyed = false;
@@ -165,7 +167,7 @@ void ModulePlayer::OnCollision(Collider* c1, Collider* c2)
 			position.x += 1;
 		}
 		else if (c2->type == Collider::Type::ENEMY) {
-			MovePlayer(555545, 55545455);
+			App->player->Disable();
 			App->fade->FadeToBlack(this, (Module*)App->sceneOver, 90);
 		}
 	}

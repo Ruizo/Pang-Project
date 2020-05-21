@@ -84,6 +84,7 @@
     <ClInclude Include="ModuleCollisions.h" />
     <ClInclude Include="ModuleEnemies.h" />
     <ClInclude Include="ModuleFadeToBlack.h" />
+    <ClInclude Include="ModuleLives.h" />
     <ClInclude Include="ModuleParticles.h" />
     <ClInclude Include="SceneIntro.h" />
     <ClInclude Include="SceneLevel1.h" />
@@ -113,6 +114,7 @@
     <ClCompile Include="ModuleCollisions.cpp" />
     <ClCompile Include="ModuleEnemies.cpp" />
     <ClCompile Include="ModuleFadeToBlack.cpp" />
+    <ClCompile Include="ModuleLives.cpp" />
     <ClCompile Include="ModuleParticles.cpp" />
     <ClCompile Include="SceneIntro.cpp" />
     <ClCompile Include="SceneLevel1.cpp" />
@@ -128,6 +130,8 @@
     <ClCompile Include="SceneOver.cpp" />
     <ClCompile Include="ScenePreIntro.cpp" />
     <ClCompile Include="SceneWin.cpp" />
+    <ClCompile Include="worldMap.cpp" />
+    <ClCompile Include="worldMap.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

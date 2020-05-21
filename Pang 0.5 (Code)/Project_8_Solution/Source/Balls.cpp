@@ -27,9 +27,9 @@ void Balls::Update()
 
 	B_Vy = B_Vy +( grav* Time);
 
-	if (B_Vy > 450)
+	if (B_Vy > 380)//450
 	{
-		B_Vy = 430;
+		B_Vy = 350;//430
 	}
 
 	position.y = position.y + (B_Vy * Time) + (grav * (Time * Time));

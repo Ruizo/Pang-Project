@@ -29,9 +29,9 @@ bool SceneLevel1::Start()
 	App->audio->PlayMusic("Assets/Music/stage1.ogg", 1.0f);
 
 	App->collisions->AddCollider({ 0, 0, 384, 10 }, Collider::Type::WALL1);
-	App->collisions->AddCollider({ 0, 231, 384, 9 }, Collider::Type::WALL2);
-	App->collisions->AddCollider({ 0, 10, 9, 221 }, Collider::Type::WALL3);
-	App->collisions->AddCollider({ 375, 10, 9, 221 }, Collider::Type::WALL4);
+	App->collisions->AddCollider({ 0, 198, 384, 9 }, Collider::Type::WALL2);//pared abajo 231
+	App->collisions->AddCollider({ 0, 10, 9, 188 }, Collider::Type::WALL3);
+	App->collisions->AddCollider({ 375, 10, 9, 188 }, Collider::Type::WALL4);
 
 	// Enemies ---
 	App->enemies->AddEnemy(Enemy_Type::Big_Ball, 168, 100);
@@ -41,7 +41,8 @@ bool SceneLevel1::Start()
 	App->render->camera.x = 0;
 	App->render->camera.y = 0;
 
-	// TODO 2: Enable (and properly disable) the player module
+	
+
 	App->player->Enable();
 	App->enemies->Enable();
 
