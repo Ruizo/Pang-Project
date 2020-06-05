@@ -66,13 +66,13 @@ bool ModulePlayer::Start()
 	laserFx = App->audio->LoadFx("Assets/Fx/laser.wav");
 	explosionFx = App->audio->LoadFx("Assets/Fx/explosion.wav");
 
-	MovePlayer(200, 180);
-	
-	/*position.x = 200;
-	position.y = 50;*/
+	MovePlayer(200, 0);
 
 	// TODO 4: Retrieve the player when playing a second time
-	destroyed = false;
+	if (destroyed == true)
+	{
+		destroyed = false;
+	}
 
 	collider = App->collisions->AddCollider({ position.x, position.y, 28, 28 }, Collider::Type::PLAYER, this);
 
@@ -108,7 +108,7 @@ Update_Status ModulePlayer::Update()
 		if (currentAnimation != &shootAnim)
 		{
 
-			position.y = 203;
+			position.y = 171;
 			shootAnim.Reset();
 			currentAnimation = &shootAnim;
 		}
@@ -121,7 +121,7 @@ Update_Status ModulePlayer::Update()
 		&& App->input->keys[SDL_SCANCODE_SPACE] == Key_State::KEY_IDLE)
 	{
 		currentAnimation = &idleAnim;
-		position.y = 200;
+		position.y = 168;
 	}
 
 	collider->SetPos(position.x, position.y);

@@ -28,20 +28,16 @@ bool SceneLevel1::Start()
 	bgTexture = App->textures->Load("Assets/Sprites/background.png");
 	App->audio->PlayMusic("Assets/Music/stage1.ogg", 1.0f);
 
-	App->collisions->AddCollider({ 0, 0, 384, 10 }, Collider::Type::WALL1);
-	App->collisions->AddCollider({ 0, 198, 384, 9 }, Collider::Type::WALL2);//pared abajo 231
-	App->collisions->AddCollider({ 0, 10, 9, 188 }, Collider::Type::WALL3);
-	App->collisions->AddCollider({ 375, 10, 9, 188 }, Collider::Type::WALL4);
+	App->collisions->AddCollider({ 0, 0, 384, 9 }, Collider::Type::WALL1);		//UpWall
+	App->collisions->AddCollider({ 0, 200, 384, 9 }, Collider::Type::WALL2);	//DownWall
+	App->collisions->AddCollider({ 0, 8, 8, 192 }, Collider::Type::WALL3);	    //RightWall
+	App->collisions->AddCollider({ 376, 9, 8, 192 }, Collider::Type::WALL4);	//LeftWall
 
 	// Enemies ---
 	App->enemies->AddEnemy(Enemy_Type::Big_Ball, 168, 100);
 
-	//168 120
-
 	App->render->camera.x = 0;
 	App->render->camera.y = 0;
-
-	
 
 	App->player->Enable();
 	App->enemies->Enable();
