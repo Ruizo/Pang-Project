@@ -32,6 +32,7 @@ public:
 
 	// Removes the memory from SDL_Texture and removes it from the array
 	bool Unload(SDL_Texture* texture);
+	void GetTextureSize(const SDL_Texture* texture, uint& width, uint& height) const;
 
 public:
 	// An array of all the loaded textures

@@ -112,7 +112,7 @@
     <ClInclude Include="ModuleLives.h">
       <Filter>Source Files\Modules\Gameplay</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\..\..\..\Desktop\Project_9_Solution\Project_9_Solution\Source\ModuleFonts.h">
+    <ClInclude Include="ModuleFonts.h">
       <Filter>Source Files\Modules\Core</Filter>
     </ClInclude>
   </ItemGroup>
@@ -201,7 +201,7 @@
     <ClCompile Include="worldMap.cpp">
       <Filter>Source Files\Modules\Gameplay</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\..\..\..\Desktop\Project_9_Solution\Project_9_Solution\Source\ModuleFonts.cpp">
+    <ClCompile Include="ModuleFonts.cpp">
       <Filter>Source Files\Modules\Core</Filter>
     </ClCompile>
   </ItemGroup>

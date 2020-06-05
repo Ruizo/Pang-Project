@@ -1,4 +1,9 @@
-﻿Debug\worldMap.obj : warning LNK4042: objeto especificado más de una vez; omitidos los sobrantes
-ModuleFonts.obj : error LNK2019: símbolo externo "public: void __thiscall ModuleTextures::GetTextureSize(struct SDL_Texture const *,unsigned int &,unsigned int &)const " (?GetTextureSize@ModuleTextures@@QBEXPBUSDL_Texture@@AAI1@Z) sin resolver al que se hace referencia en la función "public: int __thiscall ModuleFonts::Load(char const *,char const *,unsigned int)" (?Load@ModuleFonts@@QAEHPBD0I@Z)
-ModuleFonts.obj : error LNK2019: símbolo externo "public: bool __thiscall ModuleRender::Blit(struct SDL_Texture *,int,int,struct SDL_Rect const *,float,bool)" (?Blit@ModuleRender@@QAE_NPAUSDL_Texture@@HHPBUSDL_Rect@@M_N@Z) sin resolver al que se hace referencia en la función "public: void __thiscall ModuleFonts::BlitText(int,int,int,char const *)const " (?BlitText@ModuleFonts@@QBEXHHHPBD@Z)
-C:\Users\MakinillaChan\Documents\GitHub\Pang-Project\Pang 0.5 (Code)\Debug\Project_8_Solution.exe : fatal error LNK1120: 2 externos sin resolver
+﻿  ModuleFonts.cpp
+  ModuleRender.cpp
+  SceneWin.cpp
+C:\Users\MakinillaChan\Documents\GitHub\Pang-Project\Pang 0.5 (Code)\Project_8_Solution\Source\Animation.h(54,19): warning C4244: 'inicializando': conversión de 'const float' a 'int'; posible pérdida de datos
+C:\Users\MakinillaChan\Documents\GitHub\Pang-Project\Pang 0.5 (Code)\Project_8_Solution\Source\Animation.h(56,30): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
+  Generando código...
+Debug\worldMap.obj : warning LNK4042: objeto especificado más de una vez; omitidos los sobrantes
+Application.obj : error LNK2019: símbolo externo "public: __thiscall worldMap::worldMap(bool)" (??0worldMap@@QAE@_N@Z) sin resolver al que se hace referencia en la función "public: __thiscall Application::Application(void)" (??0Application@@QAE@XZ)
+C:\Users\MakinillaChan\Documents\GitHub\Pang-Project\Pang 0.5 (Code)\Debug\Project_8_Solution.exe : fatal error LNK1120: 1 externos sin resolver
