@@ -25,15 +25,15 @@ Med_Balls2::Med_Balls2(int x, int y) : Enemy(x, y)
 void Med_Balls2::Update()
 {
 
-	B_Vy = B_Vy + (grav * Time);
+	B_Vy = (B_Vy + (grav * Time));
 
-	if (B_Vy > 400)
+	if (B_Vy > 300)
 	{
-		B_Vy = 390;
+		B_Vy = 300;
 	}
 
 	position.y = position.y + (B_Vy * Time) + (grav * (Time * Time));
-	position.x = position.x + (B_Vx * Time);
+	position.x = (position.x) + ((B_Vx*-1) * Time);
 
 
 
