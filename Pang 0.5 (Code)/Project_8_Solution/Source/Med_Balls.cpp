@@ -12,13 +12,13 @@
 
 Med_Balls::Med_Balls(int x, int y) : Enemy(x, y)
 {
-	flyAnim.PushBack({ 42,0,21,21 });
+	flyAnim.PushBack({ 52,13,32,26 });
 
 	flyAnim.speed = 0.2f;
 
 	currentAnim = &flyAnim;
 
-	collider = App->collisions->AddCollider({ 0, 0, 21, 21 }, Collider::Type::ENEMY, (Module*)App->enemies);
+	collider = App->collisions->AddCollider({ 0, 0, 32, 26 }, Collider::Type::ENEMY, (Module*)App->enemies);
 }
 
 void Med_Balls::Update()

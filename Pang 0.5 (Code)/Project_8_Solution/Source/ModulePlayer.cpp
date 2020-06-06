@@ -12,7 +12,7 @@
 ModulePlayer::ModulePlayer(bool startEnabled) : Module(startEnabled)
 {
 	// idle animation - just one sprite
-	idleAnim.PushBack({ 0, 0, 25, 32 });
+	idleAnim.PushBack({ 19, 145, 25, 32 });
 
 	// move upwards
 	upAnim.PushBack({ 0, 0, 25, 32 });
@@ -28,23 +28,23 @@ ModulePlayer::ModulePlayer(bool startEnabled) : Module(startEnabled)
 
 	// Move right
 
-	rightAnim.PushBack({ 26,0,30,32 });
-	rightAnim.PushBack({ 56,0,30,32 });
-	rightAnim.PushBack({ 86,0,28,32 });
-	rightAnim.PushBack({ 114,0,29,32 });
+	rightAnim.PushBack({ 19,1,30,32 });
+	rightAnim.PushBack({ 53,1,30,32 });
+	rightAnim.PushBack({ 87,1,30,32 });
+	rightAnim.PushBack({ 121,1,30,32 });
 	rightAnim.loop = true;
 	rightAnim.speed = 0.1f;
 
 	// Move left
-	leftAnim.PushBack({ 145,0,30,32 });
-	leftAnim.PushBack({ 175,0,30,32 });
-	leftAnim.PushBack({ 205,0,28,32 });
-	leftAnim.PushBack({ 233,0,30,32 });
+	leftAnim.PushBack({ 149,34,30,32 });
+	leftAnim.PushBack({ 115,34,30,32 });
+	leftAnim.PushBack({ 81,34,30,32 });
+	leftAnim.PushBack({ 13,34,30,32 });
 	leftAnim.loop = true;
 	leftAnim.speed = 0.1f;
 
 	// Shoot
-	shootAnim.PushBack({ 0,35,27,29 });
+	shootAnim.PushBack({ 51,145,30,32 });
 	shootAnim.loop = false;
 	shootAnim.speed = 0.1f;
 }
@@ -74,7 +74,7 @@ bool ModulePlayer::Start()
 		destroyed = false;
 	}
 
-	collider = App->collisions->AddCollider({ position.x, position.y, 28, 28 }, Collider::Type::PLAYER, this);
+	collider = App->collisions->AddCollider({ position.x, position.y, 30, 32 }, Collider::Type::PLAYER, this);
 
 	return ret;
 }
@@ -107,8 +107,6 @@ Update_Status ModulePlayer::Update()
 
 		if (currentAnimation != &shootAnim)
 		{
-
-			position.y = 171;
 			shootAnim.Reset();
 			currentAnimation = &shootAnim;
 		}

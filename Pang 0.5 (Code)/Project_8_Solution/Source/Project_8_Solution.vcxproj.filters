@@ -46,9 +46,6 @@
     <ClInclude Include="Particle.h">
       <Filter>Source Files\Entities</Filter>
     </ClInclude>
-    <ClInclude Include="Module.h">
-      <Filter>Source Files\Modules</Filter>
-    </ClInclude>
     <ClInclude Include="ModuleAudio.h">
       <Filter>Source Files\Modules\Core</Filter>
     </ClInclude>
@@ -115,11 +112,11 @@
     <ClInclude Include="ModuleFonts.h">
       <Filter>Source Files\Modules\Core</Filter>
     </ClInclude>
+    <ClInclude Include="Module.h">
+      <Filter>Source Files\Modules</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Module.cpp">
-      <Filter>Source Files\Modules</Filter>
-    </ClCompile>
     <ClCompile Include="Application.cpp">
       <Filter>Source Files\Application</Filter>
     </ClCompile>
@@ -203,6 +200,9 @@
     </ClCompile>
     <ClCompile Include="ModuleFonts.cpp">
       <Filter>Source Files\Modules\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="Module.cpp">
+      <Filter>Source Files\Modules</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

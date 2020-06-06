@@ -1,9 +1,4 @@
-﻿  ModuleFonts.cpp
-  ModuleRender.cpp
-  SceneWin.cpp
-C:\Users\MakinillaChan\Documents\GitHub\Pang-Project\Pang 0.5 (Code)\Project_8_Solution\Source\Animation.h(54,19): warning C4244: 'inicializando': conversión de 'const float' a 'int'; posible pérdida de datos
-C:\Users\MakinillaChan\Documents\GitHub\Pang-Project\Pang 0.5 (Code)\Project_8_Solution\Source\Animation.h(56,30): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
-  Generando código...
-Debug\worldMap.obj : warning LNK4042: objeto especificado más de una vez; omitidos los sobrantes
-Application.obj : error LNK2019: símbolo externo "public: __thiscall worldMap::worldMap(bool)" (??0worldMap@@QAE@_N@Z) sin resolver al que se hace referencia en la función "public: __thiscall Application::Application(void)" (??0Application@@QAE@XZ)
-C:\Users\MakinillaChan\Documents\GitHub\Pang-Project\Pang 0.5 (Code)\Debug\Project_8_Solution.exe : fatal error LNK1120: 1 externos sin resolver
+﻿  ModulePlayer.cpp
+C:\Users\theex\Desktop\Ignasi\GitHub\Proyecto-1\Pang 0.5 (Code)\Project_8_Solution\Source\Animation.h(54,19): warning C4244: 'initializing': conversion from 'const float' to 'int', possible loss of data
+C:\Users\theex\Desktop\Ignasi\GitHub\Proyecto-1\Pang 0.5 (Code)\Project_8_Solution\Source\Animation.h(56,30): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+  Project_8_Solution.vcxproj -> C:\Users\theex\Desktop\Ignasi\GitHub\Proyecto-1\Pang 0.5 (Code)\Debug\Project_8_Solution.exe
