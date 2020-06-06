@@ -6,6 +6,8 @@
 #include "ModuleAudio.h"
 #include "ModuleInput.h"
 #include "ModuleFadeToBlack.h"
+#include "SceneLevel1.h"
+#include "ModuleCollisions.h"
 
 SceneOver::SceneOver(bool startEnabled) : Module(startEnabled)
 {
@@ -36,10 +38,12 @@ bool SceneOver::Start()
 Update_Status SceneOver::Update()
 {
 	if (App->input->keys[SDL_SCANCODE_SPACE] == Key_State::KEY_DOWN)
-	{
-		App->fade->FadeToBlack(this, (Module*)App->sceneLevel_1, 90);
+	{			
+		App->fade->FadeToBlack(this, (Module*)App->sceneLevel_1, 90);		
 	}
-
+	App->collisions->Disable();
+	App->sceneLevel_1->Disable();
+	
 	return Update_Status::UPDATE_CONTINUE;
 }
 
@@ -48,6 +52,6 @@ Update_Status SceneOver::PostUpdate()
 {
 	// Draw everything --------------------------------------
 	App->render->Blit(bgTexture, 0, 0, NULL);
-
+	
 	return Update_Status::UPDATE_CONTINUE;
 }

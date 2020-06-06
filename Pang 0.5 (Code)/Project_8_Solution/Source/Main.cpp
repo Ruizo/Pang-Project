@@ -78,7 +78,7 @@ int main(int argc, char* argv[])
 				}
 				state = Main_States::MAIN_EXIT;
 			}
-		}
+		}		
 	}
 
 	LOG("\nBye :)\n");

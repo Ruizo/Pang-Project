@@ -6,7 +6,7 @@
 class Balls : public Enemy
 {
 public:
-
+	
 	// Constructor (x y coordinates in the world)
 	// Creates animation data and the collider
 	Balls(int x, int y);

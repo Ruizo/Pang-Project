@@ -37,9 +37,9 @@ public:
 
 	const float Time = 1.0f/60.0f;
 
-	int B_Vy = -150;
+	int B_Vy = 150;
 
-	int B_Vx = 150;
+	int B_Vx = -150;
 
 	// The current position in the world
 	iPoint position;

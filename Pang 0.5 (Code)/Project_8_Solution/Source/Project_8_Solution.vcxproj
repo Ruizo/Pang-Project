@@ -80,6 +80,7 @@
     <ClInclude Include="Enemy.h" />
     <ClInclude Include="Balls.h" />
     <ClInclude Include="Med_Balls.h" />
+    <ClInclude Include="Med_Balls2.h" />
     <ClInclude Include="ModuleAudio.h" />
     <ClInclude Include="ModuleCollisions.h" />
     <ClInclude Include="ModuleEnemies.h" />
@@ -111,6 +112,7 @@
     <ClCompile Include="Balls.cpp" />
     <ClCompile Include="Globals.cpp" />
     <ClCompile Include="Med_Balls.cpp" />
+    <ClCompile Include="Med_Balls2.cpp" />
     <ClCompile Include="ModuleAudio.cpp" />
     <ClCompile Include="ModuleCollisions.cpp" />
     <ClCompile Include="ModuleEnemies.cpp" />

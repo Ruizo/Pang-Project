@@ -2,6 +2,7 @@
 #define _MED_BALLS_H_
 
 #include "Enemy.h"
+#include "ModuleEnemies.h"
 
 class Med_Balls : public Enemy
 {
@@ -15,7 +16,8 @@ public:
 	void Update() override;
 
 private:
-
+	enum class ENEMY_TYPE;
+	int spawn = 0;
 	// The original spawning position. The wave will be calculated from that
 	int spawn_y = 0;
 

@@ -9,6 +9,7 @@
 #include "Module.h"
 #include "Balls.h"
 #include "Med_Balls.h"
+#include "Med_Balls2.h"
 
 Enemy::Enemy(int x, int y) : position(x, y)
 {

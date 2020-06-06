@@ -9,8 +9,11 @@ enum class Enemy_Type
 {
 	NO_TYPE,
 	Big_Ball,
+	Big_Ball2,
 	Med_Ball,
+	Med_Ball2,
 	Small_Ball,
+	Small_Ball2,
 
 
 

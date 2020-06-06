@@ -12,6 +12,7 @@
 #include "Enemy.h"
 #include "Balls.h"
 #include "Med_Balls.h"
+#include "Med_Balls2.h"
 
 
 
@@ -144,6 +145,9 @@ void ModuleEnemies::SpawnEnemy(const EnemySpawnpoint& info)
 					break;
 				case Enemy_Type::Med_Ball:
 					enemies[i] = new Med_Balls(info.x, info.y);
+					break;
+				case Enemy_Type::Med_Ball2:
+					enemies[i] = new Med_Balls2(info.x, info.y);
 					break;
 			}
 			enemies[i]->texture = texture;
