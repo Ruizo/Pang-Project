@@ -25,6 +25,7 @@ public:
 	// Processes new input and handles player movement
 	Update_Status Update() override;
 
+
 	// Called at the end of the application loop
 	// Performs the render call of the player sprite
 	Update_Status PostUpdate() override;
@@ -37,7 +38,9 @@ public:
 public:
 	// Position of the player in the map
 	iPoint position;
-
+	
+	boolean shoot= true;
+	
 	// The speed in which we move the player (pixels per frame)
 	int speed = 1;
 

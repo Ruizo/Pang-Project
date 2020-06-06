@@ -1,16 +1,17 @@
 #include "ModuleCollisions.h"
 
 #include "Application.h"
-
+#include "ModulePlayer.h"
 #include "ModuleRender.h"
 #include "ModuleInput.h"
 #include "SDL/include/SDL_Scancode.h"
+
 
 ModuleCollisions::ModuleCollisions(bool startEnabled) : Module(startEnabled)
 {
 	for(uint i = 0; i < MAX_COLLIDERS; ++i)
 		colliders[i] = nullptr;
-
+	
 	matrix[Collider::Type::WALL1][Collider::Type::WALL1] = false;
 	matrix[Collider::Type::WALL1][Collider::Type::WALL2] = false;
 	matrix[Collider::Type::WALL1][Collider::Type::WALL3] = false;
@@ -98,6 +99,7 @@ Update_Status ModuleCollisions::PreUpdate()
 		{
 			delete colliders[i];
 			colliders[i] = nullptr;
+			
 		}
 	}
 
@@ -131,7 +133,7 @@ Update_Status ModuleCollisions::PreUpdate()
 			}
 		}
 	}
-
+	
 	return Update_Status::UPDATE_CONTINUE;
 }
 
@@ -202,7 +204,7 @@ bool ModuleCollisions::CleanUp()
 		if(colliders[i] != nullptr)
 		{
 			delete colliders[i];
-			colliders[i] = nullptr;
+			colliders[i] = nullptr;			
 		}
 	}
 

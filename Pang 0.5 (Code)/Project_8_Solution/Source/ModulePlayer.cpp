@@ -1,5 +1,4 @@
 #include "ModulePlayer.h"
-
 #include "Application.h"
 #include "ModuleTextures.h"
 #include "ModuleInput.h"
@@ -8,6 +7,7 @@
 #include "ModuleAudio.h"
 #include "ModuleCollisions.h"
 #include "ModuleFadeToBlack.h"
+
 
 ModulePlayer::ModulePlayer(bool startEnabled) : Module(startEnabled)
 {
@@ -102,17 +102,21 @@ Update_Status ModulePlayer::Update()
 		}
 	}
 
-	if (App->input->keys[SDL_SCANCODE_SPACE] == Key_State::KEY_DOWN)
+	if (App->input->keys[SDL_SCANCODE_SPACE] == Key_State::KEY_DOWN && (shoot))
 	{
-
 		if (currentAnimation != &shootAnim)
 		{
 			shootAnim.Reset();
 			currentAnimation = &shootAnim;
 		}
-		App->particles->AddParticle(App->particles->laser, position.x + 12, position.y + 20, Collider::Type::PLAYER_SHOT);
+		shoot = false;
+		App->particles->AddParticle(App->particles->laser, position.x + 30, position.y + 24, Collider::Type::PLAYER_SHOT);
 		App->audio->PlayFx(laserFx);
+
+			
+		
 	}
+		
 
 	if (App->input->keys[SDL_SCANCODE_A] == Key_State::KEY_IDLE
 		&& App->input->keys[SDL_SCANCODE_D] == Key_State::KEY_IDLE
@@ -127,14 +131,15 @@ Update_Status ModulePlayer::Update()
 	currentAnimation->Update();
 
 	if (destroyed)
-	{
+	{		
 		destroyedCountdown--;
 		if (destroyedCountdown <= 0)
 			return Update_Status::UPDATE_STOP;
 	}
-
+	
 	return Update_Status::UPDATE_CONTINUE;
 }
+
 
 Update_Status ModulePlayer::PostUpdate()
 {
