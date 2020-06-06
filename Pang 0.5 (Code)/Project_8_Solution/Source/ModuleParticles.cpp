@@ -145,9 +145,10 @@ void ModuleParticles::AddParticle(const Particle& particle, int x, int y, Collid
 
 			//Adding the particle's collider
 			if (colliderType != Collider::Type::NONE)
-				p->collider = App->collisions->AddCollider(p->anim.GetCurrentFrame(), colliderType, this);
-
-			particles[i] = p;
+				p->collider = App->collisions->AddCollider({ 0, 0, 10, 11 + aug }, colliderType, this);
+			    particles[i] = p;
+				aug += 14;
+				
 			break;
 		}
 	}
