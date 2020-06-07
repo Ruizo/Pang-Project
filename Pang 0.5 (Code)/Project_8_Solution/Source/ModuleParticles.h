@@ -59,7 +59,7 @@ public:
 	
 	//Template particle for an explosion
 	Particle explosion;
-	int aug = 0;
+	int aug = 11;
 	//Template particle for a laser
 	Particle laser;
 };

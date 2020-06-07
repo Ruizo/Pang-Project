@@ -145,10 +145,8 @@ void ModuleParticles::AddParticle(const Particle& particle, int x, int y, Collid
 
 			//Adding the particle's collider
 			if (colliderType != Collider::Type::NONE)
-				p->collider = App->collisions->AddCollider({ 0, 0, 10, 11 + aug }, colliderType, this);
-			    particles[i] = p;
-				aug += 14;
-				
+				p->collider = App->collisions->AddCollider({ 0, 0, 10, 11}, colliderType, this);
+			    particles[i] = p;				
 			break;
 		}
 	}
