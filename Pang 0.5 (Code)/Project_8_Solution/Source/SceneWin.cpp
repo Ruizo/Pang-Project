@@ -27,7 +27,6 @@ bool SceneWin::Start()
 	bool ret = true;
 
 	bgTexture = App->textures->Load("Assets/Sprites/Win.png");
-	App->audio->PlayMusic("Assets/Music/pornhubintro.mp3", 1.0f);
 
 	App->render->camera.x = 0;
 	App->render->camera.y = 0;

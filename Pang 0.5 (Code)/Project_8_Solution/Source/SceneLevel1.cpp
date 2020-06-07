@@ -1,5 +1,6 @@
 #include "SceneLevel1.h"
 
+#include "Enemy.h"
 #include "Application.h"
 #include "ModuleTextures.h"
 #include "ModuleRender.h"
@@ -35,7 +36,7 @@ bool SceneLevel1::Start()
 	App->collisions->AddCollider({ 376, 9, 8, 192 }, Collider::Type::WALL4);	//LeftWall
 
 	// Enemies ---
-	App->enemies->AddEnemy(Enemy_Type::Big_Ball, 168, 100);
+	App->enemies->AddEnemy(Enemy_Type::Big_Ball, 50, 80);
 
 	App->render->camera.x = 0;
 	App->render->camera.y = 0;
@@ -62,7 +63,7 @@ Update_Status SceneLevel1::PostUpdate()
 
 bool SceneLevel1::CleanUp()
 {
-	// TODO 2: Enable (and properly disable) the player module
+	
 	App->player->Disable();
 	App->enemies->Disable();
 

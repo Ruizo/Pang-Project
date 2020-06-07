@@ -14,6 +14,8 @@ enum class Enemy_Type
 	Med_Ball2,
 	Small_Ball,
 	Small_Ball2,
+	VSmall_Ball,
+	VSmall_Ball2
 
 
 

@@ -47,6 +47,8 @@ ModulePlayer::ModulePlayer(bool startEnabled) : Module(startEnabled)
 	shootAnim.PushBack({ 51,145,30,32 });
 	shootAnim.loop = false;
 	shootAnim.speed = 0.1f;
+
+
 }
 
 ModulePlayer::~ModulePlayer()

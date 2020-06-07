@@ -24,24 +24,23 @@ Med_Balls2::Med_Balls2(int x, int y) : Enemy(x, y)
 
 void Med_Balls2::Update()
 {
-
-	B_Vy = (B_Vy + (grav * Time));
-
-	if (B_Vy > 300)
+	if (B_Vy > 4.8f)
 	{
-		B_Vy = 300;
+		B_Vy = 4.5f;
 	}
+	position.x -= B_Vx;
+	position.y -= (B_Vy + grav);
+	B_Vy -= grav;
 
-	position.y = position.y + (B_Vy * Time) + (grav * (Time * Time));
-	position.x = (position.x) + ((B_Vx*-1) * Time);
-
-
-
-
-
-	//position.x += 1;
-
-	// Call to the base class. It must be called at the end
-	// It will update the collider depending on the position
 	Enemy::Update();
+}
+
+void Med_Balls2::OnCollision(Collider* c2)
+{
+	App->particles->AddParticle(App->particles->explosion, position.x, position.y);
+	App->audio->PlayFx(destroyedFx);
+	if (c2->type == Collider::Type::PLAYER_SHOT) {
+		App->enemies->AddEnemy(Enemy_Type::Small_Ball, position.x + 10, position.y);
+		App->enemies->AddEnemy(Enemy_Type::Small_Ball2, position.x - 10, position.y);
+	}
 }

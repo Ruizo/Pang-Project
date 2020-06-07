@@ -14,7 +14,7 @@ public:
 	// The enemy is going to perform a sinusoidal movement
 	void Update() override;
 
-	void OnCollision(Collider* collider) override;
+	void OnCollision(Collider* collider);
 
 
 private:

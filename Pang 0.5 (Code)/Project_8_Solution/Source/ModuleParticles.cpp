@@ -25,16 +25,6 @@ bool ModuleParticles::Start()
 	LOG("Loading particles");
 	texture = App->textures->Load("Assets/Sprites/particles.png");
 
-	// Explosion particle
-	explosion.anim.PushBack({ 274, 296, 33, 30 });
-	explosion.anim.PushBack({ 313, 296, 33, 30 });
-	explosion.anim.PushBack({ 346, 296, 33, 30 });
-	explosion.anim.PushBack({ 382, 296, 33, 30 });
-	explosion.anim.PushBack({ 419, 296, 33, 30 });
-	explosion.anim.PushBack({ 457, 296, 33, 30 });
-	explosion.anim.loop = false;
-	explosion.anim.speed = 0.05f;
-
 	laser.anim.PushBack({ 0, 0, 10, 11 });
 	laser.anim.PushBack({ 12, 0, 10, 25 });
 	laser.anim.PushBack({ 0, 0, 10, 39 });

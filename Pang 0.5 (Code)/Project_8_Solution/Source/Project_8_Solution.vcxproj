@@ -104,6 +104,10 @@
     <ClInclude Include="SceneOver.h" />
     <ClInclude Include="ScenePreIntro.h" />
     <ClInclude Include="SceneWin.h" />
+    <ClInclude Include="Small_Balls.h" />
+    <ClInclude Include="Small_Balls2.h" />
+    <ClInclude Include="VSmall_Balls.h" />
+    <ClInclude Include="VSmall_Balls2.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Application.cpp" />
@@ -134,6 +138,10 @@
     <ClCompile Include="SceneOver.cpp" />
     <ClCompile Include="ScenePreIntro.cpp" />
     <ClCompile Include="SceneWin.cpp" />
+    <ClCompile Include="Small_Balls.cpp" />
+    <ClCompile Include="Small_Balls2.cpp" />
+    <ClCompile Include="VSmall_Balls.cpp" />
+    <ClCompile Include="VSmall_Balls2.cpp" />
     <ClCompile Include="worldMap.cpp" />
     <ClCompile Include="worldMap.h" />
   </ItemGroup>

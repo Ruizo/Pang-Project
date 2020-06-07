@@ -76,9 +76,6 @@
     <ClInclude Include="ModuleEnemies.h">
       <Filter>Source Files\Modules\Gameplay</Filter>
     </ClInclude>
-    <ClInclude Include="Enemy.h">
-      <Filter>Source Files\Entities\Enemies</Filter>
-    </ClInclude>
     <ClInclude Include="Path.h">
       <Filter>Source Files\Utils</Filter>
     </ClInclude>
@@ -90,12 +87,6 @@
     </ClInclude>
     <ClInclude Include="SceneIntro.h">
       <Filter>Source Files\Modules\Gameplay</Filter>
-    </ClInclude>
-    <ClInclude Include="Balls.h">
-      <Filter>Source Files\Entities\Enemies</Filter>
-    </ClInclude>
-    <ClInclude Include="Med_Balls.h">
-      <Filter>Source Files\Entities\Enemies</Filter>
     </ClInclude>
     <ClInclude Include="ScenePreIntro.h">
       <Filter>Source Files\Modules\Gameplay</Filter>
@@ -115,8 +106,29 @@
     <ClInclude Include="Module.h">
       <Filter>Source Files\Modules</Filter>
     </ClInclude>
+    <ClInclude Include="Balls.h">
+      <Filter>Source Files\Entities\Enemies</Filter>
+    </ClInclude>
+    <ClInclude Include="Med_Balls.h">
+      <Filter>Source Files\Entities\Enemies</Filter>
+    </ClInclude>
     <ClInclude Include="Med_Balls2.h">
       <Filter>Source Files\Entities\Enemies</Filter>
+    </ClInclude>
+    <ClInclude Include="Small_Balls.h">
+      <Filter>Source Files\Entities\Enemies</Filter>
+    </ClInclude>
+    <ClInclude Include="VSmall_Balls.h">
+      <Filter>Source Files\Entities\Enemies</Filter>
+    </ClInclude>
+    <ClInclude Include="VSmall_Balls2.h">
+      <Filter>Source Files\Entities\Enemies</Filter>
+    </ClInclude>
+    <ClInclude Include="Small_Balls2.h">
+      <Filter>Source Files\Entities\Enemies</Filter>
+    </ClInclude>
+    <ClInclude Include="Enemy.h">
+      <Filter>Source Files\Entities</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -162,9 +174,6 @@
     <ClCompile Include="ModuleEnemies.cpp">
       <Filter>Source Files\Modules\Gameplay</Filter>
     </ClCompile>
-    <ClCompile Include="Enemy.cpp">
-      <Filter>Source Files\Entities\Enemies</Filter>
-    </ClCompile>
     <ClCompile Include="Path.cpp">
       <Filter>Source Files\Utils</Filter>
     </ClCompile>
@@ -176,12 +185,6 @@
     </ClCompile>
     <ClCompile Include="SceneIntro.cpp">
       <Filter>Source Files\Modules\Gameplay</Filter>
-    </ClCompile>
-    <ClCompile Include="Balls.cpp">
-      <Filter>Source Files\Entities\Enemies</Filter>
-    </ClCompile>
-    <ClCompile Include="Med_Balls.cpp">
-      <Filter>Source Files\Entities\Enemies</Filter>
     </ClCompile>
     <ClCompile Include="ScenePreIntro.cpp">
       <Filter>Source Files\Modules\Gameplay</Filter>
@@ -207,8 +210,29 @@
     <ClCompile Include="Module.cpp">
       <Filter>Source Files\Modules</Filter>
     </ClCompile>
+    <ClCompile Include="Balls.cpp">
+      <Filter>Source Files\Entities\Enemies</Filter>
+    </ClCompile>
+    <ClCompile Include="Med_Balls.cpp">
+      <Filter>Source Files\Entities\Enemies</Filter>
+    </ClCompile>
     <ClCompile Include="Med_Balls2.cpp">
       <Filter>Source Files\Entities\Enemies</Filter>
+    </ClCompile>
+    <ClCompile Include="Small_Balls.cpp">
+      <Filter>Source Files\Entities\Enemies</Filter>
+    </ClCompile>
+    <ClCompile Include="Small_Balls2.cpp">
+      <Filter>Source Files\Entities\Enemies</Filter>
+    </ClCompile>
+    <ClCompile Include="VSmall_Balls.cpp">
+      <Filter>Source Files\Entities\Enemies</Filter>
+    </ClCompile>
+    <ClCompile Include="VSmall_Balls2.cpp">
+      <Filter>Source Files\Entities\Enemies</Filter>
+    </ClCompile>
+    <ClCompile Include="Enemy.cpp">
+      <Filter>Source Files\Entities</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

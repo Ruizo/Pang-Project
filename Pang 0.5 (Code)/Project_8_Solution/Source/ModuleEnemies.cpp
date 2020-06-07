@@ -13,6 +13,10 @@
 #include "Balls.h"
 #include "Med_Balls.h"
 #include "Med_Balls2.h"
+#include "Small_Balls.h"
+#include "Small_Balls2.h"
+#include "VSmall_Balls.h"
+#include "VSmall_Balls2.h"
 
 
 
@@ -32,6 +36,7 @@ ModuleEnemies::~ModuleEnemies()
 
 bool ModuleEnemies::Start()
 {
+	c = 0;
 	texture = App->textures->Load("Assets/Sprites/enemies.png");
 	enemyDestroyedFx = App->audio->LoadFx("Assets/Fx/explosion.wav");
 
@@ -149,6 +154,18 @@ void ModuleEnemies::SpawnEnemy(const EnemySpawnpoint& info)
 				case Enemy_Type::Med_Ball2:
 					enemies[i] = new Med_Balls2(info.x, info.y);
 					break;
+				case Enemy_Type::Small_Ball:
+					enemies[i] = new Small_Balls(info.x, info.y);
+					break;
+				case Enemy_Type::Small_Ball2:
+					enemies[i] = new Small_Balls2(info.x, info.y);
+					break;
+				case Enemy_Type::VSmall_Ball:
+					enemies[i] = new VSmall_Balls(info.x, info.y);
+					break;
+				case Enemy_Type::VSmall_Ball2:
+					enemies[i] = new VSmall_Balls2(info.x, info.y);
+					break;
 			}
 			enemies[i]->texture = texture;
 			enemies[i]->destroyedFx = enemyDestroyedFx;
@@ -174,7 +191,7 @@ void ModuleEnemies::OnCollision(Collider* c1, Collider* c2)
 
 		{
 
-			App->enemies->enemies[i]->position.y = 150;
+			App->enemies->enemies[i]->position.y -= 10;
 			App->enemies->enemies[i]->B_Vy *= -1 ;
 		}
 		if (enemies[i] != nullptr && enemies[i]->GetCollider() == c1 && c2->type == Collider::Type::WALL3)//pared iz
@@ -187,7 +204,7 @@ void ModuleEnemies::OnCollision(Collider* c1, Collider* c2)
 		if (enemies[i] != nullptr && enemies[i]->GetCollider() == c1 && c2->type == Collider::Type::WALL4)//pared derecha
 
 		{
-			App->enemies->enemies[i]->position.x = 332;
+			App->enemies->enemies[i]->position.x -= 4;
 			App->enemies->enemies[i]->B_Vx = -(App->enemies->enemies[i]->B_Vx);
 		}
 		if (enemies[i] != nullptr && enemies[i]->GetCollider() == c1 && c2->type == Collider::Type::PLAYER_SHOT)
@@ -196,11 +213,10 @@ void ModuleEnemies::OnCollision(Collider* c1, Collider* c2)
 			delete enemies[i];
 			c++;
 			enemies[i] = nullptr;
-			//only 1st lvl
-			if (c == 3) {
+			//1st Level
+			if (c == 15) {
 				App->player->MovePlayer(555545, 55545455);
 				App->fade->FadeToBlack(this, (Module*)App->sceneWin, 90);
-
 			}
 			break;
 		}

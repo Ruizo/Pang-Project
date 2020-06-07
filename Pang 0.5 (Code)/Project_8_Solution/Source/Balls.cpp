@@ -24,16 +24,14 @@ Balls::Balls(int x, int y) : Enemy(x, y)
 
 void Balls::Update()
 {
-
-	B_Vy = B_Vy +( grav* Time);
-
-	if (B_Vy > 380)//450
+	if (B_Vy > 4.8f)
 	{
-		B_Vy = 350;//430
+		B_Vy = 4.5f;
 	}
+	position.x += B_Vx;
+	position.y -= (B_Vy + grav);
+	B_Vy -= grav;
 
-	position.y = position.y + (B_Vy * Time) + (grav * (Time * Time));
-	position.x = position.x + (B_Vx * Time);
 
 	// Call to the base class. It must be called at the end
 	// It will update the collider depending on the position
@@ -51,4 +49,3 @@ void Balls::OnCollision(Collider* c2)
 		
 	}
 }
-

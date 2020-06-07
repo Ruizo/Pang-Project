@@ -33,13 +33,11 @@ public:
 
 public:
 
-	const int grav = 600.0f;
+	float grav = 0.1f;
 
-	const float Time = 1.0f/60.0f;
+	float B_Vy = 0.05f;
 
-	int B_Vy = -150;
-
-	int B_Vx = 150;
+	float B_Vx = 1.0f;
 
 
 	// The current position in the world
