@@ -10,6 +10,7 @@
 #include "ModuleRender.h"
 #include "Module.h"
 #include "Med_Balls.h"
+#include "Med_Balls2.h"
 
 Balls::Balls(int x, int y) : Enemy(x, y)
 {
