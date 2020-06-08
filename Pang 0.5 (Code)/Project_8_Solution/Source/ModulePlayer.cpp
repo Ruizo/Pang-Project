@@ -7,6 +7,7 @@
 #include "ModuleAudio.h"
 #include "ModuleCollisions.h"
 #include "ModuleFadeToBlack.h"
+#include "ModuleEnemies.h"
 
 
 ModulePlayer::ModulePlayer(bool startEnabled) : Module(startEnabled)
@@ -47,8 +48,6 @@ ModulePlayer::ModulePlayer(bool startEnabled) : Module(startEnabled)
 	shootAnim.PushBack({ 51,145,30,32 });
 	shootAnim.loop = false;
 	shootAnim.speed = 0.1f;
-
-
 }
 
 ModulePlayer::~ModulePlayer()
@@ -85,60 +84,166 @@ bool ModulePlayer::Start()
 
 Update_Status ModulePlayer::Update()
 {
-	if (App->input->keys[SDL_SCANCODE_A] == Key_State::KEY_REPEAT)
-	{
-		position.x -= speed;
-		if (currentAnimation != &leftAnim)
+	if (!debug) {
+		if (App->input->keys[SDL_SCANCODE_A] == Key_State::KEY_REPEAT)
 		{
-			leftAnim.Reset();
-			currentAnimation = &leftAnim;
+			position.x -= speed;
+			if (currentAnimation != &leftAnim)
+			{
+				leftAnim.Reset();
+				currentAnimation = &leftAnim;
+			}
+		}
+		if (App->input->keys[SDL_SCANCODE_D] == Key_State::KEY_REPEAT)
+		{
+			position.x += speed;
+			if (currentAnimation != &rightAnim)
+			{
+				rightAnim.Reset();
+				currentAnimation = &rightAnim;
+			}
+		}
+
+		if (App->input->keys[SDL_SCANCODE_SPACE] == Key_State::KEY_DOWN && (shoot))
+		{
+			if (currentAnimation != &shootAnim)
+			{
+				shootAnim.Reset();
+				currentAnimation = &shootAnim;
+			}
+			shoot = false;
+			App->particles->AddParticle(App->particles->laser, position.x + 10, position.y + 24, Collider::Type::PLAYER_SHOT);
+			App->audio->PlayFx(laserFx);
+
+		}
+
+
+		if (App->input->keys[SDL_SCANCODE_A] == Key_State::KEY_IDLE
+			&& App->input->keys[SDL_SCANCODE_D] == Key_State::KEY_IDLE
+			&& App->input->keys[SDL_SCANCODE_SPACE] == Key_State::KEY_IDLE)
+		{
+			currentAnimation = &idleAnim;
+			position.y = 168;
+		}
+
+		collider->SetPos(position.x, position.y);
+
+		currentAnimation->Update();
+
+		if (destroyed)
+		{
+			destroyedCountdown--;
+			if (destroyedCountdown <= 0)
+				return Update_Status::UPDATE_STOP;
+		}
+
+		if (App->input->keys[SDL_SCANCODE_G] == Key_State::KEY_DOWN && (!debug))
+		{
+			debug = true;
+		}
+
+	}
+
+	if (debug) {
+
+		if (App->input->keys[SDL_SCANCODE_W] == Key_State::KEY_REPEAT)
+		{
+			position.y -= 5;
+			if (currentAnimation != &shootAnim)
+			{
+				leftAnim.Reset();
+				currentAnimation = &shootAnim;
+			}
+		}
+
+		if (App->input->keys[SDL_SCANCODE_S] == Key_State::KEY_REPEAT)
+		{
+			position.y += 5;
+			if (currentAnimation != &shootAnim)
+			{
+				leftAnim.Reset();
+				currentAnimation = &shootAnim;
+			}
+		}
+
+		if (App->input->keys[SDL_SCANCODE_A] == Key_State::KEY_REPEAT)
+		{
+			position.x -= 5;
+			if (currentAnimation != &leftAnim)
+			{
+				leftAnim.Reset();
+				currentAnimation = &leftAnim;
+			}
+		}
+		if (App->input->keys[SDL_SCANCODE_D] == Key_State::KEY_REPEAT)
+		{
+			position.x += 5;
+			if (currentAnimation != &rightAnim)
+			{
+				rightAnim.Reset();
+				currentAnimation = &rightAnim;
+			}
+		}
+
+		if (App->input->keys[SDL_SCANCODE_SPACE] == Key_State::KEY_DOWN && (shoot))
+		{
+			if (currentAnimation != &shootAnim)
+			{
+				shootAnim.Reset();
+				currentAnimation = &shootAnim;
+			}
+			shoot = false;
+			App->particles->AddParticle(App->particles->laser, position.x + 10, position.y + 24, Collider::Type::PLAYER_SHOT);
+			App->audio->PlayFx(laserFx);
+
+
+
+		}
+
+
+		if (App->input->keys[SDL_SCANCODE_A] == Key_State::KEY_IDLE
+			&& App->input->keys[SDL_SCANCODE_D] == Key_State::KEY_IDLE
+			&& App->input->keys[SDL_SCANCODE_SPACE] == Key_State::KEY_IDLE)
+		{
+			currentAnimation = &idleAnim;
+			//position.y = 168;
+		}
+
+		collider->SetPos(10000, 10000);
+
+		currentAnimation->Update();
+
+		if (App->input->keys[SDL_SCANCODE_H] == Key_State::KEY_DOWN && (debug))
+		{
+			debug = false;
+		}
+
+		if (App->input->keys[SDL_SCANCODE_1] == Key_State::KEY_DOWN && (debug))
+		{
+			App->enemies->AddEnemy(Enemy_Type::Big_Ball, position.x + 10, position.y);
+		}
+
+		if (App->input->keys[SDL_SCANCODE_2] == Key_State::KEY_DOWN && (debug))
+		{
+			App->enemies->AddEnemy(Enemy_Type::Med_Ball, position.x + 10, position.y);
+		}
+
+		if (App->input->keys[SDL_SCANCODE_3] == Key_State::KEY_DOWN && (debug))
+		{
+			App->enemies->AddEnemy(Enemy_Type::Small_Ball2, position.x + 10, position.y);
+		}
+
+		if (App->input->keys[SDL_SCANCODE_K] == Key_State::KEY_DOWN && (debug))
+		{
+			App->enemies->CleanUp();
+		}
+
+		if (App->input->keys[SDL_SCANCODE_L] == Key_State::KEY_DOWN && (debug))
+		{
+			App->player->Disable();
+			App->fade->FadeToBlack(this, (Module*)App->sceneOver, 90);
 		}
 	}
-	if (App->input->keys[SDL_SCANCODE_D] == Key_State::KEY_REPEAT)
-	{
-		position.x += speed;
-		if (currentAnimation != &rightAnim)
-		{
-			rightAnim.Reset();
-			currentAnimation = &rightAnim;
-		}
-	}
-
-	if (App->input->keys[SDL_SCANCODE_SPACE] == Key_State::KEY_DOWN && (shoot))
-	{
-		if (currentAnimation != &shootAnim)
-		{
-			shootAnim.Reset();
-			currentAnimation = &shootAnim;
-		}
-		shoot = false;
-		App->particles->AddParticle(App->particles->laser, position.x + 10, position.y+24, Collider::Type::PLAYER_SHOT);
-		App->audio->PlayFx(laserFx);
-
-			
-		
-	}
-		
-
-	if (App->input->keys[SDL_SCANCODE_A] == Key_State::KEY_IDLE
-		&& App->input->keys[SDL_SCANCODE_D] == Key_State::KEY_IDLE
-		&& App->input->keys[SDL_SCANCODE_SPACE] == Key_State::KEY_IDLE)
-	{
-		currentAnimation = &idleAnim;
-		position.y = 168;
-	}
-
-	collider->SetPos(position.x, position.y);
-
-	currentAnimation->Update();
-
-	if (destroyed)
-	{		
-		destroyedCountdown--;
-		if (destroyedCountdown <= 0)
-			return Update_Status::UPDATE_STOP;
-	}
-	
 	return Update_Status::UPDATE_CONTINUE;
 }
 
@@ -168,15 +273,17 @@ void ModulePlayer::OnCollision(Collider* c1, Collider* c2)
 		if (c2->type == Collider::Type::WALL4) {
 			position.x -= 1;
 		}
-		else if(c2->type == Collider::Type::WALL3){
+		else if (c2->type == Collider::Type::WALL3) {
 			position.x += 1;
 		}
 		else if (c2->type == Collider::Type::ENEMY) {
-			App->player->Disable();
-			App->fade->FadeToBlack(this, (Module*)App->sceneOver, 90);
+			if (!debug) {
+				App->player->Disable();
+				App->fade->FadeToBlack(this, (Module*)App->sceneOver, 90);
+			}
 		}
 	}
-	
+
 
 }
 
