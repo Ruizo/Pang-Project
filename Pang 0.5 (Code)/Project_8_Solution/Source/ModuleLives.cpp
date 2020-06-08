@@ -1,47 +1,127 @@
 #include "ModuleLives.h"
 
 #include "Application.h"
+
 #include "ModuleTextures.h"
 #include "ModuleRender.h"
-#include "ModuleAudio.h"
-#include "ModuleInput.h"
-#include "ModuleFadeToBlack.h"
+#include "ModuleCollisions.h"
+#include "ModulePlayer.h"
 
-Lives::Lives(bool startEnabled) : Module(startEnabled)
+#include "SDL/include/SDL_timer.h"
+
+ModuleLives::ModuleLives(bool startEnabled) : Module(startEnabled)
+{
+	for (uint i = 0; i < MAX_ACTIVE_PARTICLES; ++i)
+		particles[i] = nullptr;
+}
+
+ModuleLives::~ModuleLives()
 {
 
 }
 
-Lives::~Lives()
+bool ModuleLives::Start()
 {
+	LOG("Loading particles");
+	texture = App->textures->Load("Assets/Sprites/player.png");
 
+
+	// Explosion particle
+	Plife.anim.PushBack({ 157, 99, 24, 23 });
+
+	Plife.anim.loop = false;
+	Plife.anim.speed = 0.25f;
+
+
+
+	return true;
 }
 
-// Load assets
-bool Lives::Start()
+bool ModuleLives::CleanUp()
 {
-	bool ret = true;
+	LOG("Unloading particles");
 
-	texture = App->textures->Load("Assets/Sprites/live.png");
-		
-	position.x = 200;
-	position.y = 50;
+	// Delete all remaining active particles on application exit 
+	for (uint i = 0; i < MAX_ACTIVE_PARTICLES; ++i)
+	{
+		if (particles[i] != nullptr)
+		{
+			delete particles[i];
+			particles[i] = nullptr;
+		}
+	}
 
-	// TODO 4: Retrieve the player when playing a second time
-	
-	return ret;
+	return true;
 }
 
-Update_Status Lives::Update()
+void ModuleLives::OnCollision(Collider* c1, Collider* c2)
 {
-	
+	/*for (uint i = 0; i < MAX_ACTIVE_PARTICLES; ++i)
+	{
+		// Always destroy particles that collide
+		if (particles[i] != nullptr && particles[i]->collider == c1)
+		{
+			App->player->shoot = true;
+			delete particles[i];
+			particles[i] = nullptr;
+			break;
+		}
+	}*/
+}
+
+Update_Status ModuleLives::Update()
+{
+	for (uint i = 0; i < MAX_ACTIVE_PARTICLES; ++i)
+	{
+		Particle* particle = particles[i];
+
+		if (particle == nullptr)	continue;
+
+		// Call particle Update. If it has reached its lifetime, destroy it
+		if (particle->Update() == false)
+		{
+			delete particle;
+			particles[i] = nullptr;
+		}
+	}
+
 	return Update_Status::UPDATE_CONTINUE;
 }
 
-// Update: draw background
-Update_Status Lives::PostUpdate()
+Update_Status ModuleLives::PostUpdate()
 {
-	
+	//Iterating all particle array and drawing any active particles
+	for (uint i = 0; i < MAX_ACTIVE_PARTICLES; ++i)
+	{
+		Particle* particle = particles[i];
+
+		if (particle != nullptr && particle->isAlive)
+		{
+			App->render->Blit(texture, particle->position.x, particle->position.y, &(particle->anim.GetCurrentFrame()));
+		}
+	}
 
 	return Update_Status::UPDATE_CONTINUE;
+}
+
+void ModuleLives::AddParticle(const Particle& particle, int x, int y, Collider::Type colliderType, uint delay)
+{
+	for (uint i = 0; i < MAX_ACTIVE_PARTICLES; ++i)
+	{
+		//Finding an empty slot for a new particle
+		if (particles[i] == nullptr)
+		{
+			Particle* p = new Particle(particle);
+
+			p->frameCount = -(int)delay;			// We start the frameCount as the negative delay
+			p->position.x = x;						// so when frameCount reaches 0 the particle will be activated
+			p->position.y = y;
+
+			//Adding the particle's collider
+			if (colliderType != Collider::Type::NONE)
+				p->collider = App->collisions->AddCollider({ 0, 0, 10, 11 }, colliderType, this);
+			particles[i] = p;
+			break;
+		}
+	}
 }

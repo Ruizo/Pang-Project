@@ -8,6 +8,7 @@
 #include "ModuleCollisions.h"
 #include "ModuleFadeToBlack.h"
 #include "ModuleEnemies.h"
+#include "ModuleLives.h"
 
 
 ModulePlayer::ModulePlayer(bool startEnabled) : Module(startEnabled)
@@ -76,6 +77,7 @@ bool ModulePlayer::Start()
 	}
 
 	collider = App->collisions->AddCollider({ position.x, position.y, 30, 32 }, Collider::Type::PLAYER, this);
+	App->live->AddParticle(App->live->Plife, 13, 224, Collider::Type::NONE);
 
 	return ret;
 }
