@@ -9,8 +9,8 @@
 #include "ModuleFadeToBlack.h"
 #include "ModuleEnemies.h"
 #include "ModuleLives.h"
-
-
+#include "SceneOver.h"
+#include "SceneLevel1.h"
 ModulePlayer::ModulePlayer(bool startEnabled) : Module(startEnabled)
 {
 	// idle animation - just one sprite
@@ -281,7 +281,8 @@ void ModulePlayer::OnCollision(Collider* c1, Collider* c2)
 		else if (c2->type == Collider::Type::ENEMY) {
 			if (!debug) {
 				App->player->Disable();
-				App->fade->FadeToBlack(this, (Module*)App->sceneOver, 90);
+				//App->fade->FadeToBlack(this, (Module*)App->sceneOver, 90);
+				(Module*)App->sceneLevel_1;
 			}
 		}
 	}

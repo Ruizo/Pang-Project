@@ -1,9 +1,4 @@
-﻿  worldMap.cpp
-D:\Github\Pang-Project\Pang 0.5 (Code)\Project_8_Solution\Source\Animation.h(54,19): warning C4244: 'inicializando': conversión de 'const float' a 'int'; posible pérdida de datos
-D:\Github\Pang-Project\Pang 0.5 (Code)\Project_8_Solution\Source\Animation.h(56,30): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
-  worldMap.h
-D:\Github\Pang-Project\Pang 0.5 (Code)\Project_8_Solution\Source\Animation.h(54,19): warning C4244: 'inicializando': conversión de 'const float' a 'int'; posible pérdida de datos
-D:\Github\Pang-Project\Pang 0.5 (Code)\Project_8_Solution\Source\Animation.h(56,30): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
-  Generando código...
-Debug\worldMap.obj : warning LNK4042: objeto especificado más de una vez; omitidos los sobrantes
-  Project_8_Solution.vcxproj -> D:\Github\Pang-Project\Pang 0.5 (Code)\Debug\Project_8_Solution.exe
+﻿  ModulePlayer.cpp
+D:\uni\Pang2\Pang-Project\Pang 0.5 (Code)\Project_8_Solution\Source\Animation.h(54,19): warning C4244: 'inicializando': conversión de 'const float' a 'int'; posible pérdida de datos
+D:\uni\Pang2\Pang-Project\Pang 0.5 (Code)\Project_8_Solution\Source\Animation.h(56,30): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
+  Project_8_Solution.vcxproj -> D:\uni\Pang2\Pang-Project\Pang 0.5 (Code)\Debug\Project_8_Solution.exe
