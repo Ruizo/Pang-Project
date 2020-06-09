@@ -8,9 +8,8 @@
 #include "ModuleCollisions.h"
 #include "ModuleFadeToBlack.h"
 #include "ModuleEnemies.h"
-#include "ModuleLives.h"
-#include "SceneOver.h"
-#include "SceneLevel1.h"
+
+
 ModulePlayer::ModulePlayer(bool startEnabled) : Module(startEnabled)
 {
 	// idle animation - just one sprite
@@ -68,7 +67,7 @@ bool ModulePlayer::Start()
 	laserFx = App->audio->LoadFx("Assets/Fx/laser.wav");
 	explosionFx = App->audio->LoadFx("Assets/Fx/explosion.wav");
 
-	MovePlayer(200, 0);
+	MovePlayer(182, 0);
 
 	// TODO 4: Retrieve the player when playing a second time
 	if (destroyed == true)
@@ -77,7 +76,6 @@ bool ModulePlayer::Start()
 	}
 
 	collider = App->collisions->AddCollider({ position.x, position.y, 30, 32 }, Collider::Type::PLAYER, this);
-	App->live->AddParticle(App->live->Plife, 13, 224, Collider::Type::NONE);
 
 	return ret;
 }
@@ -281,8 +279,7 @@ void ModulePlayer::OnCollision(Collider* c1, Collider* c2)
 		else if (c2->type == Collider::Type::ENEMY) {
 			if (!debug) {
 				App->player->Disable();
-				//App->fade->FadeToBlack(this, (Module*)App->sceneOver, 90);
-				(Module*)App->sceneLevel_1;
+				App->fade->FadeToBlack(this, (Module*)App->sceneOver, 90);
 			}
 		}
 	}

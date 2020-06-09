@@ -8,14 +8,19 @@
 #include "ModuleParticles.h"
 #include "ModuleAudio.h"
 #include "ModuleRender.h"
+#include "ModulePlayer.h"
+#include "SceneLevel1.h"
+#include "SceneLevel2.h"
 #include "Module.h"
 #include "Med_Balls.h"
 #include "Med_Balls2.h"
 
 Balls::Balls(int x, int y) : Enemy(x, y)
 {
-	flyAnim.PushBack({1,6,48,40});
-	
+
+	flyAnim.PushBack({ 8,822,48,40 });
+	flyAnim.loop = false;
+
 	flyAnim.speed = 0.2f;
 
 	currentAnim = &flyAnim;

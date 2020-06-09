@@ -14,7 +14,7 @@
 
 Small_Balls2::Small_Balls2(int x, int y) : Enemy(x, y)
 {
-	flyAnim.PushBack({ 86, 19, 16, 14 });
+	flyAnim.PushBack({ 93, 835, 16, 14 });
 
 	flyAnim.speed = 0.2f;
 

@@ -14,7 +14,7 @@
 
 VSmall_Balls::VSmall_Balls(int x, int y) : Enemy(x, y)
 {
-	flyAnim.PushBack({ 106, 23, 8, 7 });
+	flyAnim.PushBack({ 113, 839, 8, 7 });
 
 	flyAnim.speed = 0.2f;
 

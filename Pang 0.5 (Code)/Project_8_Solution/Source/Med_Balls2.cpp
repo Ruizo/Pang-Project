@@ -13,7 +13,7 @@
 
 Med_Balls2::Med_Balls2(int x, int y) : Enemy(x, y)
 {
-	flyAnim.PushBack({ 52,13,32,26 });
+	flyAnim.PushBack({ 59,829,32,26 });
 
 	flyAnim.speed = 0.2f;
 

@@ -7,6 +7,11 @@
 #include "ModuleInput.h"
 #include "ModuleFadeToBlack.h"
 #include "SceneLevel1.h"
+#include "SceneLevel2.h"
+#include "SceneLevel3.h"
+#include "SceneLevel4.h"
+#include "SceneLevel5.h"
+#include "SceneLevel6.h"
 #include "ModuleCollisions.h"
 
 SceneOver::SceneOver(bool startEnabled) : Module(startEnabled)
@@ -43,6 +48,11 @@ Update_Status SceneOver::Update()
 	}
 	App->collisions->Disable();
 	App->sceneLevel_1->Disable();
+	App->sceneLevel_2->Disable();
+	App->sceneLevel_3->Disable();
+	App->sceneLevel_4->Disable();
+	App->sceneLevel_5->Disable();
+	App->sceneLevel_6->Disable();
 	
 	return Update_Status::UPDATE_CONTINUE;
 }

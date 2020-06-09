@@ -18,6 +18,8 @@
 #include "VSmall_Balls.h"
 #include "VSmall_Balls2.h"
 
+#include "Breakable_Platform.h"
+
 
 
 #define SPAWN_MARGIN 50
@@ -37,7 +39,7 @@ ModuleEnemies::~ModuleEnemies()
 bool ModuleEnemies::Start()
 {
 	c = 0;
-	texture = App->textures->Load("Assets/Sprites/enemies.png");
+	texture = App->textures->Load("Assets/Sprites/entities.png");
 	enemyDestroyedFx = App->audio->LoadFx("Assets/Fx/explosion.wav");
 
 	return true;
@@ -166,6 +168,9 @@ void ModuleEnemies::SpawnEnemy(const EnemySpawnpoint& info)
 				case Enemy_Type::VSmall_Ball2:
 					enemies[i] = new VSmall_Balls2(info.x, info.y);
 					break;
+				case Enemy_Type::BreakablePlatform:
+					enemies[i] = new BreakablePlatform(info.x, info.y);
+					break;
 			}
 			enemies[i]->texture = texture;
 			enemies[i]->destroyedFx = enemyDestroyedFx;
@@ -181,28 +186,47 @@ void ModuleEnemies::OnCollision(Collider* c1, Collider* c2)
 	for(uint i = 0; i < MAX_ENEMIES; ++i)
 	{
 		if (enemies[i] != nullptr && enemies[i]->GetCollider() == c1 && c2->type == Collider::Type::WALL1)//pared up
-
 		{
 			App->enemies->enemies[i]->position.y = 11;
 			App->enemies->enemies[i]->B_Vy *= -1;
 
 		}
 		if(enemies[i] != nullptr && enemies[i]->GetCollider() == c1 && c2->type == Collider::Type::WALL2)//pared down
-
 		{
 
 			App->enemies->enemies[i]->position.y -= 10;
 			App->enemies->enemies[i]->B_Vy *= -1 ;
 		}
 		if (enemies[i] != nullptr && enemies[i]->GetCollider() == c1 && c2->type == Collider::Type::WALL3)//pared iz
+		{
+			App->enemies->enemies[i]->position.x += 5;
+			App->enemies->enemies[i]->B_Vx = -(App->enemies->enemies[i]->B_Vx);
 
+		}
+		if (enemies[i] != nullptr && enemies[i]->GetCollider() == c1 && c2->type == Collider::Type::WALL4)//pared derecha
+		{
+			App->enemies->enemies[i]->position.x -= 4;
+			App->enemies->enemies[i]->B_Vx = -(App->enemies->enemies[i]->B_Vx);
+		}
+		if (enemies[i] != nullptr && enemies[i]->GetCollider() == c1 && c2->type == Collider::Type::BPLATFORMUp)//pared up
+		{
+			App->enemies->enemies[i]->position.y += 10;
+			App->enemies->enemies[i]->B_Vy *= -1;
+
+		}
+		if (enemies[i] != nullptr && enemies[i]->GetCollider() == c1 && c2->type == Collider::Type::BPLATFORMDown)//pared down
+		{
+
+			App->enemies->enemies[i]->position.y -= 10;
+			App->enemies->enemies[i]->B_Vy *= -1;
+		}
+		if (enemies[i] != nullptr && enemies[i]->GetCollider() == c1 && c2->type == Collider::Type::BPLATFORMLeft)//pared iz
 		{
 			App->enemies->enemies[i]->position.x = 11;
 			App->enemies->enemies[i]->B_Vx = -(App->enemies->enemies[i]->B_Vx);
 
 		}
-		if (enemies[i] != nullptr && enemies[i]->GetCollider() == c1 && c2->type == Collider::Type::WALL4)//pared derecha
-
+		if (enemies[i] != nullptr && enemies[i]->GetCollider() == c1 && c2->type == Collider::Type::BPLATFORMRight)//pared derecha
 		{
 			App->enemies->enemies[i]->position.x -= 4;
 			App->enemies->enemies[i]->B_Vx = -(App->enemies->enemies[i]->B_Vx);
@@ -211,12 +235,18 @@ void ModuleEnemies::OnCollision(Collider* c1, Collider* c2)
 		{
 			enemies[i]->OnCollision(c2); //Notify the enemy of a collision
 			delete enemies[i];
-			c++;
+			if (c1->type == Collider::Type::BPLATFORM)
+			{
+				c = c;
+			}
+			else {
+				c++;
+			}
 			enemies[i] = nullptr;
 			//1st Level
 			if (c == 15) {
 				App->player->MovePlayer(555545, 55545455);
-				App->fade->FadeToBlack(this, (Module*)App->sceneWin, 90);
+				App->fade->FadeToBlack(this, (Module*)App->sceneLevel_2, 90);
 			}
 			break;
 		}

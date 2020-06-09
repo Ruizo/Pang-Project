@@ -17,7 +17,11 @@ struct Collider
 		PLAYER,
 		ENEMY,
 		PLAYER_SHOT,
-		ENEMY_SHOT,
+		BPLATFORM,
+		BPLATFORMUp,
+		BPLATFORMDown,
+		BPLATFORMRight,
+		BPLATFORMLeft,
 
 		MAX
 	};

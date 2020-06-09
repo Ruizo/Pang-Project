@@ -15,8 +15,8 @@ enum class Enemy_Type
 	Small_Ball,
 	Small_Ball2,
 	VSmall_Ball,
-	VSmall_Ball2
-
+	VSmall_Ball2,
+	BreakablePlatform
 
 
 };

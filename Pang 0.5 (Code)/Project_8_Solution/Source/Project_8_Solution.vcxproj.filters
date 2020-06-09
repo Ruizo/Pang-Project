@@ -26,6 +26,15 @@
     <Filter Include="Source Files\Entities\Enemies">
       <UniqueIdentifier>{c465321a-28ed-404a-aa97-e9d0c6f722ee}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\Modules\Gameplay\Levels">
+      <UniqueIdentifier>{28ed1185-608d-457d-a26b-ddc1d2b604cb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Modules\Gameplay\Screens">
+      <UniqueIdentifier>{d0661018-14d3-494c-9619-70391a09d2c3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Entities\Breakable Platforms">
+      <UniqueIdentifier>{c626f687-2807-41f2-9001-6623e67a360a}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Application.h">
@@ -82,21 +91,6 @@
     <ClInclude Include="ModuleFadeToBlack.h">
       <Filter>Source Files\Modules\Core</Filter>
     </ClInclude>
-    <ClInclude Include="SceneLevel1.h">
-      <Filter>Source Files\Modules\Gameplay</Filter>
-    </ClInclude>
-    <ClInclude Include="SceneIntro.h">
-      <Filter>Source Files\Modules\Gameplay</Filter>
-    </ClInclude>
-    <ClInclude Include="ScenePreIntro.h">
-      <Filter>Source Files\Modules\Gameplay</Filter>
-    </ClInclude>
-    <ClInclude Include="SceneOver.h">
-      <Filter>Source Files\Modules\Gameplay</Filter>
-    </ClInclude>
-    <ClInclude Include="SceneWin.h">
-      <Filter>Source Files\Modules\Gameplay</Filter>
-    </ClInclude>
     <ClInclude Include="ModuleLives.h">
       <Filter>Source Files\Modules\Gameplay</Filter>
     </ClInclude>
@@ -129,6 +123,39 @@
     </ClInclude>
     <ClInclude Include="Enemy.h">
       <Filter>Source Files\Entities</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneLevel1.h">
+      <Filter>Source Files\Modules\Gameplay\Levels</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneLevel2.h">
+      <Filter>Source Files\Modules\Gameplay\Levels</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneIntro.h">
+      <Filter>Source Files\Modules\Gameplay\Screens</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneOver.h">
+      <Filter>Source Files\Modules\Gameplay\Screens</Filter>
+    </ClInclude>
+    <ClInclude Include="ScenePreIntro.h">
+      <Filter>Source Files\Modules\Gameplay\Screens</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneWin.h">
+      <Filter>Source Files\Modules\Gameplay\Screens</Filter>
+    </ClInclude>
+    <ClInclude Include="Breakable_Platform.h">
+      <Filter>Source Files\Entities\Breakable Platforms</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneLevel3.h">
+      <Filter>Source Files\Modules\Gameplay\Levels</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneLevel4.h">
+      <Filter>Source Files\Modules\Gameplay\Levels</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneLevel5.h">
+      <Filter>Source Files\Modules\Gameplay\Levels</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneLevel6.h">
+      <Filter>Source Files\Modules\Gameplay\Levels</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -180,28 +207,7 @@
     <ClCompile Include="ModuleFadeToBlack.cpp">
       <Filter>Source Files\Modules\Core</Filter>
     </ClCompile>
-    <ClCompile Include="SceneLevel1.cpp">
-      <Filter>Source Files\Modules\Gameplay</Filter>
-    </ClCompile>
-    <ClCompile Include="SceneIntro.cpp">
-      <Filter>Source Files\Modules\Gameplay</Filter>
-    </ClCompile>
-    <ClCompile Include="ScenePreIntro.cpp">
-      <Filter>Source Files\Modules\Gameplay</Filter>
-    </ClCompile>
-    <ClCompile Include="SceneOver.cpp">
-      <Filter>Source Files\Modules\Gameplay</Filter>
-    </ClCompile>
-    <ClCompile Include="SceneWin.cpp">
-      <Filter>Source Files\Modules\Gameplay</Filter>
-    </ClCompile>
     <ClCompile Include="ModuleLives.cpp">
-      <Filter>Source Files\Modules\Gameplay</Filter>
-    </ClCompile>
-    <ClCompile Include="worldMap.h">
-      <Filter>Source Files\Modules\Gameplay</Filter>
-    </ClCompile>
-    <ClCompile Include="worldMap.cpp">
       <Filter>Source Files\Modules\Gameplay</Filter>
     </ClCompile>
     <ClCompile Include="ModuleFonts.cpp">
@@ -233,6 +239,45 @@
     </ClCompile>
     <ClCompile Include="Enemy.cpp">
       <Filter>Source Files\Entities</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneLevel1.cpp">
+      <Filter>Source Files\Modules\Gameplay\Levels</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneIntro.cpp">
+      <Filter>Source Files\Modules\Gameplay\Screens</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneOver.cpp">
+      <Filter>Source Files\Modules\Gameplay\Screens</Filter>
+    </ClCompile>
+    <ClCompile Include="ScenePreIntro.cpp">
+      <Filter>Source Files\Modules\Gameplay\Screens</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneWin.cpp">
+      <Filter>Source Files\Modules\Gameplay\Screens</Filter>
+    </ClCompile>
+    <ClCompile Include="worldMap.cpp">
+      <Filter>Source Files\Modules\Gameplay\Screens</Filter>
+    </ClCompile>
+    <ClCompile Include="worldMap.h">
+      <Filter>Source Files\Modules\Gameplay\Screens</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneLevel2.cpp">
+      <Filter>Source Files\Modules\Gameplay\Levels</Filter>
+    </ClCompile>
+    <ClCompile Include="Breakable_Platform.cpp">
+      <Filter>Source Files\Entities\Breakable Platforms</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneLevel3.cpp">
+      <Filter>Source Files\Modules\Gameplay\Levels</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneLevel4.cpp">
+      <Filter>Source Files\Modules\Gameplay\Levels</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneLevel5.cpp">
+      <Filter>Source Files\Modules\Gameplay\Levels</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneLevel6.cpp">
+      <Filter>Source Files\Modules\Gameplay\Levels</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
