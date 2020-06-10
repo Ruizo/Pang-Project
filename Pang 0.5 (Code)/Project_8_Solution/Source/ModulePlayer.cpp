@@ -117,12 +117,16 @@ Update_Status ModulePlayer::Update()
 			if (doubleshot != true) {
 				shoot = false;
 			}
-			else {
+			if (doubleshot =true) {
 				shoots++;
 				App->particles->AddParticle(App->particles->laser, position.x + 10, position.y + 24, Collider::Type::PLAYER_SHOT);
 				App->audio->PlayFx(laserFx);
 				if (shoots == 2) {
 					shoot = false;
+				}
+				else {
+					App->particles->AddParticle(App->particles->laser, position.x + 10, position.y + 24, Collider::Type::PLAYER_SHOT);
+					App->audio->PlayFx(laserFx);
 				}
 			}
 		}
