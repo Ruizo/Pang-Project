@@ -42,6 +42,11 @@ public:
 	boolean shoot= true;
 	
 	boolean debug = false;
+
+	boolean doubleshot = false; // for the double shoot
+
+	int shoots=0; // for the double shoot
+
 	// The speed in which we move the player (pixels per frame)
 	int speed = 1;
 

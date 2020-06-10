@@ -78,13 +78,16 @@
   <ItemGroup>
     <ClInclude Include="Animation.h" />
     <ClInclude Include="Application.h" />
+    <ClInclude Include="Booster.h" />
     <ClInclude Include="Breakable_Platform.h" />
     <ClInclude Include="Collider.h" />
+    <ClInclude Include="DoubleWire.h" />
     <ClInclude Include="Enemy.h" />
     <ClInclude Include="Balls.h" />
     <ClInclude Include="Med_Balls.h" />
     <ClInclude Include="Med_Balls2.h" />
     <ClInclude Include="ModuleAudio.h" />
+    <ClInclude Include="ModuleBoosters.h" />
     <ClInclude Include="ModuleCollisions.h" />
     <ClInclude Include="ModuleEnemies.h" />
     <ClInclude Include="ModuleFadeToBlack.h" />
@@ -119,14 +122,17 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Application.cpp" />
+    <ClCompile Include="Booster.cpp" />
     <ClCompile Include="Breakable_Platform.cpp" />
     <ClCompile Include="Collider.cpp" />
+    <ClCompile Include="DoubleWire.cpp" />
     <ClCompile Include="Enemy.cpp" />
     <ClCompile Include="Balls.cpp" />
     <ClCompile Include="Globals.cpp" />
     <ClCompile Include="Med_Balls.cpp" />
     <ClCompile Include="Med_Balls2.cpp" />
     <ClCompile Include="ModuleAudio.cpp" />
+    <ClCompile Include="ModuleBoosters.cpp" />
     <ClCompile Include="ModuleCollisions.cpp" />
     <ClCompile Include="ModuleEnemies.cpp" />
     <ClCompile Include="ModuleFadeToBlack.cpp" />

@@ -8,6 +8,8 @@
 #include "ModuleCollisions.h"
 #include "ModuleFadeToBlack.h"
 #include "ModuleEnemies.h"
+#include "ModuleBoosters.h"
+#include "DoubleWire.h"
 
 
 ModulePlayer::ModulePlayer(bool startEnabled) : Module(startEnabled)
@@ -106,16 +108,28 @@ Update_Status ModulePlayer::Update()
 
 		if (App->input->keys[SDL_SCANCODE_SPACE] == Key_State::KEY_DOWN && (shoot))
 		{
+
 			if (currentAnimation != &shootAnim)
 			{
 				shootAnim.Reset();
 				currentAnimation = &shootAnim;
 			}
-			shoot = false;
-			App->particles->AddParticle(App->particles->laser, position.x + 10, position.y + 24, Collider::Type::PLAYER_SHOT);
-			App->audio->PlayFx(laserFx);
-
+			if (doubleshot != true) {
+				shoot = false;
+			}
+			else {
+				shoots++;
+				App->particles->AddParticle(App->particles->laser, position.x + 10, position.y + 24, Collider::Type::PLAYER_SHOT);
+				App->audio->PlayFx(laserFx);
+				if (shoots == 2) {
+					shoot = false;
+				}
+			}
 		}
+
+	
+			
+		
 
 
 		if (App->input->keys[SDL_SCANCODE_A] == Key_State::KEY_IDLE
@@ -242,6 +256,12 @@ Update_Status ModulePlayer::Update()
 		{
 			App->player->Disable();
 			App->fade->FadeToBlack(this, (Module*)App->sceneOver, 90);
+		}
+
+		if (App->input->keys[SDL_SCANCODE_E] == Key_State::KEY_DOWN && (debug))
+		{
+			
+			App->Boosters->AddBooster(Booster_Type::DOUBLEWIRE, position.x +10, position.y);
 		}
 	}
 	return Update_Status::UPDATE_CONTINUE;

@@ -24,6 +24,7 @@ ModuleCollisions::ModuleCollisions(bool startEnabled) : Module(startEnabled)
 	matrix[Collider::Type::WALL1][Collider::Type::BPLATFORMRight] = false;
 	matrix[Collider::Type::WALL1][Collider::Type::BPLATFORMLeft] = false;
 	matrix[Collider::Type::WALL1][Collider::Type::BPLATFORM] = false;
+	matrix[Collider::Type::WALL1][Collider::Type::BOOSTERS] = false;
 
 	matrix[Collider::Type::WALL2][Collider::Type::WALL1] = false;
 	matrix[Collider::Type::WALL2][Collider::Type::WALL2] = false;
@@ -37,6 +38,7 @@ ModuleCollisions::ModuleCollisions(bool startEnabled) : Module(startEnabled)
 	matrix[Collider::Type::WALL2][Collider::Type::BPLATFORMRight] = false;
 	matrix[Collider::Type::WALL2][Collider::Type::BPLATFORMLeft] = false;
 	matrix[Collider::Type::WALL2][Collider::Type::BPLATFORM] = false;
+	matrix[Collider::Type::WALL2][Collider::Type::BOOSTERS] = false;
 
 	matrix[Collider::Type::WALL3][Collider::Type::WALL1] = false;
 	matrix[Collider::Type::WALL3][Collider::Type::WALL2] = false;
@@ -50,6 +52,7 @@ ModuleCollisions::ModuleCollisions(bool startEnabled) : Module(startEnabled)
 	matrix[Collider::Type::WALL3][Collider::Type::BPLATFORMRight] = false;
 	matrix[Collider::Type::WALL3][Collider::Type::BPLATFORMLeft] = false;
 	matrix[Collider::Type::WALL3][Collider::Type::BPLATFORM] = false;
+	matrix[Collider::Type::WALL3][Collider::Type::BOOSTERS] = false;
 
 	matrix[Collider::Type::WALL4][Collider::Type::WALL1] = false;
 	matrix[Collider::Type::WALL4][Collider::Type::WALL2] = false;
@@ -63,6 +66,7 @@ ModuleCollisions::ModuleCollisions(bool startEnabled) : Module(startEnabled)
 	matrix[Collider::Type::WALL4][Collider::Type::BPLATFORMRight] = false;
 	matrix[Collider::Type::WALL4][Collider::Type::BPLATFORMLeft] = false;
 	matrix[Collider::Type::WALL4][Collider::Type::BPLATFORM] = false;
+	matrix[Collider::Type::WALL4][Collider::Type::BOOSTERS] = false;
 
 	matrix[Collider::Type::PLAYER][Collider::Type::WALL1] = true;
 	matrix[Collider::Type::PLAYER][Collider::Type::WALL2] = true;
@@ -76,6 +80,7 @@ ModuleCollisions::ModuleCollisions(bool startEnabled) : Module(startEnabled)
 	matrix[Collider::Type::PLAYER][Collider::Type::BPLATFORMRight] = false;
 	matrix[Collider::Type::PLAYER][Collider::Type::BPLATFORMLeft] = false;
 	matrix[Collider::Type::PLAYER][Collider::Type::BPLATFORM] = false;
+	matrix[Collider::Type::PLAYER][Collider::Type::BOOSTERS] = false;
 
 	matrix[Collider::Type::ENEMY][Collider::Type::WALL1] = true;
 	matrix[Collider::Type::ENEMY][Collider::Type::WALL2] = true;
@@ -114,6 +119,7 @@ ModuleCollisions::ModuleCollisions(bool startEnabled) : Module(startEnabled)
 	matrix[Collider::Type::BPLATFORMUp][Collider::Type::BPLATFORMRight] = false;
 	matrix[Collider::Type::BPLATFORMUp][Collider::Type::BPLATFORMLeft] = false;
 	matrix[Collider::Type::BPLATFORMUp][Collider::Type::BPLATFORM] = false;
+	matrix[Collider::Type::BPLATFORMUp][Collider::Type::BOOSTERS] = false;
 
 	matrix[Collider::Type::BPLATFORMDown][Collider::Type::WALL1] = false;
 	matrix[Collider::Type::BPLATFORMDown][Collider::Type::WALL2] = false;
@@ -127,6 +133,7 @@ ModuleCollisions::ModuleCollisions(bool startEnabled) : Module(startEnabled)
 	matrix[Collider::Type::BPLATFORMDown][Collider::Type::BPLATFORMRight] = false;
 	matrix[Collider::Type::BPLATFORMDown][Collider::Type::BPLATFORMLeft] = false;
 	matrix[Collider::Type::BPLATFORMDown][Collider::Type::BPLATFORM] = false;
+	matrix[Collider::Type::BPLATFORMDown][Collider::Type::BOOSTERS] = false;
 
 	matrix[Collider::Type::BPLATFORMRight][Collider::Type::WALL1] = false;
 	matrix[Collider::Type::BPLATFORMRight][Collider::Type::WALL2] = false;
@@ -140,6 +147,7 @@ ModuleCollisions::ModuleCollisions(bool startEnabled) : Module(startEnabled)
 	matrix[Collider::Type::BPLATFORMRight][Collider::Type::BPLATFORMRight] = false;
 	matrix[Collider::Type::BPLATFORMRight][Collider::Type::BPLATFORMLeft] = false;
 	matrix[Collider::Type::BPLATFORMRight][Collider::Type::BPLATFORM] = false;
+	matrix[Collider::Type::BPLATFORMRight][Collider::Type::BOOSTERS] = false;
 
 	matrix[Collider::Type::BPLATFORMLeft][Collider::Type::WALL1] = false;
 	matrix[Collider::Type::BPLATFORMLeft][Collider::Type::WALL2] = false;
@@ -153,6 +161,7 @@ ModuleCollisions::ModuleCollisions(bool startEnabled) : Module(startEnabled)
 	matrix[Collider::Type::BPLATFORMLeft][Collider::Type::BPLATFORMRight] = false;
 	matrix[Collider::Type::BPLATFORMLeft][Collider::Type::BPLATFORMLeft] = false;
 	matrix[Collider::Type::BPLATFORMLeft][Collider::Type::BPLATFORM] = false;
+	matrix[Collider::Type::BPLATFORMLeft][Collider::Type::BOOSTERS] = false;
 
 	matrix[Collider::Type::BPLATFORM][Collider::Type::WALL1] = false;
 	matrix[Collider::Type::BPLATFORM][Collider::Type::WALL2] = false;
@@ -166,6 +175,7 @@ ModuleCollisions::ModuleCollisions(bool startEnabled) : Module(startEnabled)
 	matrix[Collider::Type::BPLATFORM][Collider::Type::BPLATFORMRight] = false;
 	matrix[Collider::Type::BPLATFORM][Collider::Type::BPLATFORMLeft] = false;
 	matrix[Collider::Type::BPLATFORM][Collider::Type::BPLATFORM] = false;
+	matrix[Collider::Type::BPLATFORM][Collider::Type::BOOSTERS] = false;
 }
 
 // Destructor
@@ -285,6 +295,9 @@ void ModuleCollisions::DebugDraw()
 				break;
 			case Collider::Type::BPLATFORMLeft: // magenta
 				App->render->DrawQuad(colliders[i]->rect, 0, 255, 255, alpha);
+				break;
+			case Collider::Type::BOOSTERS: // green
+				App->render->DrawQuad(colliders[i]->rect, 0, 255, 0, alpha);
 				break;
 		}
 	}

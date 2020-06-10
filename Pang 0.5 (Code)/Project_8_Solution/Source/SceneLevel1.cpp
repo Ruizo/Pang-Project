@@ -9,6 +9,7 @@
 #include "ModuleEnemies.h"
 #include "ModulePlayer.h"
 #include "ModuleCollisions.h"
+#include "ModuleBoosters.h"
 
 SceneLevel1::SceneLevel1(bool startEnabled) : Module(startEnabled)
 {
@@ -37,12 +38,14 @@ bool SceneLevel1::Start()
 
 	// Enemies ---
 	App->enemies->AddEnemy(Enemy_Type::Big_Ball, 50, 80);
+	App->Boosters->AddBooster(Booster_Type::DOUBLEWIRE, 100, 80);
 
 	App->render->camera.x = 0;
 	App->render->camera.y = 0;
 
 	App->player->Enable();
 	App->enemies->Enable();
+	App->Boosters->Enable();
 
 	return ret;
 }

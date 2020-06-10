@@ -35,6 +35,9 @@
     <Filter Include="Source Files\Entities\Breakable Platforms">
       <UniqueIdentifier>{c626f687-2807-41f2-9001-6623e67a360a}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\Modules\Gameplay\Boosters">
+      <UniqueIdentifier>{5c0571ac-f823-4817-89e3-9aa486a2d125}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Application.h">
@@ -157,6 +160,15 @@
     <ClInclude Include="SceneLevel6.h">
       <Filter>Source Files\Modules\Gameplay\Levels</Filter>
     </ClInclude>
+    <ClInclude Include="ModuleBoosters.h">
+      <Filter>Source Files\Modules\Gameplay\Boosters</Filter>
+    </ClInclude>
+    <ClInclude Include="Booster.h">
+      <Filter>Source Files\Modules\Gameplay\Boosters</Filter>
+    </ClInclude>
+    <ClInclude Include="DoubleWire.h">
+      <Filter>Source Files\Modules\Gameplay\Boosters</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Application.cpp">
@@ -278,6 +290,15 @@
     </ClCompile>
     <ClCompile Include="SceneLevel6.cpp">
       <Filter>Source Files\Modules\Gameplay\Levels</Filter>
+    </ClCompile>
+    <ClCompile Include="ModuleBoosters.cpp">
+      <Filter>Source Files\Modules\Gameplay\Boosters</Filter>
+    </ClCompile>
+    <ClCompile Include="Booster.cpp">
+      <Filter>Source Files\Modules\Gameplay\Boosters</Filter>
+    </ClCompile>
+    <ClCompile Include="DoubleWire.cpp">
+      <Filter>Source Files\Modules\Gameplay\Boosters</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

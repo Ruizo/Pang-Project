@@ -48,7 +48,6 @@ bool ModuleEnemies::Start()
 Update_Status ModuleEnemies::Update()
 {
 	HandleEnemiesSpawn();
-
 	for (uint i = 0; i < MAX_ENEMIES; ++i)
 	{
 		if(enemies[i] != nullptr)
