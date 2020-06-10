@@ -114,19 +114,18 @@ Update_Status ModulePlayer::Update()
 				shootAnim.Reset();
 				currentAnimation = &shootAnim;
 			}
-			if (doubleshot != true) {
-				shoot = false;
-			}
-			if (doubleshot =true) {
-				shoots++;
+			if (doubleshot == false) {
+			App->particles->AddParticle(App->particles->laser, position.x + 10, position.y + 24, Collider::Type::PLAYER_SHOT);
+			App->audio->PlayFx(laserFx);
+			shoot = false;
+		}
+			
+			if (doubleshot == true) {
 				App->particles->AddParticle(App->particles->laser, position.x + 10, position.y + 24, Collider::Type::PLAYER_SHOT);
 				App->audio->PlayFx(laserFx);
+				shoots++;
 				if (shoots == 2) {
 					shoot = false;
-				}
-				else {
-					App->particles->AddParticle(App->particles->laser, position.x + 10, position.y + 24, Collider::Type::PLAYER_SHOT);
-					App->audio->PlayFx(laserFx);
 				}
 			}
 		}
@@ -144,9 +143,15 @@ Update_Status ModulePlayer::Update()
 			position.y = 168;
 		}
 
-		collider->SetPos(position.x, position.y);
+		if (godmode !=true) {
+			collider->SetPos(position.x, position.y);
 
-		currentAnimation->Update();
+			currentAnimation->Update();
+
+		}
+		else if (godmode = true) {
+			collider->SetPos(10000, 10000);
+		}
 
 		if (destroyed)
 		{
@@ -265,7 +270,7 @@ Update_Status ModulePlayer::Update()
 		if (App->input->keys[SDL_SCANCODE_E] == Key_State::KEY_DOWN && (debug))
 		{
 			
-			App->Boosters->AddBooster(Booster_Type::DOUBLEWIRE, position.x +10, position.y);
+			App->Boosters->AddBooster(Booster_Type::INVINCIBLE, position.x +10, position.y);
 		}
 	}
 	return Update_Status::UPDATE_CONTINUE;

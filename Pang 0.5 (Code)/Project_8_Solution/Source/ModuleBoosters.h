@@ -9,7 +9,9 @@ enum class Booster_Type
 {
 	NO_TYPE,
 	DOUBLEWIRE,
-
+	INVINCIBLE,
+	STOPTIME,
+	SLOWTIME,
 
 };
 
@@ -64,6 +66,10 @@ public:
 	bool surface = false;
 
 	int c = 0;
+
+	bool stoptime = false;
+
+	bool slowtime = false;
 
 private:
 	// Spawns a new Booster using the data from the queue

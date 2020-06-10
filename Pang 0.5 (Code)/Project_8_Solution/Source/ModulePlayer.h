@@ -45,6 +45,7 @@ public:
 
 	boolean doubleshot = false; // for the double shoot
 
+	boolean godmode = false;
 	int shoots=0; // for the double shoot
 
 	// The speed in which we move the player (pixels per frame)

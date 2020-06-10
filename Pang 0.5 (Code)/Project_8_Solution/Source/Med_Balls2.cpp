@@ -10,6 +10,7 @@
 #include "ModuleRender.h"
 #include "Module.h"
 #include "Balls.h"
+#include "ModuleBoosters.h"
 
 Med_Balls2::Med_Balls2(int x, int y) : Enemy(x, y)
 {
@@ -24,13 +25,15 @@ Med_Balls2::Med_Balls2(int x, int y) : Enemy(x, y)
 
 void Med_Balls2::Update()
 {
-	if (B_Vy > 4.8f)
-	{
-		B_Vy = 4.5f;
+	if (App->Boosters->stoptime != true) {
+		if (B_Vy > 4.8f)
+		{
+			B_Vy = 4.5f;
+		}
+		position.x -= B_Vx;
+		position.y -= (B_Vy + grav);
+		B_Vy -= grav;
 	}
-	position.x -= B_Vx;
-	position.y -= (B_Vy + grav);
-	B_Vy -= grav;
 
 	Enemy::Update();
 }

@@ -11,6 +11,7 @@
 #include "Module.h"
 #include "Med_Balls.h"
 #include "Med_Balls2.h"
+#include "ModuleBoosters.h"
 
 Small_Balls::Small_Balls(int x, int y) : Enemy(x, y)
 {
@@ -25,13 +26,15 @@ Small_Balls::Small_Balls(int x, int y) : Enemy(x, y)
 
 void Small_Balls::Update()
 {
-	if (B_Vy > 4.8f)
-	{
-		B_Vy = 4.5f;
+	if (App->Boosters->stoptime != true) {
+		if (B_Vy > 4.8f)
+		{
+			B_Vy = 4.5f;
+		}
+		position.x += B_Vx;
+		position.y -= (B_Vy + grav);
+		B_Vy -= grav;
 	}
-	position.x += B_Vx;
-	position.y -= (B_Vy + grav);
-	B_Vy -= grav;
 
 	Enemy::Update();
 }

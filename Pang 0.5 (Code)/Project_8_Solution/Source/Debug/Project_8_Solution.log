@@ -1,5 +1,6 @@
 ﻿  ModulePlayer.cpp
 D:\uni\Pang2\Pang-Project\Pang 0.5 (Code)\Project_8_Solution\Source\Animation.h(54,19): warning C4244: 'inicializando': conversión de 'const float' a 'int'; posible pérdida de datos
 D:\uni\Pang2\Pang-Project\Pang 0.5 (Code)\Project_8_Solution\Source\Animation.h(56,30): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
-D:\uni\Pang2\Pang-Project\Pang 0.5 (Code)\Project_8_Solution\Source\ModulePlayer.cpp(117,26): warning C4805: '!=': combinación no segura del tipo 'boolean' y el tipo 'bool' en la operación
+D:\uni\Pang2\Pang-Project\Pang 0.5 (Code)\Project_8_Solution\Source\ModulePlayer.cpp(123,26): warning C4805: '==': combinación no segura del tipo 'boolean' y el tipo 'bool' en la operación
+D:\uni\Pang2\Pang-Project\Pang 0.5 (Code)\Project_8_Solution\Source\ModulePlayer.cpp(146,21): warning C4805: '!=': combinación no segura del tipo 'boolean' y el tipo 'bool' en la operación
   Project_8_Solution.vcxproj -> D:\uni\Pang2\Pang-Project\Pang 0.5 (Code)\Debug\Project_8_Solution.exe

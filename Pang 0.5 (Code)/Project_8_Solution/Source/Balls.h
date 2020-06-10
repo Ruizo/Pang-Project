@@ -16,7 +16,6 @@ public:
 
 	void OnCollision(Collider* collider);
 
-
 private:
 	
 	// The original spawning position. The wave will be calculated from that
@@ -27,6 +26,8 @@ private:
 
 	// The enemy animation
 	Animation flyAnim;
+
+
 };
 
 

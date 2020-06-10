@@ -84,6 +84,7 @@
     <ClInclude Include="DoubleWire.h" />
     <ClInclude Include="Enemy.h" />
     <ClInclude Include="Balls.h" />
+    <ClInclude Include="Invincibility.h" />
     <ClInclude Include="Med_Balls.h" />
     <ClInclude Include="Med_Balls2.h" />
     <ClInclude Include="ModuleAudio.h" />
@@ -115,8 +116,10 @@
     <ClInclude Include="SceneOver.h" />
     <ClInclude Include="ScenePreIntro.h" />
     <ClInclude Include="SceneWin.h" />
+    <ClInclude Include="SlowTime.h" />
     <ClInclude Include="Small_Balls.h" />
     <ClInclude Include="Small_Balls2.h" />
+    <ClInclude Include="StopTime.h" />
     <ClInclude Include="VSmall_Balls.h" />
     <ClInclude Include="VSmall_Balls2.h" />
   </ItemGroup>
@@ -129,6 +132,7 @@
     <ClCompile Include="Enemy.cpp" />
     <ClCompile Include="Balls.cpp" />
     <ClCompile Include="Globals.cpp" />
+    <ClCompile Include="Invincibility.cpp" />
     <ClCompile Include="Med_Balls.cpp" />
     <ClCompile Include="Med_Balls2.cpp" />
     <ClCompile Include="ModuleAudio.cpp" />
@@ -158,8 +162,10 @@
     <ClCompile Include="SceneOver.cpp" />
     <ClCompile Include="ScenePreIntro.cpp" />
     <ClCompile Include="SceneWin.cpp" />
+    <ClCompile Include="SlowTime.cpp" />
     <ClCompile Include="Small_Balls.cpp" />
     <ClCompile Include="Small_Balls2.cpp" />
+    <ClCompile Include="StopTime.cpp" />
     <ClCompile Include="VSmall_Balls.cpp" />
     <ClCompile Include="VSmall_Balls2.cpp" />
     <ClCompile Include="worldMap.cpp" />

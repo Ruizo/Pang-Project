@@ -14,6 +14,7 @@
 #include "Module.h"
 #include "Med_Balls.h"
 #include "Med_Balls2.h"
+#include "ModuleBoosters.h"
 
 Balls::Balls(int x, int y) : Enemy(x, y)
 {
@@ -30,15 +31,29 @@ Balls::Balls(int x, int y) : Enemy(x, y)
 
 void Balls::Update()
 {
-	if (B_Vy > 4.8f)
-	{
-		B_Vy = 4.5f;
+	if (App->Boosters->slowtime != true) {
+		if (App->Boosters->stoptime != true) {
+			if (B_Vy > 4.8f)
+			{
+				B_Vy = 4.5f;
+			}
+			position.x += B_Vx;
+			position.y -= (B_Vy + grav);
+			B_Vy -= grav;
+		}
 	}
-	position.x += B_Vx;
-	position.y -= (B_Vy + grav);
-	B_Vy -= grav;
 
-
+	if (App->Boosters->slowtime == true) {
+		if (App->Boosters->stoptime != true) {
+			if (B_Vy > 4.8f)
+			{
+				B_Vy = 4.5f;
+			}
+			position.x += B_Vx;
+			position.y -= (B_Vy + grav);
+			B_Vy = grav;
+		}
+	}
 	// Call to the base class. It must be called at the end
 	// It will update the collider depending on the position
 	Enemy::Update();
