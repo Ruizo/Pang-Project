@@ -99,8 +99,10 @@ bool ModulePlayer::Start()
 
 Update_Status ModulePlayer::Update()
 {
+
+	GamePad& pad = App->input->pads[0];
 	if (!debug) {
-		if (App->input->keys[SDL_SCANCODE_A] == Key_State::KEY_REPEAT)
+		if (App->input->keys[SDL_SCANCODE_A] == Key_State::KEY_REPEAT || pad.l_x < 0.0f)
 		{
 			position.x -= speed;
 			if (currentAnimation != &leftAnim)
@@ -109,7 +111,7 @@ Update_Status ModulePlayer::Update()
 				currentAnimation = &leftAnim;
 			}
 		}
-		if (App->input->keys[SDL_SCANCODE_D] == Key_State::KEY_REPEAT)
+		if (App->input->keys[SDL_SCANCODE_D] == Key_State::KEY_REPEAT || pad.l_x > 0.0f)
 		{
 			position.x += speed;
 			if (currentAnimation != &rightAnim)
@@ -119,7 +121,7 @@ Update_Status ModulePlayer::Update()
 			}
 		}
 
-		if (App->input->keys[SDL_SCANCODE_SPACE] == Key_State::KEY_DOWN && (shoot))
+		if (App->input->keys[SDL_SCANCODE_SPACE] == Key_State::KEY_DOWN && (shoot) || pad.a == true)
 		{
 
 			if (currentAnimation != &shootAnim)
@@ -286,6 +288,19 @@ Update_Status ModulePlayer::Update()
 			App->Boosters->AddBooster(Booster_Type::INVINCIBLE, position.x + 10, position.y);
 		}
 	}
+	// If no up/down movement detected, set the current animation back to idle
+	if (pad.enabled)
+	{
+		if (pad.l_x == 0.0f && pad.l_y == 0.0f)
+			currentAnimation = &idleAnim;
+	}
+	else if (App->input->keys[SDL_SCANCODE_S] == Key_State::KEY_IDLE && App->input->keys[SDL_SCANCODE_W] == Key_State::KEY_IDLE)
+		currentAnimation = &idleAnim;
+
+	// Switch gamepad debug info
+	if (App->input->keys[SDL_SCANCODE_F2] == KEY_DOWN)
+		debugGamepadInfo = !debugGamepadInfo;
+
 	return Update_Status::UPDATE_CONTINUE;
 }
 

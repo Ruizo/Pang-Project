@@ -87,6 +87,7 @@ public:
 	uint score = 000;
 	int scoreFont = -1;
 	char scoreText[10] = { "\0" };
+	bool debugGamepadInfo = false;
 };
 
 #endif //!__MODULE_PLAYER_H__
