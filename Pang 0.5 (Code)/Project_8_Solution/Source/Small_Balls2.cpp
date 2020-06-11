@@ -8,6 +8,7 @@
 #include "ModuleParticles.h"
 #include "ModuleAudio.h"
 #include "ModuleRender.h"
+#include "ModulePlayer.h"
 #include "Module.h"
 #include "Med_Balls.h"
 #include "Med_Balls2.h"
@@ -15,7 +16,18 @@
 
 Small_Balls2::Small_Balls2(int x, int y) : Enemy(x, y)
 {
-	flyAnim.PushBack({ 93, 835, 16, 14 });
+	if (App->player->level1 || App->player->level4)
+	{
+		flyAnim.PushBack({ 93, 835, 16, 14 });
+	}
+	if (App->player->level2 || App->player->level5)
+	{
+		flyAnim.PushBack({ 93, 885, 16, 14 });
+	}
+	if (App->player->level3 || App->player->level6)
+	{
+		flyAnim.PushBack({ 93, 934, 16, 14 });
+	}
 
 	flyAnim.speed = 0.2f;
 

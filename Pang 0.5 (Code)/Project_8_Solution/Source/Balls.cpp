@@ -18,9 +18,18 @@
 
 Balls::Balls(int x, int y) : Enemy(x, y)
 {
-
-	flyAnim.PushBack({ 8,822,48,40 });
-	flyAnim.loop = false;
+	if (App->player->level1 || App->player->level4)
+	{
+		flyAnim.PushBack({ 8,822,48,40 });
+	}
+	if (App->player->level2 || App->player->level5)
+	{
+		flyAnim.PushBack({ 8,872,48,40 });
+	}
+	if (App->player->level3 || App->player->level6)
+	{
+		flyAnim.PushBack({ 8,921,48,40 });
+	}
 
 	flyAnim.speed = 0.2f;
 

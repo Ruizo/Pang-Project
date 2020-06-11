@@ -26,6 +26,14 @@ bool SceneLevel4::Start()
 	LOG("Loading background assets");
 
 	bool ret = true;
+
+	App->player->level1 = false;
+	App->player->level2 = false;
+	App->player->level3 = false;
+	App->player->level4 = true;
+	App->player->level5 = false;
+	App->player->level6 = false;
+
 	App->collisions->Enable();
 	bgTexture = App->textures->Load("Assets/Sprites/background_4.png");
 	App->audio->PlayMusic("Assets/Music/stage1.ogg", 1.0f);

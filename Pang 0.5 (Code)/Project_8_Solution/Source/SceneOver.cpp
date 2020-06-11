@@ -13,6 +13,7 @@
 #include "SceneLevel5.h"
 #include "SceneLevel6.h"
 #include "ModuleCollisions.h"
+#include "ModulePlayer.h"
 
 SceneOver::SceneOver(bool startEnabled) : Module(startEnabled)
 {
@@ -44,7 +45,30 @@ Update_Status SceneOver::Update()
 {
 	if (App->input->keys[SDL_SCANCODE_SPACE] == Key_State::KEY_DOWN)
 	{			
-		App->fade->FadeToBlack(this, (Module*)App->sceneLevel_1, 90);		
+		if (App->player->level1)
+		{
+			App->fade->FadeToBlack(this, (Module*)App->sceneLevel_1, 90);
+		}
+		if (App->player->level2)
+		{
+			App->fade->FadeToBlack(this, (Module*)App->sceneLevel_2, 90);
+		}
+		if (App->player->level3)
+		{
+			App->fade->FadeToBlack(this, (Module*)App->sceneLevel_3, 90);
+		}
+		if (App->player->level4)
+		{
+			App->fade->FadeToBlack(this, (Module*)App->sceneLevel_4, 90);
+		}
+		if (App->player->level5)
+		{
+			App->fade->FadeToBlack(this, (Module*)App->sceneLevel_5, 90);
+		}
+		if (App->player->level6)
+		{
+			App->fade->FadeToBlack(this, (Module*)App->sceneLevel_6, 90);
+		}
 	}
 	App->collisions->Disable();
 	App->sceneLevel_1->Disable();

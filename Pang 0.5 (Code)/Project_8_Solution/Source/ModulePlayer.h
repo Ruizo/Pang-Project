@@ -69,6 +69,13 @@ public:
 	// The player's collider
 	Collider* collider = nullptr;
 
+	bool level1 = false;
+	bool level2 = false;
+	bool level3 = false;
+	bool level4 = false;
+	bool level5 = false;
+	bool level6 = false;
+
 	// A flag to detect when the player has been destroyed
 	bool destroyed = false;
 

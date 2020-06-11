@@ -8,18 +8,45 @@
 #include "ModuleParticles.h"
 #include "ModuleAudio.h"
 #include "ModuleRender.h"
+#include "ModulePlayer.h"
 #include "Module.h"
 
 
 BreakablePlatform::BreakablePlatform(int x, int y) : Enemy(x, y)
 {
-	flyAnim.PushBack({ 264, 619, 31, 7 });
+	if (App->player->level2)
+	{
+		flyAnim.PushBack({ 264, 619, 31, 7 });
+	}
+	if (App->player->level3)
+	{
+		flyAnim.PushBack({ 304, 619, 31, 7 });
+	}
+	if (App->player->level5)
+	{
+		flyAnim.PushBack({ 8, 475, 7, 23 });
+	}
+	if (App->player->level6)
+	{
+		flyAnim.PushBack({ 9, 731, 15, 7 });
+	}
 
 	flyAnim.speed = 0.2f;
 
 	currentAnim = &flyAnim;
 
-	collider = App->collisions->AddCollider({ x, y, 31, 7 }, Collider::Type::BPLATFORM, (Module*)App->enemies);
+	if (App->player->level1)
+	{
+		collider = App->collisions->AddCollider({ x, y, 31, 7 }, Collider::Type::BPLATFORM, (Module*)App->enemies);
+	}
+	if (App->player->level5)
+	{
+		collider = App->collisions->AddCollider({ x, y, 7, 23 }, Collider::Type::BPLATFORM, (Module*)App->enemies);
+	}
+	if (App->player->level6)
+	{
+		collider = App->collisions->AddCollider({ x, y, 15, 7 }, Collider::Type::BPLATFORM, (Module*)App->enemies);
+	}
 }
 
 void BreakablePlatform::Update()

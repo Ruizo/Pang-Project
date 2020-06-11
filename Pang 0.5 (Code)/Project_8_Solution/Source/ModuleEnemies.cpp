@@ -233,7 +233,9 @@ void ModuleEnemies::OnCollision(Collider* c1, Collider* c2)
 		if (enemies[i] != nullptr && enemies[i]->GetCollider() == c1 && c2->type == Collider::Type::PLAYER_SHOT)
 		{
 			enemies[i]->OnCollision(c2); //Notify the enemy of a collision
+
 			delete enemies[i];
+
 			if (c1->type == Collider::Type::BPLATFORM)
 			{
 				c = c;
@@ -242,10 +244,28 @@ void ModuleEnemies::OnCollision(Collider* c1, Collider* c2)
 				c++;
 			}
 			enemies[i] = nullptr;
-			//1st Level
 			if (c == 15) {
-				App->player->MovePlayer(555545, 55545455);
 				App->fade->FadeToBlack(this, (Module*)App->sceneLevel_2, 90);
+			}
+			if (c == 30)
+			{
+				App->fade->FadeToBlack(this, (Module*)App->sceneLevel_3, 90);
+			}
+			if (c == 48)
+			{
+				App->fade->FadeToBlack(this, (Module*)App->sceneLevel_4, 90);
+			}
+			if (c == 63)
+			{
+				App->fade->FadeToBlack(this, (Module*)App->sceneLevel_5, 90);
+			}
+			if (c == 85)
+			{
+				App->fade->FadeToBlack(this, (Module*)App->sceneLevel_6, 90);
+			}
+			if (c == 145)
+			{
+				App->fade->FadeToBlack(this, (Module*)App->sceneWin, 90);
 			}
 			break;
 		}

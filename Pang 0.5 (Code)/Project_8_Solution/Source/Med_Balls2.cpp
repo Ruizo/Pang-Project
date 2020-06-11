@@ -8,13 +8,25 @@
 #include "ModuleParticles.h"
 #include "ModuleAudio.h"
 #include "ModuleRender.h"
+#include "ModulePlayer.h"
 #include "Module.h"
 #include "Balls.h"
 #include "ModuleBoosters.h"
 
 Med_Balls2::Med_Balls2(int x, int y) : Enemy(x, y)
 {
-	flyAnim.PushBack({ 59,829,32,26 });
+	if (App->player->level1 || App->player->level4)
+	{
+		flyAnim.PushBack({ 59,829,32,26 });
+	}
+	if (App->player->level2 || App->player->level5)
+	{
+		flyAnim.PushBack({ 59,879,32,26 });
+	}
+	if (App->player->level3 || App->player->level6)
+	{
+		flyAnim.PushBack({ 59,928,32,26 });
+	}
 
 	flyAnim.speed = 0.2f;
 
