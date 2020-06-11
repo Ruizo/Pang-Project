@@ -298,13 +298,10 @@ Update_Status ModulePlayer::PostUpdate()
 	}
 
 	// Draw UI (score) --------------------------------------
-	sprintf_s(scoreText, 10, "%7d", score);
+    sprintf_s(scoreText, 10, "%7d", score);
 
-	App->fonts->BlitText(58, 248, scoreFont, scoreText);
+	App->fonts->BlitText(43, 226, scoreFont, scoreText);
 
-	//App->fonts->BlitText(17, 213, scoreFont, "player-1");
-
-	//App->fonts->BlitText(273, 213, scoreFont, "player-2");
 
 	return Update_Status::UPDATE_CONTINUE;
 }
