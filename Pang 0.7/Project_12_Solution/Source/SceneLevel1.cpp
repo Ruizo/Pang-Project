@@ -90,7 +90,7 @@ Update_Status SceneLevel1::PostUpdate()
 
 bool SceneLevel1::CleanUp()
 {
-	App->player->CleanUp();
+	App->player->Disable();
 	App->enemies->Disable();
 	App->sceneLevel_1->Disable();
 
