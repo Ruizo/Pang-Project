@@ -215,7 +215,7 @@ void ModuleEnemies::OnCollision(Collider* c1, Collider* c2)
 			App->enemies->enemies[i]->position.x -= 4;
 			App->enemies->enemies[i]->B_Vx = -(App->enemies->enemies[i]->B_Vx);
 		}
-		if (enemies[i] != nullptr && enemies[i]->GetCollider() == c1 && c2->type == Collider::Type::BPLATFORMUp)//pared up
+		if (enemies[i] != nullptr && enemies[i]->GetCollider() == c1 && c2->type == Collider::Type::BPLATFORMUp)
 		{
 			App->enemies->enemies[i]->position.y += 10;
 			App->enemies->enemies[i]->B_Vy *= -1;

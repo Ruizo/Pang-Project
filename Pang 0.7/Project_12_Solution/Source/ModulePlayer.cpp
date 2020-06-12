@@ -12,7 +12,12 @@
 #include "ModuleBoosters.h"
 
 #include "ModuleEnemies.h"
-#include"SceneLevel1.h"
+#include "SceneLevel1.h"
+#include "SceneLevel2.h"
+#include "SceneLevel3.h"
+#include "SceneLevel4.h"
+#include "SceneLevel5.h"
+#include "SceneLevel6.h"
 
 #include <stdio.h>
 
@@ -102,7 +107,7 @@ Update_Status ModulePlayer::Update()
 
 	GamePad& pad = App->input->pads[0];
 	if (!debug) {
-		if (App->input->keys[SDL_SCANCODE_A] == Key_State::KEY_REPEAT || pad.l_x < 0.0f)
+		if (App->input->keys[SDL_SCANCODE_A] == Key_State::KEY_REPEAT /*|| pad.l_x < 0.0f*/)
 		{
 			position.x -= speed;
 			if (currentAnimation != &leftAnim)
@@ -111,7 +116,7 @@ Update_Status ModulePlayer::Update()
 				currentAnimation = &leftAnim;
 			}
 		}
-		if (App->input->keys[SDL_SCANCODE_D] == Key_State::KEY_REPEAT || pad.l_x > 0.0f)
+		if (App->input->keys[SDL_SCANCODE_D] == Key_State::KEY_REPEAT /*|| pad.l_x > 0.0f*/)
 		{
 			position.x += speed;
 			if (currentAnimation != &rightAnim)
@@ -121,7 +126,7 @@ Update_Status ModulePlayer::Update()
 			}
 		}
 
-		if (App->input->keys[SDL_SCANCODE_SPACE] == Key_State::KEY_DOWN && (shoot) || pad.a == true)
+		if (App->input->keys[SDL_SCANCODE_SPACE] == Key_State::KEY_DOWN && (shoot) /*|| pad.a == true*/)
 		{
 
 			if (currentAnimation != &shootAnim)
@@ -144,13 +149,7 @@ Update_Status ModulePlayer::Update()
 				}
 			}
 		}
-
-
-
-
-
-
-		if (App->input->keys[SDL_SCANCODE_A] == Key_State::KEY_IDLE
+				if (App->input->keys[SDL_SCANCODE_A] == Key_State::KEY_IDLE
 			&& App->input->keys[SDL_SCANCODE_D] == Key_State::KEY_IDLE
 			&& App->input->keys[SDL_SCANCODE_SPACE] == Key_State::KEY_IDLE)
 		{
@@ -288,7 +287,7 @@ Update_Status ModulePlayer::Update()
 			App->Boosters->AddBooster(Booster_Type::INVINCIBLE, position.x + 10, position.y);
 		}
 	}
-	// If no up/down movement detected, set the current animation back to idle
+	/*// If no up/down movement detected, set the current animation back to idle
 	if (pad.enabled)
 	{
 		if (pad.l_x == 0.0f && pad.l_y == 0.0f)
@@ -299,7 +298,7 @@ Update_Status ModulePlayer::Update()
 
 	// Switch gamepad debug info
 	if (App->input->keys[SDL_SCANCODE_F2] == KEY_DOWN)
-		debugGamepadInfo = !debugGamepadInfo;
+		debugGamepadInfo = !debugGamepadInfo;*/
 
 	return Update_Status::UPDATE_CONTINUE;
 }
@@ -321,12 +320,12 @@ Update_Status ModulePlayer::PostUpdate()
 	return Update_Status::UPDATE_CONTINUE;
 }
 
-/*bool ModulePlayer::CleanUp()
+bool ModulePlayer::CleanUp()
 {
-	/activeTextures = activeColliders = activeFonts = activeFx = 0;
+	activeTextures = activeColliders = activeFonts = activeFx = 0;
 
 	// TODO 1: Remove ALL remaining resources. Update resource count properly
-	
+
 	App->textures->Unload(texture);
 	--totalTextures;
 
@@ -342,17 +341,8 @@ Update_Status ModulePlayer::PostUpdate()
 	App->fonts->UnLoad(scoreFont);
 	--totalFonts;
 
-	for (uint i = 0; i < MAX_COLLIDERS; ++i)
-	{
-		if (colliders[i] != nullptr)
-		{
-			delete colliders[i];
-			colliders[i] = nullptr;
-		}
-	}
-	
 	return true;
-}*/
+}
 
 void ModulePlayer::OnCollision(Collider* c1, Collider* c2)
 {
@@ -368,19 +358,38 @@ void ModulePlayer::OnCollision(Collider* c1, Collider* c2)
 			if (!debug) {
 				score = 0;
 				if (lives == 0) {
-					App->player->Disable();
-					App->enemies->Disable();
-					App->collisions->Disable();
+					App->sceneLevel_1->CleanUp();
 					App->fade->FadeToBlack(this, (Module*)App->sceneOver, 90);
 				}
 
 				else if (lives != 0) {
-					App->player->Disable();
-				//	App->collisions->Disable();
-					App->enemies->Disable();
-
-					App->sceneLevel_1->Disable();
-					App->sceneLevel_1->Enable();
+					if (level1 == true) {
+						App->sceneLevel_1->CleanUp();
+						
+						App->sceneLevel_1->Enable();
+					
+					}
+					else if (level2 == true) {
+						App->sceneLevel_2->Disable();
+						App->sceneLevel_2->Enable();
+					}
+					else if (level3 == true) {
+						App->sceneLevel_3->Disable();
+						App->sceneLevel_3->Enable();
+					}
+					else if (level4 == true) {
+						App->sceneLevel_4->Disable();
+						App->sceneLevel_4->Enable();
+					}
+					else if (level5 == true) {
+						App->sceneLevel_5->Disable();
+						App->sceneLevel_5->Enable();
+					}
+					else if (level6 == true) {
+						App->sceneLevel_6->Disable();
+						App->sceneLevel_6->Enable();
+					}
+			
 				}
 
 
