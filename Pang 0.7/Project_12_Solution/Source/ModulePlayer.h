@@ -51,6 +51,10 @@ public:
 	int shoots = 0;
 
 	int lives = 3;
+
+	int tempDW = 0;
+
+	int tempIn = 0;
 	
 	// The pointer to the current player animation
 	// It will be switched depending on the player's movement direction

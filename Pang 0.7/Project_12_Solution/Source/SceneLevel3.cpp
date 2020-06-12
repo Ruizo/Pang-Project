@@ -5,6 +5,7 @@
 #include "ModuleTextures.h"
 #include "ModuleRender.h"
 #include "ModuleAudio.h"
+#include "ModuleCollisions.h"
 #include "ModuleEnemies.h"
 #include "ModulePlayer.h"
 #include "ModuleCollisions.h"
@@ -13,7 +14,7 @@
 
 SceneLevel3::SceneLevel3(bool startEnabled) : Module(startEnabled)
 {
-	name = "level 3";
+
 }
 
 SceneLevel3::~SceneLevel3()
@@ -29,12 +30,13 @@ bool SceneLevel3::Start()
 	bool ret = true;
 
 	App->player->level1 = false;
-	App->player->level2 = false;
-	App->player->level3 = true;
+	App->player->level2 = true;
+	App->player->level3 = false;
 	App->player->level4 = false;
 	App->player->level5 = false;
 	App->player->level6 = false;
 
+	App->player->doubleshot = false;
 
 
 
@@ -43,12 +45,13 @@ bool SceneLevel3::Start()
 	bgTexture = App->textures->Load("Assets/Sprites/background_3.png");
 	App->audio->PlayMusic("Assets/Music/stage1.ogg", 1.0f);
 
+
 	App->collisions->AddCollider({ 0, 0, 384, 9 }, Collider::Type::WALL1);		//UpWall
 	App->collisions->AddCollider({ 0, 200, 384, 9 }, Collider::Type::WALL2);	//DownWall
 	App->collisions->AddCollider({ 0, 8, 8, 192 }, Collider::Type::WALL3);	    //RightWall
 	App->collisions->AddCollider({ 376, 9, 8, 192 }, Collider::Type::WALL4);	//LeftWall
 
-	// Enemies ---
+	/// Enemies ---
 	App->enemies->AddEnemy(Enemy_Type::Big_Ball, 50, 80);
 	App->enemies->AddEnemy(Enemy_Type::Small_Ball, 170, 80);
 
@@ -57,6 +60,7 @@ bool SceneLevel3::Start()
 	App->enemies->AddEnemy(Enemy_Type::BreakablePlatform, SCREEN_WIDTH / 2 - 15, 100);
 	App->enemies->AddEnemy(Enemy_Type::BreakablePlatform, SCREEN_WIDTH / 4 - 15, 70);
 	App->enemies->AddEnemy(Enemy_Type::BreakablePlatform, 3 * SCREEN_WIDTH / 4 - 15, 70);
+
 
 	App->render->camera.x = 0;
 	App->render->camera.y = 0;
@@ -95,6 +99,6 @@ bool SceneLevel3::CleanUp()
 
 	App->player->Disable();
 	App->enemies->Disable();
-
+	App->collisions->CleanUp();
 	return true;
 }

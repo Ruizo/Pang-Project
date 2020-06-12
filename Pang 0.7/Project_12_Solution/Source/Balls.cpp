@@ -62,7 +62,19 @@ void Balls::Update()
 			position.y -= (B_Vy + grav);
 			B_Vy = grav;
 		}
+		
 	}
+	
+	if (App->Boosters->stoptime == true) {
+			App->Boosters->tempSt++;
+			if (App->Boosters->tempSt == 300) {
+				App->Boosters->stoptime = false;
+				App->Boosters->tempSt = 0;
+			}
+
+		}
+
+	
 	// Call to the base class. It must be called at the end
 	// It will update the collider depending on the position
 	Enemy::Update();

@@ -83,7 +83,7 @@ bool ModulePlayer::Start()
 	explosionFx = App->audio->LoadFx("Assets/Fx/explosion.wav");
 
 	position.x = 200;
-	position.y = 0;
+	position.y = 500;
 
 	// TODO 4: Retrieve the player when playing a second time
 	if (destroyed == true)
@@ -104,7 +104,17 @@ bool ModulePlayer::Start()
 
 Update_Status ModulePlayer::Update()
 {
+	if (doubleshot == true) {
+		tempDW++;
 
+		LOG("%d", tempDW);
+		if (tempDW == 300) {
+			
+			doubleshot = false;
+			tempDW = 0;
+		}
+	}
+	
 	GamePad& pad = App->input->pads[0];
 	if (!debug) {
 		if (App->input->keys[SDL_SCANCODE_A] == Key_State::KEY_REPEAT /*|| pad.l_x < 0.0f*/)
@@ -125,7 +135,7 @@ Update_Status ModulePlayer::Update()
 				currentAnimation = &rightAnim;
 			}
 		}
-
+		
 		if (App->input->keys[SDL_SCANCODE_SPACE] == Key_State::KEY_DOWN && (shoot) /*|| pad.a == true*/)
 		{
 
@@ -141,12 +151,18 @@ Update_Status ModulePlayer::Update()
 			}
 
 			if (doubleshot == true) {
+				
+				
 				App->particles->AddParticle(App->particles->laser, position.x + 10, position.y + 24, Collider::Type::PLAYER_SHOT);
 				App->audio->PlayFx(laserFx);
 				shoots++;
 				if (shoots == 2) {
 					shoot = false;
 				}
+				
+		
+
+				
 			}
 		}
 				if (App->input->keys[SDL_SCANCODE_A] == Key_State::KEY_IDLE
@@ -165,6 +181,11 @@ Update_Status ModulePlayer::Update()
 		}
 		else if (godmode = true) {
 			collider->SetPos(10000, 10000);
+			tempIn++;
+			if (tempIn == 300) {
+				godmode = false;
+				tempIn = 0;
+			}
 		}
 
 		if (destroyed)
@@ -322,7 +343,7 @@ Update_Status ModulePlayer::PostUpdate()
 
 bool ModulePlayer::CleanUp()
 {
-	activeTextures = activeColliders = activeFonts = activeFx = 0;
+	/*activeTextures = activeColliders = activeFonts = activeFx = 0;
 
 	// TODO 1: Remove ALL remaining resources. Update resource count properly
 
@@ -339,7 +360,7 @@ bool ModulePlayer::CleanUp()
 	--totalColliders;
 
 	App->fonts->UnLoad(scoreFont);
-	--totalFonts;
+	--totalFonts;*/
 
 	return true;
 }
@@ -357,12 +378,14 @@ void ModulePlayer::OnCollision(Collider* c1, Collider* c2)
 		else if (c2->type == Collider::Type::ENEMY) {
 			if (!debug) {
 				score = 0;
-				if (lives == 0) {
-					App->sceneLevel_1->CleanUp();
+				if (lives != 0) {
+
+					App->player->Disable();
+					App->enemies->Disable();
 					App->fade->FadeToBlack(this, (Module*)App->sceneOver, 90);
 				}
 
-				else if (lives != 0) {
+				/*else if (lives != 0) {
 					if (level1 == true) {
 						App->sceneLevel_1->CleanUp();
 						
@@ -390,7 +413,7 @@ void ModulePlayer::OnCollision(Collider* c1, Collider* c2)
 						App->sceneLevel_6->Enable();
 					}
 			
-				}
+				}*/
 
 
 			}

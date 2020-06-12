@@ -72,6 +72,10 @@ public:
 
 	bool slowtime = false;
 
+	int tempSt = 0;
+	int tempSl = 0;
+
+
 private:
 	// Spawns a new Booster using the data from the queue
 	void SpawnBooster(const BoosterSpawnpoint& info);

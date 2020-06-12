@@ -19,6 +19,8 @@ public:
 	boolean godmode = false;
 
 	boolean stoptime = false;
+
+	
 private:
 
 	// The original spawning position. The wave will be calculated from that

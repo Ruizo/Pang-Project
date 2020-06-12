@@ -48,5 +48,14 @@ void VSmall_Balls2::Update()
 		B_Vy -= grav;
 	}
 
+	if (App->Boosters->stoptime == true) {
+		App->Boosters->tempSt++;
+		if (App->Boosters->tempSt == 300) {
+			App->Boosters->stoptime = false;
+			App->Boosters->tempSt = 0;
+		}
+
+	}
+
 	Enemy::Update();
 }
