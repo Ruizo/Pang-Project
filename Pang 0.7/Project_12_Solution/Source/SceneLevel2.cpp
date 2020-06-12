@@ -36,6 +36,8 @@ bool SceneLevel2::Start()
 	App->player->level5 = false;
 	App->player->level6 = false;
 
+	App->player->doubleshot = false;
+
 
 
 
@@ -95,6 +97,6 @@ bool SceneLevel2::CleanUp()
 
 	App->player->Disable();
 	App->enemies->Disable();
-
+	App->collisions->CleanUp();
 	return true;
 }

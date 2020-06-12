@@ -253,12 +253,12 @@ void ModuleEnemies::OnCollision(Collider* c1, Collider* c2)
 			enemies[i] = nullptr;
 			//1st Level
 			if (c == 15) {
-				App->sceneLevel_1->Disable();
+				App->sceneLevel_1->CleanUp();
 				App->fade->FadeToBlack(this, (Module*)App->sceneLevel_2, 90);
 			}
 			if (c == 30)
 			{
-				App->sceneLevel_2->Disable();
+				App->sceneLevel_2->CleanUp();
 				App->fade->FadeToBlack(this, (Module*)App->sceneLevel_3, 90);
 			}
 			if (c == 48)

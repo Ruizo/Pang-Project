@@ -49,7 +49,7 @@ bool SceneLevel1::Start()
 	App->enemies->AddEnemy(Enemy_Type::Big_Ball, 50, 80);
 	App->Boosters->AddBooster(Booster_Type::DOUBLEWIRE, 100, 80);
 	App->Boosters->AddBooster(Booster_Type::INVINCIBLE, 300, 80);
-	//App->Boosters->AddBooster(Booster_Type::STOPTIME, 200, 80);
+	App->Boosters->AddBooster(Booster_Type::STOPTIME, 200, 80);
 	App->Boosters->AddBooster(Booster_Type::SLOWTIME, 250, 80);
 
 	App->render->camera.x = 0;
@@ -93,6 +93,7 @@ bool SceneLevel1::CleanUp()
 	App->player->Disable();
 	App->enemies->Disable();
 	App->sceneLevel_1->Disable();
+	App->collisions->CleanUp();
 
 	
 
