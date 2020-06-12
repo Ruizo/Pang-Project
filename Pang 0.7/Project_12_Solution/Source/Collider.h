@@ -25,6 +25,7 @@ struct Collider
 		BPLATFORMRight,
 		BPLATFORMLeft,
 		BOOSTERS,
+		STAIRS,
 
 		MAX
 	};

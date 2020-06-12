@@ -83,7 +83,7 @@ bool ModulePlayer::Start()
 	explosionFx = App->audio->LoadFx("Assets/Fx/explosion.wav");
 
 	position.x = 200;
-	position.y = 500;
+	position.y = 168;
 
 	// TODO 4: Retrieve the player when playing a second time
 	if (destroyed == true)
@@ -117,6 +117,18 @@ Update_Status ModulePlayer::Update()
 	
 	GamePad& pad = App->input->pads[0];
 	if (!debug) {
+		if (App->input->keys[SDL_SCANCODE_W] == Key_State::KEY_REPEAT && stairs == true /*|| pad.l_x < 0.0f*/)
+		{
+			position.y -= speed;
+			if (currentAnimation != &leftAnim)
+			{
+				leftAnim.Reset();
+				currentAnimation = &leftAnim;
+			}
+			if (position.y == 150) {
+				stairs = false;
+			}
+		}
 		if (App->input->keys[SDL_SCANCODE_A] == Key_State::KEY_REPEAT /*|| pad.l_x < 0.0f*/)
 		{
 			position.x -= speed;
@@ -170,7 +182,7 @@ Update_Status ModulePlayer::Update()
 			&& App->input->keys[SDL_SCANCODE_SPACE] == Key_State::KEY_IDLE)
 		{
 			currentAnimation = &idleAnim;
-			position.y = 168;
+			//position.y = 168;
 		}
 
 		if (godmode != true) {
@@ -371,6 +383,12 @@ void ModulePlayer::OnCollision(Collider* c1, Collider* c2)
 	{
 		if (c2->type == Collider::Type::WALL4) {
 			position.x -= 1;
+		}
+		else if (c2->type == Collider::Type::STAIRS) {
+			stairs = true;
+		}
+		else if (c2->type == Collider::Type::NONE) {
+			stairs = false;
 		}
 		else if (c2->type == Collider::Type::WALL3) {
 			position.x += 1;

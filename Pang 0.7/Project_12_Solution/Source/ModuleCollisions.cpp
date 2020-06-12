@@ -87,6 +87,8 @@ ModuleCollisions::ModuleCollisions(bool startEnabled) : Module(startEnabled)
 	matrix[Collider::Type::PLAYER][Collider::Type::BPLATFORMLeft] = false;
 	matrix[Collider::Type::PLAYER][Collider::Type::BPLATFORM] = false;
 	matrix[Collider::Type::PLAYER][Collider::Type::BOOSTERS] = false;
+	matrix[Collider::Type::PLAYER][Collider::Type::STAIRS] = true;
+
 
 	matrix[Collider::Type::ENEMY][Collider::Type::WALL1] = true;
 	matrix[Collider::Type::ENEMY][Collider::Type::WALL2] = true;
@@ -183,6 +185,8 @@ ModuleCollisions::ModuleCollisions(bool startEnabled) : Module(startEnabled)
 	matrix[Collider::Type::BPLATFORM][Collider::Type::BPLATFORMLeft] = false;
 	matrix[Collider::Type::BPLATFORM][Collider::Type::BPLATFORM] = false;
 	matrix[Collider::Type::BPLATFORM][Collider::Type::BOOSTERS] = false;
+
+
 }
 
 // Destructor
@@ -312,6 +316,10 @@ void ModuleCollisions::DebugDraw()
 			break;
 		case Collider::Type::BOOSTERS: // green
 			App->render->DrawQuad(colliders[i]->rect, 0, 255, 0, alpha);
+			break;
+		
+		case Collider::Type::STAIRS:
+			App->render->DrawQuad(colliders[i]->rect, 150, 200, 50, alpha);
 			break;
 		}
 	}

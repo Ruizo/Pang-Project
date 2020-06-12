@@ -49,7 +49,17 @@ bool SceneLevel4::Start()
 	App->collisions->AddCollider({ 192, 155, 8, 32 }, Collider::Type::WALL3);
 	App->collisions->AddCollider({ 0, 8, 8, 192 }, Collider::Type::WALL3);
 	App->collisions->AddCollider({ 184, 155, 8, 32 }, Collider::Type::WALL4);
-	App->collisions->AddCollider({ 376, 9, 8, 192 }, Collider::Type::WALL4);	//LeftWall
+	App->collisions->AddCollider({ 376, 9, 8, 192 }, Collider::Type::WALL4);
+
+
+
+
+	App->collisions->AddCollider({ 168, 160, 8, 40 }, Collider::Type::STAIRS);
+	App->collisions->AddCollider({ 210, 160, 8, 40 }, Collider::Type::STAIRS);
+
+
+
+
 
 	// Enemies ---
 	App->enemies->AddEnemy(Enemy_Type::Big_Ball, 50, 80);

@@ -55,6 +55,8 @@ public:
 	int tempDW = 0;
 
 	int tempIn = 0;
+
+	bool stairs = false;
 	
 	// The pointer to the current player animation
 	// It will be switched depending on the player's movement direction
