@@ -72,32 +72,37 @@ ModulePlayer::~ModulePlayer()
 
 bool ModulePlayer::Start()
 {
-	LOG("Loading player textures");
-
 	bool ret = true;
 
-	texture = App->textures->Load("Assets/Sprites/player.png");
-	currentAnimation = &idleAnim;
+	if (start == true) {
+		LOG("Loading player textures");
 
-	laserFx = App->audio->LoadFx("Assets/Fx/laser.wav");
-	explosionFx = App->audio->LoadFx("Assets/Fx/explosion.wav");
+		
 
-	position.x = 200;
-	position.y = 168;
+		texture = App->textures->Load("Assets/Sprites/player.png");
+		currentAnimation = &idleAnim;
 
-	// TODO 4: Retrieve the player when playing a second time
-	if (destroyed == true)
-	{
-		destroyed = false;
+		laserFx = App->audio->LoadFx("Assets/Fx/laser.wav");
+		explosionFx = App->audio->LoadFx("Assets/Fx/explosion.wav");
+
+		position.x = 200;
+		position.y = 168;
+
+		// TODO 4: Retrieve the player when playing a second time
+		if (destroyed == true)
+		{
+			destroyed = false;
+		}
+
+		collider = App->collisions->AddCollider({ position.x, position.y, 30, 32 }, Collider::Type::PLAYER, this);
+		//App->live->AddParticle(App->live->Plife, 13, 224, Collider::Type::NONE);
+		++activeColliders; ++totalColliders;
+
+		char lookupTable[] = { "! @,_./0123456789$;< ?abcdefghijklmnopqrstuvwxyz" };
+		scoreFont = App->fonts->Load("Assets/Fonts/rtype_font3.png", lookupTable, 2);
+		++activeFonts; ++totalFonts;
+		start = false;
 	}
-
-	collider = App->collisions->AddCollider({ position.x, position.y, 30, 32 }, Collider::Type::PLAYER, this);
-	//App->live->AddParticle(App->live->Plife, 13, 224, Collider::Type::NONE);
-	++activeColliders; ++totalColliders;
-
-	char lookupTable[] = { "! @,_./0123456789$;< ?abcdefghijklmnopqrstuvwxyz" };
-	scoreFont = App->fonts->Load("Assets/Fonts/rtype_font3.png", lookupTable, 2);
-	++activeFonts; ++totalFonts;
 
 	return ret;
 }
@@ -386,6 +391,13 @@ void ModulePlayer::OnCollision(Collider* c1, Collider* c2)
 		}
 		else if (c2->type == Collider::Type::STAIRS) {
 			stairs = true;
+
+			if (position.y == 120) {
+				stairs = false;
+			}
+		}
+		else if (c2->type == Collider::Type::ELEVATOR) {
+			position.y += 2;
 		}
 		else if (c2->type == Collider::Type::NONE) {
 			stairs = false;
@@ -397,7 +409,7 @@ void ModulePlayer::OnCollision(Collider* c1, Collider* c2)
 			if (!debug) {
 				score = 0;
 				if (lives != 0) {
-
+					start = true;
 					App->player->Disable();
 					App->enemies->Disable();
 					App->fade->FadeToBlack(this, (Module*)App->sceneOver, 90);

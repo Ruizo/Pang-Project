@@ -88,6 +88,7 @@ ModuleCollisions::ModuleCollisions(bool startEnabled) : Module(startEnabled)
 	matrix[Collider::Type::PLAYER][Collider::Type::BPLATFORM] = false;
 	matrix[Collider::Type::PLAYER][Collider::Type::BOOSTERS] = false;
 	matrix[Collider::Type::PLAYER][Collider::Type::STAIRS] = true;
+	matrix[Collider::Type::PLAYER][Collider::Type::ELEVATOR] = true;
 
 
 	matrix[Collider::Type::ENEMY][Collider::Type::WALL1] = true;
@@ -317,7 +318,7 @@ void ModuleCollisions::DebugDraw()
 		case Collider::Type::BOOSTERS: // green
 			App->render->DrawQuad(colliders[i]->rect, 0, 255, 0, alpha);
 			break;
-		
+
 		case Collider::Type::STAIRS:
 			App->render->DrawQuad(colliders[i]->rect, 150, 200, 50, alpha);
 			break;

@@ -53,16 +53,19 @@ bool SceneLevel4::Start()
 
 
 
+	App->collisions->AddCollider({ 168, 140, 8, 40 }, Collider::Type::STAIRS);
+	App->collisions->AddCollider({ 210, 140, 8, 40 }, Collider::Type::STAIRS);
 
-	App->collisions->AddCollider({ 168, 160, 8, 40 }, Collider::Type::STAIRS);
-	App->collisions->AddCollider({ 210, 160, 8, 40 }, Collider::Type::STAIRS);
 
+
+	App->collisions->AddCollider({ 128, 114, 8, 53 }, Collider::Type::ELEVATOR);
+	App->collisions->AddCollider({ 250, 114, 8, 53 }, Collider::Type::ELEVATOR);
 
 
 
 
 	// Enemies ---
-	App->enemies->AddEnemy(Enemy_Type::Big_Ball, 50, 80);
+	//App->enemies->AddEnemy(Enemy_Type::Big_Ball, 50, 80);
 
 	//Platforms ---
 
