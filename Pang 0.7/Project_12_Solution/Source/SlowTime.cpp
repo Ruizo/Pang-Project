@@ -24,7 +24,7 @@ SlowTime::SlowTime(int x, int y) : Booster(x, y)
 
 	currentAnim = &flyAnim;
 
-	collider = App->collisions->AddCollider({ 0, 0, 16, 14 }, Collider::Type::BOOSTERS, (Module*)App->Boosters);
+	collider = App->collisions->AddCollider({ 0, 0, 15, 16 }, Collider::Type::BOOSTERS, (Module*)App->Boosters);
 }
 
 void SlowTime::Update()
