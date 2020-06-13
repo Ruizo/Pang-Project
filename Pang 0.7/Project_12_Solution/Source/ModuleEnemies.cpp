@@ -252,8 +252,7 @@ void ModuleEnemies::OnCollision(Collider* c1, Collider* c2)
 			else {
 				c++;
 			}
-			enemies[i] = nullptr;			
-
+			enemies[i] = nullptr;
 			//1st Level
 			if (c == 15 && App->player->level1 == true) {
 				App->sceneLevel_1->CleanUp();

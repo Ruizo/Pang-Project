@@ -476,6 +476,7 @@ void ModulePlayer::OnCollision(Collider* c1, Collider* c2)
 			if (!debug) {
 				
 				if (lives == 0) {
+					App->Boosters->CleanUp();
 					App->player->CleanUp();
 					App->enemies->CleanUp();
 					App->fade->FadeToBlack(this, (Module*)App->sceneOver, 90);
@@ -485,32 +486,38 @@ void ModulePlayer::OnCollision(Collider* c1, Collider* c2)
 			
 					lives--;
 					if (level1 == true) {
+						App->Boosters->CleanUp();
 						App->player->CleanUp();
 						App->enemies->CleanUp();
 						App->fade->FadeToBlack(this, (Module*)App->death, 90);
 					
 					}
 					else if (level2 == true) {
+						App->Boosters->CleanUp();
 						App->player->CleanUp();
 						App->enemies->CleanUp();
 						App->fade->FadeToBlack(this, (Module*)App->death, 90);
 					}
 					else if (level3 == true) {
+						App->Boosters->CleanUp();
 						App->player->CleanUp();
 						App->enemies->CleanUp();
 						App->fade->FadeToBlack(this, (Module*)App->death, 90);
 					}
 					else if (level4 == true) {
+						App->Boosters->CleanUp();
 						App->player->CleanUp();
 						App->enemies->CleanUp();
 						App->fade->FadeToBlack(this, (Module*)App->death, 90);
 					}
 					else if (level5 == true) {
+						App->Boosters->CleanUp();
 						App->player->CleanUp();
 						App->enemies->CleanUp();
 						App->fade->FadeToBlack(this, (Module*)App->death, 90);
 					}
 					else if (level6 == true) {
+						App->Boosters->CleanUp();
 						App->player->CleanUp();
 						App->enemies->CleanUp();
 						App->fade->FadeToBlack(this, (Module*)App->death, 90);
