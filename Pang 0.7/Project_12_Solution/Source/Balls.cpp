@@ -31,6 +31,8 @@ Balls::Balls(int x, int y) : Enemy(x, y)
 		flyAnim.PushBack({ 8,921,48,40 });
 	}
 
+	deathAnim.anim.PushBack({ 63, 1094, 28, 48 });
+
 	flyAnim.speed = 0.2f;
 
 	currentAnim = &flyAnim;
@@ -82,13 +84,11 @@ void Balls::Update()
 
 void Balls::OnCollision(Collider* c2)
 {
-	App->particles->AddParticle(App->particles->explosion, position.x, position.y);
+	App->particles->AddParticle(App->particles->deathExplosion1, position.x, position.y, Collider::Type::NONE);
 	App->audio->PlayFx(destroyedFx);
 	if (c2->type == Collider::Type::PLAYER_SHOT || c2->type == Collider::Type::VULCAN || c2->type == Collider::Type::POWERWIRE) {
 		App->enemies->AddEnemy(Enemy_Type::Med_Ball, position.x + 10, position.y);
 		App->enemies->AddEnemy(Enemy_Type::Med_Ball2, position.x - 10, position.y);
-
-
 	}
 	switch (App->enemies->random) {
 	case 0:

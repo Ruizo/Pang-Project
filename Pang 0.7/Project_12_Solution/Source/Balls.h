@@ -27,6 +27,7 @@ private:
 	// The enemy animation
 	Animation flyAnim;
 
+	Particle deathAnim;
 
 };
 
