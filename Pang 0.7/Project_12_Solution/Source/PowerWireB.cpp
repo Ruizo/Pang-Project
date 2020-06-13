@@ -47,5 +47,7 @@ void PowerWireB::OnCollision(Collider* c2)
 	if (c2->type == Collider::Type::PLAYER) {
 		App->player->powerwireB = true;
 		App->powerwireB->Enable();
+		App->player->VulcanB = false;
+		App->player->doubleshot = false;
 	}
 }

@@ -47,5 +47,7 @@ void VulcanB::OnCollision(Collider* c2)
 	if (c2->type == Collider::Type::PLAYER) {
 		App->player->VulcanB = true;
 		App->vulcanB->Enable();
+		App->player->doubleshot = false;
+		App->player->powerwireB = false;
 	}
 }

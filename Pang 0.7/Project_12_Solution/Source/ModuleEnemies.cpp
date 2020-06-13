@@ -18,6 +18,7 @@
 #include "VSmall_Balls.h"
 #include "VSmall_Balls2.h"
 #include "ModuleCollisions.h"
+#include "ModuleBoosters.h"
 
 #include "SceneLevel1.h"
 #include "SceneLevel2.h"
@@ -238,8 +239,9 @@ void ModuleEnemies::OnCollision(Collider* c1, Collider* c2)
 			App->enemies->enemies[i]->position.x -= 4;
 			App->enemies->enemies[i]->B_Vx = -(App->enemies->enemies[i]->B_Vx);
 		}
-		if (enemies[i] != nullptr && enemies[i]->GetCollider() == c1 && (c2->type == Collider::Type::PLAYER_SHOT || c2->type == Collider::Type::VULCAN || c2->type == Collider::Type::POWERWIRE))
-		{
+		if ((enemies[i] != nullptr && enemies[i]->GetCollider() == c1 && (c2->type == Collider::Type::PLAYER_SHOT || c2->type == Collider::Type::VULCAN || c2->type == Collider::Type::POWERWIRE)))
+		{	
+			random = rand() % 35;
 			App->player->score += 200;
 			enemies[i]->OnCollision(c2); //Notify the enemy of a collision
 			delete enemies[i];
@@ -250,7 +252,8 @@ void ModuleEnemies::OnCollision(Collider* c1, Collider* c2)
 			else {
 				c++;
 			}
-			enemies[i] = nullptr;
+			enemies[i] = nullptr;			
+
 			//1st Level
 			if (c == 15 && App->player->level1 == true) {
 				App->sceneLevel_1->CleanUp();

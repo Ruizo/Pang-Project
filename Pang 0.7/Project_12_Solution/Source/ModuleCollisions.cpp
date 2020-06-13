@@ -115,6 +115,7 @@ ModuleCollisions::ModuleCollisions(bool startEnabled) : Module(startEnabled)
 	matrix[Collider::Type::ENEMY][Collider::Type::BPLATFORMRight] = true;
 	matrix[Collider::Type::ENEMY][Collider::Type::BPLATFORMLeft] = true;
 	matrix[Collider::Type::ENEMY][Collider::Type::BPLATFORM] = true;
+	matrix[Collider::Type::ENEMY][Collider::Type::DYNAMITE] = true;
 
 	matrix[Collider::Type::PLAYER_SHOT][Collider::Type::WALL1] = true;
 	matrix[Collider::Type::PLAYER_SHOT][Collider::Type::WALL2] = false;
@@ -128,6 +129,8 @@ ModuleCollisions::ModuleCollisions(bool startEnabled) : Module(startEnabled)
 	matrix[Collider::Type::PLAYER_SHOT][Collider::Type::BPLATFORMRight] = false;
 	matrix[Collider::Type::PLAYER_SHOT][Collider::Type::BPLATFORMLeft] = false;
 	matrix[Collider::Type::PLAYER_SHOT][Collider::Type::BPLATFORM] = true;
+
+	matrix[Collider::Type::DYNAMITE][Collider::Type::ENEMY] = true;
 
 	matrix[Collider::Type::BPLATFORMUp][Collider::Type::WALL1] = false;
 	matrix[Collider::Type::BPLATFORMUp][Collider::Type::WALL2] = false;
@@ -372,6 +375,9 @@ void ModuleCollisions::DebugDraw()
 			App->render->DrawQuad(colliders[i]->rect, 0, 255, 0, alpha);
 			break;
 		case Collider::Type::POWERWIRE:
+			App->render->DrawQuad(colliders[i]->rect, 255, 0, 0, alpha);
+			break;
+		case Collider::Type::DYNAMITE:
 			App->render->DrawQuad(colliders[i]->rect, 255, 0, 0, alpha);
 			break;
 		}

@@ -377,7 +377,17 @@ Update_Status ModulePlayer::Update()
 		if (App->input->keys[SDL_SCANCODE_E] == Key_State::KEY_DOWN && (debug))
 		{
 
-			App->Boosters->AddBooster(Booster_Type::INVINCIBLE, position.x + 10, position.y);
+			App->Boosters->AddBooster(Booster_Type::DOUBLEWIRE, position.x + 10, position.y);
+		}
+		if (App->input->keys[SDL_SCANCODE_R] == Key_State::KEY_DOWN && (debug))
+		{
+
+			App->Boosters->AddBooster(Booster_Type::POWERWIRE, position.x + 10, position.y);
+		}
+		if (App->input->keys[SDL_SCANCODE_T] == Key_State::KEY_DOWN && (debug))
+		{
+
+			App->Boosters->AddBooster(Booster_Type::VULCAN, position.x + 10, position.y);
 		}
 	}
 	

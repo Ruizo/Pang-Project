@@ -54,6 +54,8 @@ bool ModuleParticles::Start()
 	laser.lifetime = 360;
 	laser.anim.speed = 0.21f;
 
+	
+
 	return true;
 }
 
@@ -103,9 +105,9 @@ void ModuleParticles::OnCollision(Collider* c1, Collider* c2)
 			if (App->player->doubleshot == false) {
 				App->player->shoot = true;
 			}
- 			delete particles[i];
-			particles[i] = nullptr;
-			break;
+				delete particles[i];
+				particles[i] = nullptr;
+				break;			
 		}
 	}
 }
@@ -160,10 +162,20 @@ Particle* ModuleParticles::AddParticle(const Particle& particle, int x, int y, C
 			p->position.y = y;
 
 			//Adding the particle's collider
-			if (colliderType != Collider::Type::NONE)
+			if (colliderType != Collider::Type::NONE && (App->player->dynamite == false)) 
+			{
 				p->collider = App->collisions->AddCollider({ 0, 0, 10, 11 }, colliderType, this);
-			particles[i] = p;
-			break;
+				particles[i] = p;
+				break;
+			}
+			else if (App->player->dynamite == true)
+			{
+				p->collider = App->collisions->AddCollider({ 0, 0, 1000, 1000 }, colliderType, this);
+				App->player->dynamite = false;
+				particles[i] = p;
+				break;
+			}
+			
 		}
 	}
 

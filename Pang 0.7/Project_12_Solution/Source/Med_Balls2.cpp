@@ -66,4 +66,27 @@ void Med_Balls2::OnCollision(Collider* c2)
 		App->enemies->AddEnemy(Enemy_Type::Small_Ball, position.x + 10, position.y);
 		App->enemies->AddEnemy(Enemy_Type::Small_Ball2, position.x - 10, position.y);
 	}
+	switch (App->enemies->random) {
+	case 0:
+		App->Boosters->AddBooster(Booster_Type::DYNAMITE, position.x, position.y);
+		break;
+	case 1:
+		App->Boosters->AddBooster(Booster_Type::DOUBLEWIRE, position.x, position.y);
+		break;
+	case 3:
+		App->Boosters->AddBooster(Booster_Type::POWERWIRE, position.x, position.y);
+		break;
+	case 4:
+		App->Boosters->AddBooster(Booster_Type::STOPTIME, position.x, position.y);
+		break;
+	case 5:
+		App->Boosters->AddBooster(Booster_Type::INVINCIBLE, position.x, position.y);
+		break;
+	case 6:
+		App->Boosters->AddBooster(Booster_Type::SLOWTIME, position.x, position.y);
+		break;
+	case 7:
+		App->Boosters->AddBooster(Booster_Type::VULCAN, position.x, position.y);
+		break;
+	}
 }

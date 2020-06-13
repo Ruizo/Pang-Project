@@ -105,6 +105,7 @@ public:
 	int livepo = 10;
 	bool VulcanB = false;
 	bool powerwireB = false;
+	bool dynamite = false;
 };
 
 #endif //!__MODULE_PLAYER_H__

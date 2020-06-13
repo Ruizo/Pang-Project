@@ -44,6 +44,8 @@ void DoubleWire::OnCollision(Collider* c2)
 		powerup = true;
 		
 		App->player->doubleshot = true;
+		App->player->VulcanB = false;
+		App->player->powerwireB = false;
 	}
 
 }

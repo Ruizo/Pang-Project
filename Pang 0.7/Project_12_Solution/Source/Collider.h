@@ -29,6 +29,7 @@ struct Collider
 		ELEVATOR,
 		VULCAN,
 		POWERWIRE,
+		DYNAMITE,
 
 		MAX
 	};
