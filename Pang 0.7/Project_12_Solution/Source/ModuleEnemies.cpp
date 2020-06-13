@@ -238,7 +238,7 @@ void ModuleEnemies::OnCollision(Collider* c1, Collider* c2)
 			App->enemies->enemies[i]->position.x -= 4;
 			App->enemies->enemies[i]->B_Vx = -(App->enemies->enemies[i]->B_Vx);
 		}
-		if (enemies[i] != nullptr && enemies[i]->GetCollider() == c1 && c2->type == Collider::Type::PLAYER_SHOT)
+		if (enemies[i] != nullptr && enemies[i]->GetCollider() == c1 && (c2->type == Collider::Type::PLAYER_SHOT || c2->type == Collider::Type::VULCAN || c2->type == Collider::Type::POWERWIRE))
 		{
 			App->player->score += 200;
 			enemies[i]->OnCollision(c2); //Notify the enemy of a collision

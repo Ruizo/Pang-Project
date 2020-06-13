@@ -62,7 +62,7 @@ void Small_Balls2::OnCollision(Collider* c2)
 {
 	App->particles->AddParticle(App->particles->explosion, position.x, position.y);
 	App->audio->PlayFx(destroyedFx);
-	if (c2->type == Collider::Type::PLAYER_SHOT) {
+	if (c2->type == Collider::Type::PLAYER_SHOT || c2->type == Collider::Type::VULCAN || c2->type == Collider::Type::POWERWIRE) {
 		App->enemies->AddEnemy(Enemy_Type::VSmall_Ball, position.x + 10, position.y);
 		App->enemies->AddEnemy(Enemy_Type::VSmall_Ball2, position.x - 10, position.y);
 

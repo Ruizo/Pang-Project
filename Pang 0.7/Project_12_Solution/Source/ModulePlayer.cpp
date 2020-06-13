@@ -18,6 +18,8 @@
 #include "SceneLevel4.h"
 #include "SceneLevel5.h"
 #include "SceneLevel6.h"
+#include "Vulcan.h"
+#include "PowerWire.h"
 
 #include <stdio.h>
 
@@ -167,14 +169,28 @@ Update_Status ModulePlayer::Update()
 				shootAnim.Reset();
 				currentAnimation = &shootAnim;
 			}
+
 			if (doubleshot == false) {
-				App->particles->AddParticle(App->particles->laser, position.x + 10, position.y + 24, Collider::Type::PLAYER_SHOT);
-				App->audio->PlayFx(laserFx);
-				shoot = false;
+				if (VulcanB == true) {
+					App->vulcanB->AddParticle(App->vulcanB->laser, position.x + 10, position.y + 24, Collider::Type::VULCAN);
+					shoots++;
+					if (shoots == 2) {
+						shoot = false;
+					}
+				}
+				else if (powerwireB == true){
+					App->powerwireB->AddParticle(App->powerwireB->powerwire, position.x + 10, position.y + 24, Collider::Type::POWERWIRE);
+					App->audio->PlayFx(laserFx);
+					shoot = false;
+				}
+				else {
+					App->particles->AddParticle(App->particles->laser, position.x + 10, position.y + 24, Collider::Type::PLAYER_SHOT);
+					App->audio->PlayFx(laserFx);
+					shoot = false;
+				}
 			}
 
-			if (doubleshot == true) {
-				
+			if (doubleshot == true) {			
 				
 				App->particles->AddParticle(App->particles->laser, position.x + 10, position.y + 24, Collider::Type::PLAYER_SHOT);
 				App->audio->PlayFx(laserFx);
@@ -288,12 +304,27 @@ Update_Status ModulePlayer::Update()
 				shootAnim.Reset();
 				currentAnimation = &shootAnim;
 			}
-			shoot = false;
-			App->particles->AddParticle(App->particles->laser, position.x + 10, position.y + 24, Collider::Type::PLAYER_SHOT);
-			App->audio->PlayFx(laserFx);
+			if (doubleshot == false) {
+				if (VulcanB == true) {
+					App->vulcanB->AddParticle(App->vulcanB->laser, position.x + 10, position.y + 24, Collider::Type::VULCAN);
+					shoot = false;
+				}
+				else {
+					App->particles->AddParticle(App->particles->laser, position.x + 10, position.y + 24, Collider::Type::PLAYER_SHOT);
+					App->audio->PlayFx(laserFx);
+					shoot = false;
+				}
+				if (doubleshot == true) {
 
 
-
+					App->particles->AddParticle(App->particles->laser, position.x + 10, position.y + 24, Collider::Type::PLAYER_SHOT);
+					App->audio->PlayFx(laserFx);
+					shoots++;
+					if (shoots == 2) {
+						shoot = false;
+					}
+				}
+			}
 		}
 
 

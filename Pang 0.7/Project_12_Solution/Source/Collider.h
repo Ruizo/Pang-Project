@@ -27,6 +27,8 @@ struct Collider
 		BOOSTERS,
 		STAIRS,
 		ELEVATOR,
+		VULCAN,
+		POWERWIRE,
 
 		MAX
 	};

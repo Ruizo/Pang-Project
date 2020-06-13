@@ -13,7 +13,10 @@
 #include "DoubleWire.h"
 #include "Invincibility.h"
 #include "StopTime.h"
+#include "VulcanB.h"
 #include "SlowTime.h"
+#include "PowerWireB.h"
+#include "Dynamite.h"
 
 
 #include "Breakable_Platform.h"
@@ -155,6 +158,15 @@ void ModuleBoosters::SpawnBooster(const BoosterSpawnpoint& info)
 				break;
 			case Booster_Type::SLOWTIME:
 				Boosters[i] = new SlowTime(info.x, info.y);
+				break;
+			case Booster_Type::VULCAN:
+				Boosters[i] = new VulcanB(info.x, info.y);
+				break;
+			case Booster_Type::POWERWIRE:
+				Boosters[i] = new PowerWireB(info.x, info.y);
+				break;
+			case Booster_Type::DYNAMITE:
+				Boosters[i] = new Dynamite(info.x, info.y);
 				break;
 			}
 			Boosters[i]->texture = texture;

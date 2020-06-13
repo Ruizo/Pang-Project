@@ -103,7 +103,7 @@ void ModuleParticles::OnCollision(Collider* c1, Collider* c2)
 			if (App->player->doubleshot == false) {
 				App->player->shoot = true;
 			}
-			delete particles[i];
+ 			delete particles[i];
 			particles[i] = nullptr;
 			break;
 		}

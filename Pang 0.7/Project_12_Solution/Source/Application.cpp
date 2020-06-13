@@ -28,6 +28,8 @@
 #include "ModuleBoosters.h"
 #include "ModuleFonts.h"
 #include "ModuleRender.h"
+#include "Vulcan.h"
+#include "PowerWire.h"
 
 Application::Application()
 {
@@ -60,8 +62,10 @@ Application::Application()
 	modules[20] =	fade =			new ModuleFadeToBlack(true);
 	modules[21] =	fonts =			new ModuleFonts(true);
 	modules[22]	=	debugInfo =		new ModuleDebugInfo(true);
-	modules[23] = Boosters = new ModuleBoosters(false);
-	modules[24] =	render =		new ModuleRender(true);
+	modules[23] = Boosters =		new ModuleBoosters(false);
+	modules[24] = vulcanB =			new Vulcan(false);
+	modules[25] = powerwireB =		new PowerWire(false);
+	modules[26] =	render =		new ModuleRender(true);
 }
 
 Application::~Application()

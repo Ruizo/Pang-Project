@@ -103,7 +103,8 @@ public:
 	char scoreText[10] = { "\0" };
 	bool debugGamepadInfo = false;
 	int livepo = 10;
-
+	bool VulcanB = false;
+	bool powerwireB = false;
 };
 
 #endif //!__MODULE_PLAYER_H__

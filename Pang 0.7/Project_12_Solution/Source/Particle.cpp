@@ -1,6 +1,8 @@
 #include "Particle.h"
 
 #include "Collider.h"
+#include "ModulePlayer.h"
+#include "Application.h"
 
 Particle::Particle()
 {
@@ -47,9 +49,15 @@ bool Particle::Update()
 		position.x += speed.x;
 		position.y += speed.y;
 
-		if (collider != nullptr) {
+		
+		if (collider != nullptr && App->player->VulcanB == true) {
 			collider->SetPos(position.x, position.y);
-			collider->rect.h -= speed.y;
+		}
+		else {
+			if (collider != nullptr) {
+				collider->SetPos(position.x, position.y);
+				collider->rect.h -= speed.y;
+			}
 		}
 	}
 
