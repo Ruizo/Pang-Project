@@ -72,7 +72,9 @@ public:
 	bool surface = false;
 
 	int c = 0;
-
+	int random;
+	Enemy* enemies[MAX_ENEMIES] = { nullptr };
+	
 private:
 	// Spawns a new enemy using the data from the queue
 	void SpawnEnemy(const EnemySpawnpoint& info);
@@ -82,7 +84,7 @@ private:
 	EnemySpawnpoint spawnQueue[MAX_ENEMIES];
 
 	// All spawned enemies in the scene
-	Enemy* enemies[MAX_ENEMIES] = { nullptr };
+	
 
 	// The enemies sprite sheet
 	SDL_Texture* texture = nullptr;

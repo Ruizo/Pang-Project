@@ -27,6 +27,8 @@ ModuleCollisions::ModuleCollisions(bool startEnabled) : Module(startEnabled)
 	matrix[Collider::Type::WALL1][Collider::Type::BPLATFORMLeft] = false;
 	matrix[Collider::Type::WALL1][Collider::Type::BPLATFORM] = false;
 	matrix[Collider::Type::WALL1][Collider::Type::BOOSTERS] = false;
+	matrix[Collider::Type::WALL1][Collider::Type::VULCAN] = true;
+	matrix[Collider::Type::WALL1][Collider::Type::POWERWIRE] = true;
 
 	matrix[Collider::Type::WALL2][Collider::Type::WALL1] = false;
 	matrix[Collider::Type::WALL2][Collider::Type::WALL2] = false;
@@ -41,6 +43,8 @@ ModuleCollisions::ModuleCollisions(bool startEnabled) : Module(startEnabled)
 	matrix[Collider::Type::WALL2][Collider::Type::BPLATFORMLeft] = false;
 	matrix[Collider::Type::WALL2][Collider::Type::BPLATFORM] = false;
 	matrix[Collider::Type::WALL2][Collider::Type::BOOSTERS] = false;
+	matrix[Collider::Type::WALL2][Collider::Type::VULCAN] = false;
+	matrix[Collider::Type::WALL2][Collider::Type::POWERWIRE] = false;
 
 	matrix[Collider::Type::BOOSTERS][Collider::Type::WALL2] = true;
 	matrix[Collider::Type::BOOSTERS][Collider::Type::PLAYER] = true;
@@ -59,6 +63,8 @@ ModuleCollisions::ModuleCollisions(bool startEnabled) : Module(startEnabled)
 	matrix[Collider::Type::WALL3][Collider::Type::BPLATFORMLeft] = false;
 	matrix[Collider::Type::WALL3][Collider::Type::BPLATFORM] = false;
 	matrix[Collider::Type::WALL3][Collider::Type::BOOSTERS] = false;
+	matrix[Collider::Type::WALL3][Collider::Type::VULCAN] = true;
+	matrix[Collider::Type::WALL3][Collider::Type::POWERWIRE] = true;
 
 	matrix[Collider::Type::WALL4][Collider::Type::WALL1] = false;
 	matrix[Collider::Type::WALL4][Collider::Type::WALL2] = false;
@@ -73,6 +79,8 @@ ModuleCollisions::ModuleCollisions(bool startEnabled) : Module(startEnabled)
 	matrix[Collider::Type::WALL4][Collider::Type::BPLATFORMLeft] = false;
 	matrix[Collider::Type::WALL4][Collider::Type::BPLATFORM] = false;
 	matrix[Collider::Type::WALL4][Collider::Type::BOOSTERS] = false;
+	matrix[Collider::Type::WALL4][Collider::Type::VULCAN] = true;
+	matrix[Collider::Type::WALL4][Collider::Type::POWERWIRE] = true;
 
 	matrix[Collider::Type::PLAYER][Collider::Type::WALL1] = true;
 	matrix[Collider::Type::PLAYER][Collider::Type::WALL2] = true;
@@ -89,6 +97,8 @@ ModuleCollisions::ModuleCollisions(bool startEnabled) : Module(startEnabled)
 	matrix[Collider::Type::PLAYER][Collider::Type::BOOSTERS] = false;
 	matrix[Collider::Type::PLAYER][Collider::Type::STAIRS] = true;
 	matrix[Collider::Type::PLAYER][Collider::Type::ELEVATOR] = true;
+	matrix[Collider::Type::PLAYER][Collider::Type::VULCAN] = false;
+	matrix[Collider::Type::PLAYER][Collider::Type::POWERWIRE] = false;
 
 
 	matrix[Collider::Type::ENEMY][Collider::Type::WALL1] = true;
@@ -97,12 +107,15 @@ ModuleCollisions::ModuleCollisions(bool startEnabled) : Module(startEnabled)
 	matrix[Collider::Type::ENEMY][Collider::Type::WALL4] = true;
 	matrix[Collider::Type::ENEMY][Collider::Type::ENEMY] = false;
 
+	matrix[Collider::Type::ENEMY][Collider::Type::VULCAN] = true;
+	matrix[Collider::Type::ENEMY][Collider::Type::POWERWIRE] = true;
 	matrix[Collider::Type::ENEMY][Collider::Type::PLAYER_SHOT] = true;
 	matrix[Collider::Type::ENEMY][Collider::Type::BPLATFORMUp] = true;
 	matrix[Collider::Type::ENEMY][Collider::Type::BPLATFORMDown] = true;
 	matrix[Collider::Type::ENEMY][Collider::Type::BPLATFORMRight] = true;
 	matrix[Collider::Type::ENEMY][Collider::Type::BPLATFORMLeft] = true;
 	matrix[Collider::Type::ENEMY][Collider::Type::BPLATFORM] = true;
+	matrix[Collider::Type::ENEMY][Collider::Type::DYNAMITE] = true;
 
 	matrix[Collider::Type::PLAYER_SHOT][Collider::Type::WALL1] = true;
 	matrix[Collider::Type::PLAYER_SHOT][Collider::Type::WALL2] = false;
@@ -117,6 +130,8 @@ ModuleCollisions::ModuleCollisions(bool startEnabled) : Module(startEnabled)
 	matrix[Collider::Type::PLAYER_SHOT][Collider::Type::BPLATFORMLeft] = false;
 	matrix[Collider::Type::PLAYER_SHOT][Collider::Type::BPLATFORM] = true;
 
+	matrix[Collider::Type::DYNAMITE][Collider::Type::ENEMY] = true;
+
 	matrix[Collider::Type::BPLATFORMUp][Collider::Type::WALL1] = false;
 	matrix[Collider::Type::BPLATFORMUp][Collider::Type::WALL2] = false;
 	matrix[Collider::Type::BPLATFORMUp][Collider::Type::WALL3] = false;
@@ -130,6 +145,8 @@ ModuleCollisions::ModuleCollisions(bool startEnabled) : Module(startEnabled)
 	matrix[Collider::Type::BPLATFORMUp][Collider::Type::BPLATFORMLeft] = false;
 	matrix[Collider::Type::BPLATFORMUp][Collider::Type::BPLATFORM] = false;
 	matrix[Collider::Type::BPLATFORMUp][Collider::Type::BOOSTERS] = false;
+	matrix[Collider::Type::BPLATFORMUp][Collider::Type::VULCAN] = false;
+	matrix[Collider::Type::BPLATFORMUp][Collider::Type::POWERWIRE] = false;
 
 	matrix[Collider::Type::BPLATFORMDown][Collider::Type::WALL1] = false;
 	matrix[Collider::Type::BPLATFORMDown][Collider::Type::WALL2] = false;
@@ -144,6 +161,8 @@ ModuleCollisions::ModuleCollisions(bool startEnabled) : Module(startEnabled)
 	matrix[Collider::Type::BPLATFORMDown][Collider::Type::BPLATFORMLeft] = false;
 	matrix[Collider::Type::BPLATFORMDown][Collider::Type::BPLATFORM] = false;
 	matrix[Collider::Type::BPLATFORMDown][Collider::Type::BOOSTERS] = false;
+	matrix[Collider::Type::BPLATFORMDown][Collider::Type::VULCAN] = false;
+	matrix[Collider::Type::BPLATFORMDown][Collider::Type::POWERWIRE] = false;
 
 	matrix[Collider::Type::BPLATFORMRight][Collider::Type::WALL1] = false;
 	matrix[Collider::Type::BPLATFORMRight][Collider::Type::WALL2] = false;
@@ -158,6 +177,8 @@ ModuleCollisions::ModuleCollisions(bool startEnabled) : Module(startEnabled)
 	matrix[Collider::Type::BPLATFORMRight][Collider::Type::BPLATFORMLeft] = false;
 	matrix[Collider::Type::BPLATFORMRight][Collider::Type::BPLATFORM] = false;
 	matrix[Collider::Type::BPLATFORMRight][Collider::Type::BOOSTERS] = false;
+	matrix[Collider::Type::BPLATFORMRight][Collider::Type::VULCAN] = false;
+	matrix[Collider::Type::BPLATFORMRight][Collider::Type::POWERWIRE] = false;
 
 	matrix[Collider::Type::BPLATFORMLeft][Collider::Type::WALL1] = false;
 	matrix[Collider::Type::BPLATFORMLeft][Collider::Type::WALL2] = false;
@@ -172,6 +193,8 @@ ModuleCollisions::ModuleCollisions(bool startEnabled) : Module(startEnabled)
 	matrix[Collider::Type::BPLATFORMLeft][Collider::Type::BPLATFORMLeft] = false;
 	matrix[Collider::Type::BPLATFORMLeft][Collider::Type::BPLATFORM] = false;
 	matrix[Collider::Type::BPLATFORMLeft][Collider::Type::BOOSTERS] = false;
+	matrix[Collider::Type::BPLATFORMLeft][Collider::Type::VULCAN] = false;
+	matrix[Collider::Type::BPLATFORMLeft][Collider::Type::POWERWIRE] = false;
 
 	matrix[Collider::Type::BPLATFORM][Collider::Type::WALL1] = false;
 	matrix[Collider::Type::BPLATFORM][Collider::Type::WALL2] = false;
@@ -186,8 +209,34 @@ ModuleCollisions::ModuleCollisions(bool startEnabled) : Module(startEnabled)
 	matrix[Collider::Type::BPLATFORM][Collider::Type::BPLATFORMLeft] = false;
 	matrix[Collider::Type::BPLATFORM][Collider::Type::BPLATFORM] = false;
 	matrix[Collider::Type::BPLATFORM][Collider::Type::BOOSTERS] = false;
+	matrix[Collider::Type::BPLATFORM][Collider::Type::VULCAN] = true;
+	matrix[Collider::Type::BPLATFORM][Collider::Type::POWERWIRE] = true;
 
+	matrix[Collider::Type::VULCAN][Collider::Type::WALL1] = true;
+	matrix[Collider::Type::VULCAN][Collider::Type::WALL2] = false;
+	matrix[Collider::Type::VULCAN][Collider::Type::WALL3] = true;
+	matrix[Collider::Type::VULCAN][Collider::Type::WALL4] = true;
+	matrix[Collider::Type::VULCAN][Collider::Type::PLAYER] = false;
+	matrix[Collider::Type::VULCAN][Collider::Type::ENEMY] = true;
+	matrix[Collider::Type::VULCAN][Collider::Type::PLAYER_SHOT] = false;
+	matrix[Collider::Type::VULCAN][Collider::Type::BPLATFORMUp] = false;
+	matrix[Collider::Type::VULCAN][Collider::Type::BPLATFORMDown] = false;
+	matrix[Collider::Type::VULCAN][Collider::Type::BPLATFORMRight] = false;
+	matrix[Collider::Type::VULCAN][Collider::Type::BPLATFORMLeft] = false;
+	matrix[Collider::Type::VULCAN][Collider::Type::BPLATFORM] = true;
 
+	matrix[Collider::Type::POWERWIRE][Collider::Type::WALL1] = true;
+	matrix[Collider::Type::POWERWIRE][Collider::Type::WALL2] = false;
+	matrix[Collider::Type::POWERWIRE][Collider::Type::WALL3] = true;
+	matrix[Collider::Type::POWERWIRE][Collider::Type::WALL4] = true;
+	matrix[Collider::Type::POWERWIRE][Collider::Type::PLAYER] = false;
+	matrix[Collider::Type::POWERWIRE][Collider::Type::ENEMY] = true;
+	matrix[Collider::Type::POWERWIRE][Collider::Type::PLAYER_SHOT] = false;
+	matrix[Collider::Type::POWERWIRE][Collider::Type::BPLATFORMUp] = false;
+	matrix[Collider::Type::POWERWIRE][Collider::Type::BPLATFORMDown] = false;
+	matrix[Collider::Type::POWERWIRE][Collider::Type::BPLATFORMRight] = false;
+	matrix[Collider::Type::POWERWIRE][Collider::Type::BPLATFORMLeft] = false;
+	matrix[Collider::Type::POWERWIRE][Collider::Type::BPLATFORM] = true;
 }
 
 // Destructor
@@ -321,6 +370,15 @@ void ModuleCollisions::DebugDraw()
 
 		case Collider::Type::STAIRS:
 			App->render->DrawQuad(colliders[i]->rect, 150, 200, 50, alpha);
+			break;
+		case Collider::Type::VULCAN:
+			App->render->DrawQuad(colliders[i]->rect, 0, 255, 0, alpha);
+			break;
+		case Collider::Type::POWERWIRE:
+			App->render->DrawQuad(colliders[i]->rect, 255, 0, 0, alpha);
+			break;
+		case Collider::Type::DYNAMITE:
+			App->render->DrawQuad(colliders[i]->rect, 255, 0, 0, alpha);
 			break;
 		}
 	}
