@@ -10,6 +10,7 @@
 #include "Balls.h"
 #include "Med_Balls.h"
 #include "Med_Balls2.h"
+#include "ModuleBoosters.h"
 
 Enemy::Enemy(int x, int y) : position(x, y)
 {
@@ -45,5 +46,7 @@ void Enemy::Draw()
 
 void Enemy::OnCollision(Collider* collider)
 {
-	App->audio->PlayFx(destroyedFx);
+	App->particles->AddParticle(App->particles->explosion, position.x, position.y);
+	App->audio->PlayFx(destroyedFx);	
+	
 }

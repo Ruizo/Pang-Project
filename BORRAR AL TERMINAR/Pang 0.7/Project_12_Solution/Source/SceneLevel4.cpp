@@ -41,7 +41,7 @@ bool SceneLevel4::Start()
 
 	App->collisions->Enable();
 	bgTexture = App->textures->Load("Assets/Sprites/background_4.png");
-	App->audio->PlayMusic("Assets/Music/stage2.ogg", 1.0f);
+	App->audio->PlayMusic("Assets/Music/stage1.ogg", 1.0f);
 
 	App->collisions->AddCollider({ 0, 0, 384, 9 }, Collider::Type::WALL1);		//UpWall
 	App->collisions->AddCollider({ 0, 200, 384, 9 }, Collider::Type::WALL2);	//DownWall
@@ -65,7 +65,7 @@ bool SceneLevel4::Start()
 
 
 	// Enemies ---
-	App->enemies->AddEnemy(Enemy_Type::Big_Ball, 50, 80);
+	//App->enemies->AddEnemy(Enemy_Type::Big_Ball, 50, 80);
 
 	//Platforms ---
 

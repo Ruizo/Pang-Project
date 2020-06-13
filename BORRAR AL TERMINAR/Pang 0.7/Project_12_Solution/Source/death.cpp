@@ -46,9 +46,7 @@ Update_Status Death::Update()
 	App->player->score = 0;
 	
 		if (App->player->level1 == true) {
-	
 			App->fade->FadeToBlack(this, (Module*)App->sceneLevel_1, 90);
-
 		}
 		else if (App->player->level2 == true) {
 			App->fade->FadeToBlack(this, (Module*)App->sceneLevel_2, 90);

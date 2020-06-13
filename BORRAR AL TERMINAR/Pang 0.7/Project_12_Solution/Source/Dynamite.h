@@ -1,20 +1,22 @@
-#ifndef _BALLS_H_
-#define _BALLS_H_
+#ifndef _Dynamite_H_
+#define _Dynamite_H_
 
-#include "Enemy.h"
+#include "Booster.h"
 
-class Balls : public Enemy
+class Dynamite : public Booster
 {
 public:
 
 	// Constructor (x y coordinates in the world)
 	// Creates animation data and the collider
-	Balls(int x, int y);
+	Dynamite(int x, int y);
 
 	// The enemy is going to perform a sinusoidal movement
 	void Update() override;
 
 	void OnCollision(Collider* collider);
+
+	boolean godmode = false;
 
 private:
 
@@ -24,12 +26,13 @@ private:
 	// The total height of the wave
 	int waveHeight = 15;
 
+	Collider* c3;
 	// The enemy animation
 	Animation flyAnim;
 
-
+	Animation anim;
 };
 
 
 
-#endif // _BALLS_H
+#endif // _Dynamite_H

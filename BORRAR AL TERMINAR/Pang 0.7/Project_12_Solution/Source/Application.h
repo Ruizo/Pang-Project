@@ -3,7 +3,7 @@
 
 #include "Globals.h"
 
-#define NUM_MODULES 25
+#define NUM_MODULES 27
 
 class Module;
 class ModuleWindow;
@@ -31,6 +31,8 @@ class ModuleBoosters;
 class ModuleFonts;
 class Death;
 class ModuleRender;
+class Vulcan;
+class PowerWire;
 
 class Application
 {
@@ -85,7 +87,8 @@ public:
 	ModuleFonts* fonts = nullptr;
 	ModuleBoosters* Boosters = nullptr;
 	ModuleDebugInfo* debugInfo = nullptr;
-
+	Vulcan* vulcanB = nullptr;
+	PowerWire* powerwireB = nullptr;
 	ModuleRender* render = nullptr;
 };
 

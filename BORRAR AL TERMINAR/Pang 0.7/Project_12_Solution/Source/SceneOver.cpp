@@ -33,7 +33,6 @@ bool SceneOver::Start()
 	bool ret = true;
 
 	bgTexture = App->textures->Load("Assets/Sprites/Over.png");
-	App->audio->PlayMusic("Assets/Music/stage2.ogg", 1.0f);
 
 
 	App->render->camera.x = 0;
@@ -47,7 +46,7 @@ Update_Status SceneOver::Update()
 	App->player->score = 0;
 	if (App->input->keys[SDL_SCANCODE_SPACE] == Key_State::KEY_DOWN)
 	{			
-		App->fade->FadeToBlack(this, (Module*)App->sceneLevel_1, 90);		
+		App->fade->FadeToBlack(this, (Module*)App->sceneIntro, 90);		
 	}
 	App->collisions->Disable();
 	App->sceneLevel_1->Disable();

@@ -1,5 +1,5 @@
 #include "Booster.h"
-#include "StopTime.h"
+#include "Dynamite.h"
 #include "Application.h"
 #include "ModuleCollisions.h"
 #include "ModuleParticles.h"
@@ -12,13 +12,16 @@
 #include "Particle.h"
 #include "Balls.h"
 #include "ModuleBoosters.h"
+#include "ModuleEnemies.h"
 
 
-StopTime::StopTime(int x, int y) : Booster(x, y)
+Dynamite::Dynamite(int x, int y) : Booster(x, y)
 {
 
-	flyAnim.PushBack({ 8, 102, 16, 16 });
-	flyAnim.loop = false;
+	flyAnim.PushBack({ 88, 105, 15, 13 });
+	flyAnim.PushBack({ 111, 105, 16, 15 });
+	flyAnim.PushBack({ 135, 105, 15, 16 });
+	flyAnim.loop = true;
 
 	flyAnim.speed = 0.2f;
 
@@ -27,7 +30,7 @@ StopTime::StopTime(int x, int y) : Booster(x, y)
 	collider = App->collisions->AddCollider({ 0, 0, 15, 16 }, Collider::Type::BOOSTERS, (Module*)App->Boosters);
 }
 
-void StopTime::Update()
+void Dynamite::Update()
 {
 
 	position.y = position.y + 1;
@@ -39,11 +42,12 @@ void StopTime::Update()
 	Booster::Update();
 }
 
-void StopTime::OnCollision(Collider* c2)
+void Dynamite::OnCollision(Collider* c2)
 {
 	App->particles->AddParticle(App->particles->explosion, position.x, position.y);
 	App->audio->PlayFx(destroyedFx);
 	if (c2->type == Collider::Type::PLAYER) {
-		App->Boosters->stoptime = true;
+		App->player->dynamite = true;
+		App->particles->AddParticle(App->particles->laser, 0, 0, Collider::Type::PLAYER_SHOT);
 	}
 }
