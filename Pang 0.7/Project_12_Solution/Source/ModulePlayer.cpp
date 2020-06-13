@@ -29,10 +29,11 @@ ModulePlayer::ModulePlayer(bool startEnabled) : Module(startEnabled)
 	idleAnim.PushBack({ 19, 145, 25, 32 });
 
 	// move upwards
-	upAnim.PushBack({ 0, 0, 25, 32 });
-	upAnim.PushBack({ 0, 0, 25, 32 });
-	upAnim.loop = false;
-	upAnim.speed = 0.1f;
+	
+	upAnim.PushBack({ 20, 69, 25, 32 });
+	upAnim.PushBack({ 56, 69, 25, 32 });
+	upAnim.loop = true;
+	upAnim.speed = 0.09f;
 
 	// Move down
 	downAnim.PushBack({ 33, 1, 32, 14 });
@@ -128,13 +129,13 @@ Update_Status ModulePlayer::Update()
 		{
 			App->input->ShakeController(0, 12, 0.33f);
 		}
-		if (App->input->keys[SDL_SCANCODE_W] == Key_State::KEY_REPEAT && stairs == true || pad.l_y < 0.0f)
+		if ((App->input->keys[SDL_SCANCODE_W] == Key_State::KEY_REPEAT || pad.l_y < 0.0f) && stairs == true )
 		{
 			position.y -= speed;
-			if (currentAnimation != &leftAnim)
+			if (currentAnimation != &upAnim)
 			{
-				leftAnim.Reset();
-				currentAnimation = &leftAnim;
+				upAnim.Reset();
+				currentAnimation = &upAnim;
 			}
 			if (position.y == 150) {
 				stairs = false;
@@ -188,9 +189,10 @@ Update_Status ModulePlayer::Update()
 				
 			}
 		}
-				if (App->input->keys[SDL_SCANCODE_A] == Key_State::KEY_IDLE
+		if (App->input->keys[SDL_SCANCODE_A] == Key_State::KEY_IDLE
 			&& App->input->keys[SDL_SCANCODE_D] == Key_State::KEY_IDLE
-			&& App->input->keys[SDL_SCANCODE_SPACE] == Key_State::KEY_IDLE)
+			&& App->input->keys[SDL_SCANCODE_SPACE] == Key_State::KEY_IDLE
+			&& App->input->keys[SDL_SCANCODE_W] == Key_State::KEY_IDLE)
 		{
 			currentAnimation = &idleAnim;
 			//position.y = 168;
@@ -245,10 +247,10 @@ Update_Status ModulePlayer::Update()
 		if (App->input->keys[SDL_SCANCODE_W] == Key_State::KEY_REPEAT)
 		{
 			position.y -= 5;
-			if (currentAnimation != &shootAnim)
+			if (currentAnimation != &upAnim)
 			{
-				leftAnim.Reset();
-				currentAnimation = &shootAnim;
+				upAnim.Reset();
+				currentAnimation = &upAnim;
 			}
 		}
 
@@ -299,7 +301,8 @@ Update_Status ModulePlayer::Update()
 
 		if (App->input->keys[SDL_SCANCODE_A] == Key_State::KEY_IDLE
 			&& App->input->keys[SDL_SCANCODE_D] == Key_State::KEY_IDLE
-			&& App->input->keys[SDL_SCANCODE_SPACE] == Key_State::KEY_IDLE)
+			&& App->input->keys[SDL_SCANCODE_SPACE] == Key_State::KEY_IDLE
+			&& App->input->keys[SDL_SCANCODE_W] == Key_State::KEY_IDLE)
 		{
 			currentAnimation = &idleAnim;
 			//position.y = 168;
