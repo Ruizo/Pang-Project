@@ -26,30 +26,30 @@ ModuleParticles::~ModuleParticles()
 bool ModuleParticles::Start()
 {
 	LOG("Loading particles");
-	texture = App->textures->Load("Assets/Sprites/particles.png");
+	texture = App->textures->Load("Assets/Sprites/entities.png");
 
 	// Explosion particle
-	laser.anim.PushBack({ 0, 0, 10, 11 });
-	laser.anim.PushBack({ 12, 0, 10, 25 });
-	laser.anim.PushBack({ 0, 0, 10, 39 });
-	laser.anim.PushBack({ 12, 0, 10, 53 });
-	laser.anim.PushBack({ 0, 0, 10, 67 });
-	laser.anim.PushBack({ 12, 0, 10, 81 });
-	laser.anim.PushBack({ 0, 0, 10, 95 });
-	laser.anim.PushBack({ 12, 0, 10, 109 });
-	laser.anim.PushBack({ 0, 0, 10, 123 });
-	laser.anim.PushBack({ 12, 0, 10, 137 });
-	laser.anim.PushBack({ 0, 0, 10, 151 });
-	laser.anim.PushBack({ 12, 0, 10, 165 });
-	laser.anim.PushBack({ 0, 0, 10, 179 });
-	laser.anim.PushBack({ 12, 0, 10, 193 });
-	laser.anim.PushBack({ 0, 0, 10, 207 });
-	laser.anim.PushBack({ 12, 0, 10, 221 });
-	laser.anim.PushBack({ 0, 0, 10, 235 });
-	laser.anim.PushBack({ 12, 0, 10, 249 });
-	laser.anim.PushBack({ 0, 0, 10, 263 });
-	laser.anim.PushBack({ 27, 0, 10, 267 });
-	laser.anim.PushBack({ 40, 0, 10, 267 });
+	laser.anim.PushBack({ 8, 1146, 10, 11 });
+	laser.anim.PushBack({ 20, 1146, 10, 25 });
+	laser.anim.PushBack({ 8, 1146, 10, 39 });
+	laser.anim.PushBack({ 20, 1146, 10, 53 });
+	laser.anim.PushBack({ 8, 1146, 10, 67 });
+	laser.anim.PushBack({ 20, 1146, 10, 81 });
+	laser.anim.PushBack({ 8, 1146, 10, 95 });
+	laser.anim.PushBack({ 20, 1146, 10, 109 });
+	laser.anim.PushBack({ 8, 1146, 10, 123 });
+	laser.anim.PushBack({ 20, 1146, 10, 137 });
+	laser.anim.PushBack({ 8, 1146, 10, 151 });
+	laser.anim.PushBack({ 20, 1146, 10, 165 });
+	laser.anim.PushBack({ 8, 1146, 10, 179 });
+	laser.anim.PushBack({ 20, 1146, 10, 193 });
+	laser.anim.PushBack({ 8, 1146, 10, 207 });
+	laser.anim.PushBack({ 20, 1146, 10, 221 });
+	laser.anim.PushBack({ 8, 1146, 10, 235 });
+	laser.anim.PushBack({ 20, 1146, 10, 249 });
+	laser.anim.PushBack({ 8, 1146, 10, 263 });
+	laser.anim.PushBack({ 48, 1146, 10, 267 });
+	laser.anim.PushBack({ 35, 1146, 10, 267 });
 	laser.speed.y = -3;
 	laser.lifetime = 360;
 	laser.anim.speed = 0.21f;
