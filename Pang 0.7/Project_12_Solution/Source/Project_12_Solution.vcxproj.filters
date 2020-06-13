@@ -181,6 +181,9 @@
     <ClInclude Include="Breakable_Platform.h">
       <Filter>Source Files\Entities\Breakable platforms</Filter>
     </ClInclude>
+    <ClInclude Include="death.h">
+      <Filter>Source Files\Modules\Gameplay\Screens</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Module.cpp">
@@ -317,6 +320,9 @@
     </ClCompile>
     <ClCompile Include="Breakable_Platform.cpp">
       <Filter>Source Files\Entities\Breakable platforms</Filter>
+    </ClCompile>
+    <ClCompile Include="death.cpp">
+      <Filter>Source Files\Modules\Gameplay\Screens</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

@@ -80,6 +80,7 @@
     <ClInclude Include="Booster.h" />
     <ClInclude Include="Breakable_Platform.h" />
     <ClInclude Include="Collider.h" />
+    <ClInclude Include="death.h" />
     <ClInclude Include="DoubleWire.h" />
     <ClInclude Include="Enemy.h" />
     <ClInclude Include="Invincibility.h" />
@@ -128,6 +129,7 @@
     <ClCompile Include="Booster.cpp" />
     <ClCompile Include="Breakable_Platform.cpp" />
     <ClCompile Include="Collider.cpp" />
+    <ClCompile Include="death.cpp" />
     <ClCompile Include="DoubleWire.cpp" />
     <ClCompile Include="Enemy.cpp" />
     <ClCompile Include="Globals.cpp" />

@@ -360,7 +360,7 @@ Update_Status ModulePlayer::PostUpdate()
 
 bool ModulePlayer::CleanUp()
 {
-	/*activeTextures = activeColliders = activeFonts = activeFx = 0;
+	activeTextures = activeColliders = activeFonts = activeFx = 0;
 
 	// TODO 1: Remove ALL remaining resources. Update resource count properly
 
@@ -373,11 +373,11 @@ bool ModulePlayer::CleanUp()
 	App->audio->UnloadFx(explosionFx);
 	--totalFx;
 
-	App->collisions->RemoveCollider(collider);
-	--totalColliders;
+	/*App->collisions->RemoveCollider(collider);
+	--totalColliders;*/
 
 	App->fonts->UnLoad(scoreFont);
-	--totalFonts;*/
+	--totalFonts;
 
 	return true;
 }
@@ -407,44 +407,49 @@ void ModulePlayer::OnCollision(Collider* c1, Collider* c2)
 		}
 		else if (c2->type == Collider::Type::ENEMY) {
 			if (!debug) {
-				score = 0;
-				if (lives != 0) {
-					/*start = true;
-					App->player->Disable();
-					App->enemies->Disable();
+				
+				if (lives == 0) {
+					App->player->CleanUp();
+					App->enemies->CleanUp();
 					App->fade->FadeToBlack(this, (Module*)App->sceneOver, 90);
-				*/
+				
 				}
-
-				/*else if (lives != 0) {
+				else if (lives != 0) {
+					start = true;
+					lives--;
 					if (level1 == true) {
-						App->sceneLevel_1->CleanUp();
-						
-						App->sceneLevel_1->Enable();
+						App->player->CleanUp();
+						App->enemies->CleanUp();
+						App->fade->FadeToBlack(this, (Module*)App->death, 90);
 					
 					}
 					else if (level2 == true) {
-						App->sceneLevel_2->Disable();
-						App->sceneLevel_2->Enable();
+						App->player->CleanUp();
+						App->enemies->CleanUp();
+						App->fade->FadeToBlack(this, (Module*)App->death, 90);
 					}
 					else if (level3 == true) {
-						App->sceneLevel_3->Disable();
-						App->sceneLevel_3->Enable();
+						App->player->CleanUp();
+						App->enemies->CleanUp();
+						App->fade->FadeToBlack(this, (Module*)App->death, 90);
 					}
 					else if (level4 == true) {
-						App->sceneLevel_4->Disable();
-						App->sceneLevel_4->Enable();
+						App->player->CleanUp();
+						App->enemies->CleanUp();
+						App->fade->FadeToBlack(this, (Module*)App->death, 90);
 					}
 					else if (level5 == true) {
-						App->sceneLevel_5->Disable();
-						App->sceneLevel_5->Enable();
+						App->player->CleanUp();
+						App->enemies->CleanUp();
+						App->fade->FadeToBlack(this, (Module*)App->death, 90);
 					}
 					else if (level6 == true) {
-						App->sceneLevel_6->Disable();
-						App->sceneLevel_6->Enable();
+						App->player->CleanUp();
+						App->enemies->CleanUp();
+						App->fade->FadeToBlack(this, (Module*)App->death, 90);
 					}
 			
-				}*/
+				}
 
 
 			}

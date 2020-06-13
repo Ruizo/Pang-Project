@@ -25,6 +25,7 @@ SceneLevel2::~SceneLevel2()
 // Load assets
 bool SceneLevel2::Start()
 {
+	App->player->score = App->player->totalscore;
 	LOG("Loading background assets");
 
 	bool ret = true;

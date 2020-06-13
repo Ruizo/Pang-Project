@@ -10,6 +10,7 @@
 #include "SceneIntro.h"
 #include "worldMap.h"
 #include "SceneWin.h"
+#include "death.h"
 #include "SceneOver.h"
 
 
@@ -48,18 +49,19 @@ Application::Application()
 	modules[10] =   sceneLevel_4 =  new SceneLevel4(false);
 	modules[11] =   sceneLevel_5 =  new SceneLevel5(false);
 	modules[12] =   sceneLevel_6 =  new SceneLevel6(false);	//Gameplay scene starts disabled
-	modules[13] =   sceneOver =     new SceneOver(false);
-	modules[14] = sceneWin = new SceneWin(false);
-	modules[15] =	player =		new ModulePlayer(false);	//Player starts disabled
-	modules[16] =	particles =		new ModuleParticles(true);
-	modules[17] =	enemies =		new ModuleEnemies(false);	//Enemies start disabled
+	modules[13] = death = new Death(false);
+	modules[14] =   sceneOver =     new SceneOver(false);
+	modules[15] = sceneWin = new SceneWin(false);
+	modules[16] =	player =		new ModulePlayer(false);	//Player starts disabled
+	modules[17] =	particles =		new ModuleParticles(true);
+	modules[18] =	enemies =		new ModuleEnemies(false);	//Enemies start disabled
 
-	modules[18] =	collisions =	new ModuleCollisions(true);
-	modules[19] =	fade =			new ModuleFadeToBlack(true);
-	modules[20] =	fonts =			new ModuleFonts(true);
-	modules[21]	=	debugInfo =		new ModuleDebugInfo(true);
-	modules[22] = Boosters = new ModuleBoosters(false);
-	modules[23] =	render =		new ModuleRender(true);
+	modules[19] =	collisions =	new ModuleCollisions(true);
+	modules[20] =	fade =			new ModuleFadeToBlack(true);
+	modules[21] =	fonts =			new ModuleFonts(true);
+	modules[22]	=	debugInfo =		new ModuleDebugInfo(true);
+	modules[23] = Boosters = new ModuleBoosters(false);
+	modules[24] =	render =		new ModuleRender(true);
 }
 
 Application::~Application()

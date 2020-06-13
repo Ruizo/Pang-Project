@@ -26,6 +26,7 @@ bool SceneLevel1::Start()
 	LOG("Loading background assets");
 
 	bool ret = true;
+	App->player->lives = 3;
 
 	App->player->level1 = true;
 	App->player->level2 = false;
@@ -92,7 +93,7 @@ bool SceneLevel1::CleanUp()
 {
 	App->player->Disable();
 	App->enemies->Disable();
-	//App->sceneLevel_1->Disable();
+	App->sceneLevel_1->Disable();
 	App->collisions->CleanUp();
 
 	

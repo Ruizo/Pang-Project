@@ -81,7 +81,7 @@ bool ModuleBoosters::CleanUp()
 			Boosters[i] = nullptr;
 		}
 	}
-
+	
 	return true;
 }
 

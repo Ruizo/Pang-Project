@@ -50,7 +50,7 @@ public:
 
 	int shoots = 0;
 
-	int lives = 3;
+	uint lives = 3;
 
 	int tempDW = 0;
 
@@ -93,6 +93,7 @@ public:
 
 	// Font score index
 	uint score = 000;
+	uint totalscore = 0;
 	int scoreFont = -1;
 	char scoreText[10] = { "\0" };
 	bool debugGamepadInfo = false;

@@ -13,6 +13,7 @@
 #include "SceneLevel5.h"
 #include "SceneLevel6.h"
 #include "ModuleCollisions.h"
+#include "ModulePlayer.h"
 
 SceneOver::SceneOver(bool startEnabled) : Module(startEnabled)
 {
@@ -32,7 +33,7 @@ bool SceneOver::Start()
 	bool ret = true;
 
 	bgTexture = App->textures->Load("Assets/Sprites/Over.png");
-	App->audio->PlayMusic("Assets/Music/pornhubintro.mp3", 1.0f);
+
 
 	App->render->camera.x = 0;
 	App->render->camera.y = 0;
@@ -42,6 +43,7 @@ bool SceneOver::Start()
 
 Update_Status SceneOver::Update()
 {
+	App->player->score = 0;
 	if (App->input->keys[SDL_SCANCODE_SPACE] == Key_State::KEY_DOWN)
 	{			
 		App->fade->FadeToBlack(this, (Module*)App->sceneLevel_1, 90);		
