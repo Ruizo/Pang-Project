@@ -29,14 +29,6 @@ bool ModuleInput::Init()
 Update_Status ModuleInput::PreUpdate()
 {
 	//Read new SDL events, mostly from the window
-	SDL_Event event;
-	if (SDL_PollEvent(&event))
-	{
-		if (event.type == SDL_QUIT)	return Update_Status::UPDATE_STOP;
-	}
-
-	//Read all keyboard data and update our custom array
-	SDL_PumpEvents();
 	const Uint8* keyboard = SDL_GetKeyboardState(NULL);
 	for (int i = 0; i < MAX_KEYS; ++i)
 	{
@@ -46,6 +38,31 @@ Update_Status ModuleInput::PreUpdate()
 			keys[i] = (keys[i] == KEY_REPEAT || keys[i] == KEY_DOWN) ? KEY_UP : KEY_IDLE;
 	}
 
+	//Read new SDL events
+	SDL_Event event;
+	while (SDL_PollEvent(&event) != 0)
+	{
+		switch (event.type)
+		{
+		case(SDL_CONTROLLERDEVICEADDED):
+		{
+			HandleDeviceConnection(event.cdevice.which);
+			break;
+		}
+		case(SDL_CONTROLLERDEVICEREMOVED):
+		{
+			HandleDeviceRemoval(event.cdevice.which);
+			break;
+		}
+		case(SDL_QUIT):
+		{
+			return Update_Status::UPDATE_STOP;
+			break;
+		}
+		}
+	}
+
+	UpdateGamepadsInput();
 
 	return Update_Status::UPDATE_CONTINUE;
 }
