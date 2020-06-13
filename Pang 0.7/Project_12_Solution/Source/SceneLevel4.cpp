@@ -106,6 +106,8 @@ bool SceneLevel4::CleanUp()
 
 	App->player->Disable();
 	App->enemies->Disable();
+	App->sceneLevel_4->Disable();
+	App->collisions->CleanUp();
 
 	return true;
 }

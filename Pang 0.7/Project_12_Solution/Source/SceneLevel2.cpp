@@ -95,9 +95,9 @@ Update_Status SceneLevel2::PostUpdate()
 
 bool SceneLevel2::CleanUp()
 {
-	App->sceneLevel_2->Disable();
 	App->player->Disable();
 	App->enemies->Disable();
+	App->sceneLevel_2->Disable();	
 	App->collisions->CleanUp();
 	return true;
 }

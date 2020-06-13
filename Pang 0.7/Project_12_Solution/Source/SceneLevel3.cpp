@@ -99,6 +99,7 @@ bool SceneLevel3::CleanUp()
 
 	App->player->Disable();
 	App->enemies->Disable();
+	App->sceneLevel_3->Disable();
 	App->collisions->CleanUp();
 	return true;
 }

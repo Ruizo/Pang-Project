@@ -35,6 +35,7 @@ public:
 	// The scene sprite sheet loaded into an SDL_Texture
 	SDL_Texture* bgTexture = nullptr;
 
+	int c = 15;
 	int scoreFont = -1;
 	char scoreText[10] = { "\0" };
 };

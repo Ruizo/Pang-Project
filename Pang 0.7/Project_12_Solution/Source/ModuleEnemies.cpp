@@ -252,37 +252,46 @@ void ModuleEnemies::OnCollision(Collider* c1, Collider* c2)
 			}
 			enemies[i] = nullptr;
 			//1st Level
-			if (c == 15) {
+			if (c == 15 && App->player->level1 == true) {
 				App->sceneLevel_1->CleanUp();
 				App->player->start = true;
 				App->player->totalscore = App->player->score;
 				App->fade->FadeToBlack(this, (Module*)App->sceneLevel_2, 90);
 			}
-			if (c == 30)
+			if (c == 15 && App->player->level2 == true)
 			{
 				App->sceneLevel_2->CleanUp();
+				App->player->start = true;
 				App->fade->FadeToBlack(this, (Module*)App->sceneLevel_3, 90);
 				App->player->totalscore = App->player->score;
 			}
-			if (c == 48)
+			if (c == 18 && App->player->level3 == true)
 			{
 				App->sceneLevel_3->CleanUp();
+				App->player->start = true;
 				App->fade->FadeToBlack(this, (Module*)App->sceneLevel_4, 90);
+				App->player->totalscore = App->player->score;
 			}
-			if (c == 63)
+			if (c == 15 && App->player->level4 == true)
 			{
-				App->sceneLevel_4->Disable();
+				App->sceneLevel_4->CleanUp();
+				App->player->start = true;
 				App->fade->FadeToBlack(this, (Module*)App->sceneLevel_5, 90);
+				App->player->totalscore = App->player->score;
 			}
-			if (c == 85)
+			if (c == 22 && App->player->level5 == true)
 			{
-				App->sceneLevel_5->Disable();
+				App->sceneLevel_5->CleanUp();
+				App->player->start = true;
 				App->fade->FadeToBlack(this, (Module*)App->sceneLevel_6, 90);
+				App->player->totalscore = App->player->score;
 			}
-			if (c == 145)
+			if (c == 30 && App->player->level6 == true)
 			{
-				App->sceneLevel_6->Disable();
+				App->sceneLevel_6->CleanUp();
+				App->player->start = true;
 				App->fade->FadeToBlack(this, (Module*)App->sceneWin, 90);
+				App->player->totalscore = App->player->score;
 			}
 			break;
 		}

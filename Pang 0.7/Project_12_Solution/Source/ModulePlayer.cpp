@@ -62,7 +62,6 @@ ModulePlayer::ModulePlayer(bool startEnabled) : Module(startEnabled)
 	shootAnim.loop = false;
 	shootAnim.speed = 0.1f;
 
-	
 }
 
 ModulePlayer::~ModulePlayer()
@@ -77,6 +76,7 @@ bool ModulePlayer::Start()
 	if (start == true) {
 		LOG("Loading player textures");
 
+		livess = App->textures->Load("Assets/Sprites/lives.png");
 		
 
 		texture = App->textures->Load("Assets/Sprites/player.png");
@@ -87,6 +87,8 @@ bool ModulePlayer::Start()
 
 		position.x = 200;
 		position.y = 168;
+
+		
 
 		// TODO 4: Retrieve the player when playing a second time
 		if (destroyed == true)
@@ -347,6 +349,18 @@ Update_Status ModulePlayer::PostUpdate()
 	{
 		SDL_Rect rect = currentAnimation->GetCurrentFrame();
 		App->render->Blit(texture, position.x, position.y, &rect);
+		if (lives == 2) {
+			App->render->Blit(livess, livepo, 230, NULL);
+			App->render->Blit(livess, livepo + 17, 230, NULL);
+			App->render->Blit(livess, livepo + 34, 230, NULL);
+		}
+		else if (lives == 1) {
+			App->render->Blit(livess, livepo, 230, NULL);
+			App->render->Blit(livess, livepo + 17, 230, NULL);
+		}
+		else if (lives == 0) {
+			App->render->Blit(livess, livepo, 230, NULL);
+		}
 	}
 
 	// Draw UI (score) --------------------------------------

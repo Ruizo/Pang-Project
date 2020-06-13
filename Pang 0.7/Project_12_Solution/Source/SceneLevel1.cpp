@@ -26,7 +26,7 @@ bool SceneLevel1::Start()
 	LOG("Loading background assets");
 
 	bool ret = true;
-	App->player->lives = 3;
+	//App->player->lives = 3;
 
 	App->player->level1 = true;
 	App->player->level2 = false;
@@ -41,6 +41,7 @@ bool SceneLevel1::Start()
 	bgTexture = App->textures->Load("Assets/Sprites/background.png");
 	App->audio->PlayMusic("Assets/Music/stage1.ogg", 1.0f);
 
+
 	App->collisions->AddCollider({ 0, 0, 384, 9 }, Collider::Type::WALL1);		//UpWall
 	App->collisions->AddCollider({ 0, 200, 384, 9 }, Collider::Type::WALL2);	//DownWall
 	App->collisions->AddCollider({ 0, 8, 8, 192 }, Collider::Type::WALL3);	    //RightWall
@@ -48,10 +49,10 @@ bool SceneLevel1::Start()
 
 	// Enemies ---
 	App->enemies->AddEnemy(Enemy_Type::Big_Ball, 50, 80);
-	App->Boosters->AddBooster(Booster_Type::DOUBLEWIRE, 100, 80);
+	/*App->Boosters->AddBooster(Booster_Type::DOUBLEWIRE, 100, 80);
 	App->Boosters->AddBooster(Booster_Type::INVINCIBLE, 300, 80);
 	App->Boosters->AddBooster(Booster_Type::STOPTIME, 200, 80);
-	App->Boosters->AddBooster(Booster_Type::SLOWTIME, 250, 80);
+	App->Boosters->AddBooster(Booster_Type::SLOWTIME, 250, 80);*/
 
 	App->render->camera.x = 0;
 	App->render->camera.y = 0;

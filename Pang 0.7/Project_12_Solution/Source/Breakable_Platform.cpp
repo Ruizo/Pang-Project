@@ -35,8 +35,9 @@ BreakablePlatform::BreakablePlatform(int x, int y) : Enemy(x, y)
 
 	currentAnim = &flyAnim;
 
-	if (App->player->level2)
+	if (App->player->level2 || App->player->level3)
 	{
+
 		collider = App->collisions->AddCollider({ x, y, 31, 7 }, Collider::Type::BPLATFORM, (Module*)App->enemies);
 	}
 	if (App->player->level5)

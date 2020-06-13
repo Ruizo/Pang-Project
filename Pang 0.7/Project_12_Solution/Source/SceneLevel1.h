@@ -36,6 +36,7 @@ public:
 	SDL_Texture* bgTexture = nullptr;
 
 	uint score = 000;
+	int c = 0;
 	int scoreFont = -1;
 	char scoreText[10] = { "\0" };
 };

@@ -53,7 +53,9 @@ bool SceneLevel6::Start()
 	App->enemies->AddEnemy(Enemy_Type::Big_Ball, 120, 80);
 
 	//Platforms ---
-
+	App->enemies->AddEnemy(Enemy_Type::BreakablePlatform, SCREEN_WIDTH / 2 - 7, 60);
+	App->enemies->AddEnemy(Enemy_Type::BreakablePlatform, SCREEN_WIDTH / 4 - 7, 60);
+	App->enemies->AddEnemy(Enemy_Type::BreakablePlatform, 3 * SCREEN_WIDTH / 4 - 7, 60);
 
 	App->render->camera.x = 0;
 	App->render->camera.y = 0;
@@ -87,6 +89,7 @@ bool SceneLevel6::CleanUp()
 
 	App->player->Disable();
 	App->enemies->Disable();
-
+	App->sceneLevel_6->Disable();
+	App->collisions->CleanUp();
 	return true;
 }

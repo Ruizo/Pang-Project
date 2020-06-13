@@ -53,7 +53,11 @@ bool SceneLevel5::Start()
 	App->enemies->AddEnemy(Enemy_Type::Med_Ball, 50, 80);
 
 	//Platforms ---
-
+	App->enemies->AddEnemy(Enemy_Type::BreakablePlatform, SCREEN_WIDTH / 2 - 3, 50);
+	App->enemies->AddEnemy(Enemy_Type::BreakablePlatform, SCREEN_WIDTH / 4 - 3, 50);
+	App->enemies->AddEnemy(Enemy_Type::BreakablePlatform, SCREEN_WIDTH / 4 - 3, 73);
+	App->enemies->AddEnemy(Enemy_Type::BreakablePlatform, 3 * SCREEN_WIDTH / 4 - 3, 50);
+	App->enemies->AddEnemy(Enemy_Type::BreakablePlatform, 3 * SCREEN_WIDTH / 4 - 3, 73);
 
 	App->render->camera.x = 0;
 	App->render->camera.y = 0;
@@ -87,6 +91,7 @@ bool SceneLevel5::CleanUp()
 
 	App->player->Disable();
 	App->enemies->Disable();
-
+	App->sceneLevel_5->Disable();
+	App->collisions->CleanUp();
 	return true;
 }

@@ -50,7 +50,7 @@ public:
 
 	int shoots = 0;
 
-	uint lives = 3;
+	uint lives = 2;
 
 	int tempDW = 0;
 
@@ -71,6 +71,9 @@ public:
 	Animation rightAnim;
 	Animation leftAnim;
 	Animation shootAnim;
+
+
+	SDL_Texture* livess;
 
 	// The player's collider
 	Collider* collider = nullptr;
@@ -97,6 +100,8 @@ public:
 	int scoreFont = -1;
 	char scoreText[10] = { "\0" };
 	bool debugGamepadInfo = false;
+	int livepo = 10;
+
 };
 
 #endif //!__MODULE_PLAYER_H__
