@@ -28,7 +28,10 @@ bool ModuleParticles::Start()
 	LOG("Loading particles");
 	texture = App->textures->Load("Assets/Sprites/entities.png");
 
-	// Explosion particle
+	deathExplosion1.anim.PushBack({ 63, 1095, 28, 47 });
+	deathExplosion1.anim.PushBack({ 99, 1095, 28, 47 });
+	deathExplosion1.anim.PushBack({ 63, 1095, 28, 47 });
+
 	laser.anim.PushBack({ 8, 1146, 10, 11 });
 	laser.anim.PushBack({ 20, 1146, 10, 25 });
 	laser.anim.PushBack({ 8, 1146, 10, 39 });

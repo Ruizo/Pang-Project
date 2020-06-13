@@ -56,7 +56,10 @@ public:
 
 public:
 	//Template particle for an explosion
-	Particle explosion;
+	Particle deathExplosion1;
+	Particle deathExplosion2;
+	Particle deathExplosion3;
+	Particle deathExplosion4;
 
 	//Template particle for a laser
 	Particle laser;
