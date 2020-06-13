@@ -82,7 +82,10 @@ Update_Status SceneLevel5::PostUpdate()
 {
 	// Draw everything --------------------------------------
 	App->render->Blit(bgTexture, 0, 0, NULL);
-
+	App->fonts->BlitText(17, 215, scoreFont, "player_1");
+	App->fonts->BlitText(273, 215, scoreFont, "player_2");
+	App->fonts->BlitText(171, 215, scoreFont, "mt. keirin");
+	App->fonts->BlitText(160, 229, scoreFont, "2_2 stage");
 	return Update_Status::UPDATE_CONTINUE;
 }
 

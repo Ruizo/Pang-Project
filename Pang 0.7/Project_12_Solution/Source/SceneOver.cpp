@@ -55,6 +55,7 @@ Update_Status SceneOver::Update()
 	App->sceneLevel_4->Disable();
 	App->sceneLevel_5->Disable();
 	App->sceneLevel_6->Disable();
+	App->player->lives = 2;
 	
 	return Update_Status::UPDATE_CONTINUE;
 }

@@ -392,6 +392,7 @@ bool ModulePlayer::CleanUp()
 
 	App->fonts->UnLoad(scoreFont);
 	--totalFonts;
+	start = true;
 
 	return true;
 }
@@ -429,7 +430,7 @@ void ModulePlayer::OnCollision(Collider* c1, Collider* c2)
 				
 				}
 				else if (lives != 0) {
-					start = true;
+			
 					lives--;
 					if (level1 == true) {
 						App->player->CleanUp();
