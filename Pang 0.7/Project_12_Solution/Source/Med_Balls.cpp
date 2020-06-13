@@ -38,9 +38,9 @@ Med_Balls::Med_Balls(int x, int y) : Enemy(x, y)
 void Med_Balls::Update()
 {
 	if (App->Boosters->stoptime != true) {
-		if (B_Vy > 4.8f)
+		if (B_Vy > 4.5f)
 		{
-			B_Vy = 4.5f;
+			B_Vy = 4.3f;
 		}
 		position.x += B_Vx;
 		position.y -= (B_Vy + grav);

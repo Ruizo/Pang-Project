@@ -254,6 +254,7 @@ void ModuleEnemies::OnCollision(Collider* c1, Collider* c2)
 			//1st Level
 			if (c == 15) {
 				App->sceneLevel_1->CleanUp();
+				App->player->start = true;
 				App->fade->FadeToBlack(this, (Module*)App->sceneLevel_2, 90);
 			}
 			if (c == 30)
@@ -263,7 +264,7 @@ void ModuleEnemies::OnCollision(Collider* c1, Collider* c2)
 			}
 			if (c == 48)
 			{
-				App->sceneLevel_3->Disable();
+				App->sceneLevel_3->CleanUp();
 				App->fade->FadeToBlack(this, (Module*)App->sceneLevel_4, 90);
 			}
 			if (c == 63)

@@ -39,9 +39,9 @@ VSmall_Balls::VSmall_Balls(int x, int y) : Enemy(x, y)
 void VSmall_Balls::Update()
 {
 	if (App->Boosters->stoptime != true) {
-		if (B_Vy > 4.8f)
+		if (B_Vy > 4.3f)
 		{
-			B_Vy = 4.5f;
+			B_Vy = 4.0f;
 		}
 		position.x += B_Vx;
 		position.y -= (B_Vy + grav);

@@ -30,8 +30,8 @@ bool SceneLevel3::Start()
 	bool ret = true;
 
 	App->player->level1 = false;
-	App->player->level2 = true;
-	App->player->level3 = false;
+	App->player->level2 = false;
+	App->player->level3 = true;
 	App->player->level4 = false;
 	App->player->level5 = false;
 	App->player->level6 = false;

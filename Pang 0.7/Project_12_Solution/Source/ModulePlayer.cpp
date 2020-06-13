@@ -409,10 +409,11 @@ void ModulePlayer::OnCollision(Collider* c1, Collider* c2)
 			if (!debug) {
 				score = 0;
 				if (lives != 0) {
-					start = true;
+					/*start = true;
 					App->player->Disable();
 					App->enemies->Disable();
 					App->fade->FadeToBlack(this, (Module*)App->sceneOver, 90);
+				*/
 				}
 
 				/*else if (lives != 0) {

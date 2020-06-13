@@ -52,7 +52,7 @@ bool SceneLevel2::Start()
 	App->collisions->AddCollider({ 376, 9, 8, 192 }, Collider::Type::WALL4);	//LeftWall
 
 	// Enemies ---
-	//App->enemies->AddEnemy(Enemy_Type::Big_Ball, 50, 80);
+
 
 	App->enemies->AddEnemy(Enemy_Type::Big_Ball, 50, 80);
 
@@ -94,7 +94,7 @@ Update_Status SceneLevel2::PostUpdate()
 
 bool SceneLevel2::CleanUp()
 {
-
+	App->sceneLevel_2->Disable();
 	App->player->Disable();
 	App->enemies->Disable();
 	App->collisions->CleanUp();
