@@ -36,7 +36,7 @@ bool SceneLevel5::Start()
 	App->player->level5 = true;
 	App->player->level6 = false;
 
-
+	App->Boosters->CleanUp();
 
 
 	App->collisions->Enable();
@@ -53,7 +53,7 @@ bool SceneLevel5::Start()
 
 	// Enemies ---
 	App->enemies->AddEnemy(Enemy_Type::Big_Ball, 50, 90);
-	App->enemies->AddEnemy(Enemy_Type::Med_Ball, 50, 90);
+	App->enemies->AddEnemy(Enemy_Type::Med_Ball2, 190, 90);
 
 	//Platforms ---
 	App->enemies->AddEnemy(Enemy_Type::BreakablePlatform, SCREEN_WIDTH / 2 - 3, 50);

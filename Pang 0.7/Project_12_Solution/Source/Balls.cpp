@@ -111,9 +111,9 @@ void Balls::OnCollision(Collider* c2)
 	case 1:
 		App->Boosters->AddBooster(Booster_Type::DOUBLEWIRE, position.x, position.y);
 		break;
-	case 3:
+	/*case 3:
 		App->Boosters->AddBooster(Booster_Type::POWERWIRE, position.x, position.y);
-		break;
+		break;*/
 	case 4:
 		App->Boosters->AddBooster(Booster_Type::STOPTIME, position.x, position.y);
 		break;

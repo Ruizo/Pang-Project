@@ -38,6 +38,7 @@ bool SceneLevel4::Start()
 
 	App->player->doubleshot = false;
 	App->Boosters->slowtime = false;
+	App->Boosters->CleanUp();
 
 	App->collisions->Enable();
 	bgTexture = App->textures->Load("Assets/Sprites/background_4.png");
@@ -107,7 +108,7 @@ bool SceneLevel4::CleanUp()
 
 	App->player->Disable();
 	App->enemies->Disable();
-	App->Boosters->Disable();
+	App->Boosters->CleanUp();
 	App->sceneLevel_4->Disable();
 	App->collisions->CleanUp();
 

@@ -40,7 +40,7 @@ bool SceneLevel6::Start()
 	App->Boosters->slowtime = false;
 	App->player->powerwireB = false;
 	App->Boosters->stoptime = false;
-
+	App->Boosters->CleanUp();
 	App->collisions->Enable();
 	bgTexture = App->textures->Load("Assets/Sprites/background_6.png");
 	App->audio->PlayMusic("Assets/Music/stage2.ogg", 1.0f);

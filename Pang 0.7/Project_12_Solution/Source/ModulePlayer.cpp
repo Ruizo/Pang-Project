@@ -97,7 +97,13 @@ bool ModulePlayer::Start()
 		position.x = 200;
 		position.y = 168;
 
-		
+		doubleshot = false;
+		App->Boosters->slowtime = false;
+		powerwireB = false;
+		App->Boosters->stoptime = false;
+		VulcanB = false;
+		godmode = false;
+		doubleshot = false;
 
 		// TODO 4: Retrieve the player when playing a second time
 		if (destroyed == true)
@@ -218,14 +224,12 @@ Update_Status ModulePlayer::Update()
 				//position.y = 168;
 			}
 
-			if (godmode != true) {
 				collider->SetPos(position.x, position.y);
 
 				currentAnimation->Update();
 
-			}
-			else if (godmode = true) {
-				collider->SetPos(10000, 10000);
+			
+			if (godmodetime = true) {
 				tempIn++;
 				if (tempIn == 300) {
 					godmode = false;
@@ -350,13 +354,14 @@ Update_Status ModulePlayer::Update()
 				//position.y = 168;
 			}
 
-			collider->SetPos(10000, 10000);
+			collider->SetPos(position.x, position.y);
 
 			currentAnimation->Update();
 
 			if (App->input->keys[SDL_SCANCODE_H] == Key_State::KEY_DOWN && (debug))
 			{
 				debug = false;
+				position.y = 168;
 			}
 
 			if (App->input->keys[SDL_SCANCODE_1] == Key_State::KEY_DOWN && (debug))
@@ -420,42 +425,48 @@ Update_Status ModulePlayer::Update()
 				if (level1 == true) {
 					App->sceneLevel_1->CleanUp();
 					App->player->start = true;
+					shoot = true;
 					App->player->totalscore = App->player->score;
-					App->fade->FadeToBlack(this, (Module*)App->sceneLevel_2, 90);
+					App->fade->FadeToBlack(this, (Module*)App->sceneLevel_2, 50);
 				}
 				else if (level2 == true) {
 						App->sceneLevel_2->CleanUp();
 						App->player->start = true;
+						shoot = true;
 						App->player->totalscore = App->player->score;
-						App->fade->FadeToBlack(this, (Module*)App->sceneLevel_3, 90);
+						App->fade->FadeToBlack(this, (Module*)App->sceneLevel_3, 50);
 					
 				}
 				else if (level3 == true) {
 					App->sceneLevel_3->CleanUp();
 					App->player->start = true;
+					shoot = true;
 					App->player->totalscore = App->player->score;
-					App->fade->FadeToBlack(this, (Module*)App->sceneLevel_4, 90);
+					App->fade->FadeToBlack(this, (Module*)App->sceneLevel_4, 50);
 
 				}
 				else if (level4 == true) {
 					App->sceneLevel_4->CleanUp();
 					App->player->start = true;
+					shoot = true;
 					App->player->totalscore = App->player->score;
-					App->fade->FadeToBlack(this, (Module*)App->sceneLevel_5, 90);
+					App->fade->FadeToBlack(this, (Module*)App->sceneLevel_5, 50);
 
 				}
 				else if (level5 == true) {
 					App->sceneLevel_5->CleanUp();
 					App->player->start = true;
+					shoot = true;
 					App->player->totalscore = App->player->score;
-					App->fade->FadeToBlack(this, (Module*)App->sceneLevel_6, 90);
+					App->fade->FadeToBlack(this, (Module*)App->sceneLevel_6, 50);
 
 				}
 				else if (level6 == true) {
 					App->sceneLevel_6->CleanUp();
 					App->player->start = true;
+					shoot = true;
 					App->player->totalscore = App->player->score;
-					App->fade->FadeToBlack(this, (Module*)App->sceneWin, 90);
+					App->fade->FadeToBlack(this, (Module*)App->sceneWin, 50);
 				}
 
 			}
@@ -546,45 +557,49 @@ void ModulePlayer::OnCollision(Collider* c1, Collider* c2)
 		}
 		else if (c2->type == Collider::Type::ENEMY) {
 			if (!debug) {
-				
-				
-				if (lives == 0) {
-					dead = true;
-					collider->SetPos(10000, 10000);
-					App->fade->FadeToBlack(this, (Module*)App->sceneOver, 90);
-				
-				}
-				else if (lives != 0) {
-					
-					lives--;
-					dead = true;
-					if (level1 == true) {
+				if (godmode == false || debug == false) {
 
+					if (lives == 0) {
+						dead = true;
 						collider->SetPos(10000, 10000);
-						App->fade->FadeToBlack(this, (Module*)App->death, 90);
-					
+						App->fade->FadeToBlack(this, (Module*)App->sceneOver, 50);
+
 					}
-					else if (level2 == true) {
-						collider->SetPos(10000, 10000);
-						App->fade->FadeToBlack(this, (Module*)App->death, 5);
+					else if (lives != 0) {
+
+						lives--;
+						dead = true;
+						if (level1 == true) {
+
+							collider->SetPos(10000, 10000);
+							App->fade->FadeToBlack(this, (Module*)App->death, 50);
+
+						}
+						else if (level2 == true) {
+							collider->SetPos(10000, 10000);
+							App->fade->FadeToBlack(this, (Module*)App->death, 50);
+						}
+						else if (level3 == true) {
+							collider->SetPos(10000, 10000);
+							App->fade->FadeToBlack(this, (Module*)App->death, 50);
+						}
+						else if (level4 == true) {
+							collider->SetPos(10000, 10000);
+							App->fade->FadeToBlack(this, (Module*)App->death, 50);
+						}
+						else if (level5 == true) {
+							collider->SetPos(10000, 10000);
+							App->fade->FadeToBlack(this, (Module*)App->death, 50);
+						}
+						else if (level6 == true) {
+							collider->SetPos(10000, 10000);
+							App->fade->FadeToBlack(this, (Module*)App->death, 50);
+						}
+
 					}
-					else if (level3 == true) {
-						collider->SetPos(10000, 10000);
-						App->fade->FadeToBlack(this, (Module*)App->death, 5);
-					}
-					else if (level4 == true) {
-						collider->SetPos(10000, 10000);
-						App->fade->FadeToBlack(this, (Module*)App->death, 5);
-					}
-					else if (level5 == true) {
-						collider->SetPos(10000, 10000);
-						App->fade->FadeToBlack(this, (Module*)App->death, 5);
-					}
-					else if (level6 == true) {
-						collider->SetPos(10000, 10000);
-						App->fade->FadeToBlack(this, (Module*)App->death, 5);
-					}
-			
+				}
+				else {
+					godmodetime = true;
 				}
 
 

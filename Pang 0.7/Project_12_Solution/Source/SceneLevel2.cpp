@@ -40,7 +40,7 @@ bool SceneLevel2::Start()
 	App->player->doubleshot = false;
 
 	App->Boosters->slowtime = false;
-
+	App->Boosters->CleanUp();
 
 	App->collisions->Enable();
 	bgTexture = App->textures->Load("Assets/Sprites/background_2.png");

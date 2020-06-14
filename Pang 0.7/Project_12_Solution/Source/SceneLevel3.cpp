@@ -39,7 +39,7 @@ bool SceneLevel3::Start()
 	App->player->doubleshot = false;
 	App->Boosters->slowtime = false;
 
-
+	App->Boosters->CleanUp();
 
 	App->collisions->Enable();
 	bgTexture = App->textures->Load("Assets/Sprites/background_3.png");
@@ -53,7 +53,7 @@ bool SceneLevel3::Start()
 
 	/// Enemies ---
 	App->enemies->AddEnemy(Enemy_Type::Big_Ball, 50, 90);
-	App->enemies->AddEnemy(Enemy_Type::Small_Ball, 170, 90);
+	App->enemies->AddEnemy(Enemy_Type::Small_Ball, 120, 90);
 
 	//Platforms ---
 	App->enemies->AddEnemy(Enemy_Type::BreakablePlatform, SCREEN_WIDTH / 2 - 15, 70);

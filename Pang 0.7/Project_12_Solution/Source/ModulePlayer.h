@@ -87,6 +87,7 @@ public:
 	Collider* collider = nullptr;
 
 	boolean godmode = false;
+	bool godmodetime = false;
 	// A flag to detect when the player has been destroyed
 	bool destroyed = false;
 

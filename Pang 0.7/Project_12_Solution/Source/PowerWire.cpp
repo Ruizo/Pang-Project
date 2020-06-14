@@ -109,6 +109,7 @@ void PowerWire::OnCollision(Collider* c1, Collider* c2)
 
 				if (currentAnimation != &idleAnim) {
 
+
 					idleAnim.Reset();
 					currentAnimation = &idleAnim;
 				}

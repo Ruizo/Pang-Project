@@ -39,6 +39,7 @@ public:
 	int c = 0;
 	int scoreFont = -1;
 	char scoreText[10] = { "\0" };
+	int timer;
 };
 
 
