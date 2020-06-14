@@ -1,6 +1,4 @@
-# A2_Game_Prototype
-
-The Pang-Project By *Equipo TDM*
+# Pang Project by TDM Studios!
 
 ## Our github repository for this project:
 
@@ -27,15 +25,39 @@ The game is about the Buster Brothers: two guys who are requested to save the wo
 > Each level the player gets awarded an amount of points depending on the amount of time left (there is a countdown limit), the structures/bonus objects destroyed and, of course, the balls. Chaining same type/size balls results in a crescent streak of bonus points.
 
 ## Controls
-
+### NormalMode Keybinds
 Keyboard | Game
 :---:|:---
 **A**|Move/walk to the left
 **D**|Move/walk to the right
 **SPACE**|Shoot current weapon
 **W**|Move/walk through stairs up to a platform*
-**ESC**|Close game (cannot save progress at the moment)
+**ALT + F4**|Close game
+**G**|GodMode
 
 *Only when stairs appear at level.
+
+### GodMode KeyBinds
+Keyboard | Game
+:---:|:---
+**A**|Move/walk to the left
+**D**|Move/walk to the right
+**W**|Move/walk upwards
+**S**|Move/walk downwards
+**SPACE**|Shoot current weapon
+**ALT + F4**|Close game
+**H**|Normal mode
+**1**|Spawn 1 Big Ball
+**2**|Spawn 1 Medium Ball
+**3**|Spawn 1 Small Ball
+**K**| Delete all the enemies on screen
+**L**| Instant Lose
+**E**| Spawn Double Wire Booster
+**R**| Spawn Power Wire Booster
+**T**| Spawn Vulcan Booster
+**Y**| Spawn Dynamite Booster
+**U**| Spawn Slowtime Booster
+**I**| Spawn Stoptime Booster
+
 
 `Hi! We are a group of students in Developing and Design of Videogames and today we'll travel in time to bring you back one classic: PANG!`
