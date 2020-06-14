@@ -42,10 +42,10 @@ Application::Application()
 	modules[2] =	textures =		new ModuleTextures(true);
 	modules[3] =	audio =			new ModuleAudio(true);
 
-	modules[4] =	scenePreIntro =	new ScenePreIntro(true);
+	modules[4] =	scenePreIntro =	new ScenePreIntro(false);
 	modules[5] =    sceneIntro =    new SceneIntro(false);
 	modules[6] =    WorldMap =      new worldMap(false);
-	modules[7] =    sceneLevel_1 =  new SceneLevel1(false);
+	modules[7] =    sceneLevel_1 =  new SceneLevel1(true);
 	modules[8] =    sceneLevel_2 =  new SceneLevel2(false);
 	modules[9] =    sceneLevel_3 =  new SceneLevel3(false);
 	modules[10] =   sceneLevel_4 =  new SceneLevel4(false);

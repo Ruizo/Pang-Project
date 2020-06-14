@@ -267,7 +267,7 @@ Update_Status ModulePlayer::Update()
 
 		if (debug) {
 
-			if (App->input->keys[SDL_SCANCODE_W] == Key_State::KEY_REPEAT)
+			if ((App->input->keys[SDL_SCANCODE_W] == Key_State::KEY_REPEAT || pad.l_y < 0.0f))
 			{
 				position.y -= 5;
 				if (currentAnimation != &upAnim)
@@ -277,7 +277,7 @@ Update_Status ModulePlayer::Update()
 				}
 			}
 
-			if (App->input->keys[SDL_SCANCODE_S] == Key_State::KEY_REPEAT)
+			if (App->input->keys[SDL_SCANCODE_S] == Key_State::KEY_REPEAT || pad.l_y > 0.0f)
 			{
 				position.y += 5;
 				if (currentAnimation != &shootAnim)
@@ -287,7 +287,7 @@ Update_Status ModulePlayer::Update()
 				}
 			}
 
-			if (App->input->keys[SDL_SCANCODE_A] == Key_State::KEY_REPEAT)
+			if (App->input->keys[SDL_SCANCODE_A] == Key_State::KEY_REPEAT || pad.l_x < 0.0f)
 			{
 				position.x -= 5;
 				if (currentAnimation != &leftAnim)
@@ -296,7 +296,7 @@ Update_Status ModulePlayer::Update()
 					currentAnimation = &leftAnim;
 				}
 			}
-			if (App->input->keys[SDL_SCANCODE_D] == Key_State::KEY_REPEAT)
+			if (App->input->keys[SDL_SCANCODE_D] == Key_State::KEY_REPEAT || pad.l_x > 0.0f)
 			{
 				position.x += 5;
 				if (currentAnimation != &rightAnim)
@@ -343,7 +343,8 @@ Update_Status ModulePlayer::Update()
 			if (App->input->keys[SDL_SCANCODE_A] == Key_State::KEY_IDLE
 				&& App->input->keys[SDL_SCANCODE_D] == Key_State::KEY_IDLE
 				&& App->input->keys[SDL_SCANCODE_SPACE] == Key_State::KEY_IDLE
-				&& App->input->keys[SDL_SCANCODE_W] == Key_State::KEY_IDLE)
+				&& App->input->keys[SDL_SCANCODE_W] == Key_State::KEY_IDLE
+				&& pad.l_y == 0.0f && pad.l_x == 0.0f)
 			{
 				currentAnimation = &idleAnim;
 				//position.y = 168;

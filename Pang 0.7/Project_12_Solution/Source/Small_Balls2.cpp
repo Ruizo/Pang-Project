@@ -41,9 +41,10 @@ void Small_Balls2::Update()
 	if (App->player->dead != true) {
 		if (App->Boosters->slowtime != true) {
 			if (App->Boosters->stoptime != true) {
-				if (B_Vy > 4.4f)
+				grav = 0.1f;
+				if (B_Vy > 3.5f)
 				{
-					B_Vy = 4.2f;
+					B_Vy = 3.2f;
 				}
 				position.x -= B_Vx;
 				position.y -= (B_Vy + grav);

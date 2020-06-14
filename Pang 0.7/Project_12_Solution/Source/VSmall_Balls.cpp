@@ -41,9 +41,10 @@ void VSmall_Balls::Update()
 	if (App->player->dead != true) {
 		if (App->Boosters->slowtime != true) {
 			if (App->Boosters->stoptime != true) {
-				if (B_Vy > 4.3f)
+				grav = 0.1f;
+				if (B_Vy > 3.f)
 				{
-					B_Vy = 4.0f;
+					B_Vy = 2.7f;
 				}
 				position.x += B_Vx;
 				position.y -= (B_Vy + grav);
