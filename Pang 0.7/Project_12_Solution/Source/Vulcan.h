@@ -61,7 +61,7 @@ public:
 	Particle explosion;
 	int aug = 11;
 	//Template particle for a laser
-	Particle laser;
+	Particle vulcan;
 };
 
 #endif // !__Vulcan_H__

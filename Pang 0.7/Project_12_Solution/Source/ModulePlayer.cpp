@@ -173,7 +173,7 @@ Update_Status ModulePlayer::Update()
 
 				if (doubleshot == false) {
 					if (VulcanB == true) {
-						App->vulcanB->AddParticle(App->vulcanB->laser, position.x + 10, position.y + 24, Collider::Type::VULCAN);
+						App->vulcanB->AddParticle(App->vulcanB->vulcan, position.x + 10, position.y + 24, Collider::Type::VULCAN);
 						shoots++;
 						if (shoots == 2) {
 							shoot = false;
@@ -312,7 +312,7 @@ Update_Status ModulePlayer::Update()
 				}
 				if (doubleshot == false) {
 					if (VulcanB == true) {
-						App->vulcanB->AddParticle(App->vulcanB->laser, position.x + 10, position.y + 24, Collider::Type::VULCAN);
+						App->vulcanB->AddParticle(App->vulcanB->vulcan, position.x + 10, position.y + 24, Collider::Type::VULCAN);
 						shoot = false;
 					}
 					else {

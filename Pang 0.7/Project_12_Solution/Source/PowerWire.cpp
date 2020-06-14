@@ -47,11 +47,11 @@ bool PowerWire::Start()
 	powerwire.anim.PushBack({ 35, 1146, 10, 179 });
 	powerwire.anim.PushBack({ 48, 1146, 10, 193 });
 	powerwire.anim.PushBack({ 35, 1146, 10, 207 });
-	idleAnim.PushBack({ 60, 1146, 10, 200 });
-	idleAnim.loop = true;
+	idleAnim.PushBack({ 35, 1146, 10, 207 });
+
 	powerwire.anim.loop = false;
 	powerwire.speed.y = -3;
-	powerwire.lifetime = 100000;
+	powerwire.lifetime = 500;
 	powerwire.anim.speed = 0.21f;
 
 	return true;
@@ -106,8 +106,12 @@ void PowerWire::OnCollision(Collider* c1, Collider* c2)
 			}
 			else if (c2->type == Collider::Type::WALL1){
 				yes = true;
-				idleAnim.Reset();				
-				currentAnimation = &idleAnim;
+
+				if (currentAnimation != &idleAnim) {
+
+					idleAnim.Reset();
+					currentAnimation = &idleAnim;
+				}
 				powerwire.speed.y = 0;
 				break;
 

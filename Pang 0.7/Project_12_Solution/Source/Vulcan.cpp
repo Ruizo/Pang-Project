@@ -25,16 +25,16 @@ bool Vulcan::Start()
 	LOG("Loading particles");
 	texture = App->textures->Load("Assets/Sprites/entities.png");
 
-	//laser.anim.PushBack({ 100, 262, 4, 8 });
-	//laser.anim.PushBack({ 112, 262, 8, 8 });
-	//laser.anim.PushBack({ 128, 262, 12, 8 });
-	laser.anim.PushBack({ 148, 263, 15, 6 });
-	laser.anim.PushBack({ 172, 261, 14, 9 });
+	//vulcan.anim.PushBack({ 100, 262, 4, 8 });
+	//vulcan.anim.PushBack({ 112, 262, 8, 8 });
+	//vulcan.anim.PushBack({ 128, 262, 12, 8 });
+	vulcan.anim.PushBack({ 148, 263, 15, 6 });
+	vulcan.anim.PushBack({ 172, 261, 14, 9 });
 
-	laser.anim.loop;
-	laser.speed.y = -4;
-	laser.lifetime = 360;
-	laser.anim.speed = 0.11f;
+	vulcan.anim.loop;
+	vulcan.speed.y = -4;
+	vulcan.lifetime = 360;
+	vulcan.anim.speed = 0.11f;
 
 	return true;
 }

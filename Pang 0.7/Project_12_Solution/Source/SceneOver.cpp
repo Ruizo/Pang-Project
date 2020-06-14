@@ -47,10 +47,6 @@ bool SceneOver::Start()
 Update_Status SceneOver::Update()
 {
 	App->player->score = 0;
-	if (App->input->keys[SDL_SCANCODE_SPACE] == Key_State::KEY_DOWN)
-	{			
-		App->fade->FadeToBlack(this, (Module*)App->sceneLevel_1, 90);		
-	}
 	App->Boosters->CleanUp();
 	App->player->CleanUp();
 	App->enemies->CleanUp();
@@ -63,6 +59,12 @@ Update_Status SceneOver::Update()
 	App->sceneLevel_6->Disable();
 	App->player->lives = 2;
 	App->player->dead = false;
+
+ 	if (App->input->keys[SDL_SCANCODE_SPACE] == Key_State::KEY_DOWN)
+	{			
+		App->fade->FadeToBlack(this, (Module*)App->sceneLevel_1, 90);		
+	}
+	
 	
 	return Update_Status::UPDATE_CONTINUE;
 }
@@ -70,6 +72,7 @@ Update_Status SceneOver::Update()
 // Update: draw background
 Update_Status SceneOver::PostUpdate()
 {
+
 	// Draw everything --------------------------------------
 	App->render->Blit(bgTexture, 0, 0, NULL);
 	
