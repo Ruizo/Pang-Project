@@ -1,6 +1,6 @@
 # Pang Project by TDM Studios!
 
-We are a group of students in Developing and Design of Videogames in the university UPC CITM, Barcelona. 
+We are a group of students in Videogames Development and Design in the university UPC CITM, Barcelona, Spain. 
 Our objective is to bring you out memories with the making of a recreation of the Arcade game Pang!
 
 Don't forget to support us by watching this repository!
