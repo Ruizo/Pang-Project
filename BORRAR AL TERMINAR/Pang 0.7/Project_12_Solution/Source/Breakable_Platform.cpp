@@ -57,21 +57,6 @@ void BreakablePlatform::Update()
 
 void BreakablePlatform::OnCollision(Collider* c2)
 {
-	if (App->player->level2)
-	{
-		App->particles->AddParticle(App->particles->platformDeath1, position.x, position.y);
-	}
-	if (App->player->level3)
-	{
-		App->particles->AddParticle(App->particles->platformDeath2, position.x, position.y);
-	}
-	if (App->player->level5)
-	{
-		App->particles->AddParticle(App->particles->platformDeath3, position.x, position.y);
-	}
-	if (App->player->level6)
-	{
-		App->particles->AddParticle(App->particles->platformDeath4, position.x, position.y);
-	}
+	App->particles->AddParticle(App->particles->explosion, position.x, position.y);
 	App->audio->PlayFx(destroyedFx);
 }

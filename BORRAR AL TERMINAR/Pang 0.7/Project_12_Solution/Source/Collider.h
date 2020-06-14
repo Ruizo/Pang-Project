@@ -3,7 +3,7 @@
 
 #include "SDL/include/SDL_Rect.h"
 
-#define MAX_LISTENERS 5
+#define MAX_LISTENERS 100
 
 class Module;
 
@@ -27,6 +27,9 @@ struct Collider
 		BOOSTERS,
 		STAIRS,
 		ELEVATOR,
+		VULCAN,
+		POWERWIRE,
+		DYNAMITE,
 
 		MAX
 	};

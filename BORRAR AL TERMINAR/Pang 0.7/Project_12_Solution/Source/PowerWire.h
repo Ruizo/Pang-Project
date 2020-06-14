@@ -1,10 +1,10 @@
-#ifndef __MODULE_PARTICLES_H__
-#define __MODULE_PARTICLES_H__
+#ifndef __POWERWIRE_H__
+#define __POWERWIRE_H__
 
 #include "Module.h"
 
 #include "Globals.h"
-#include "Particle.h"
+#include "PowerWireP.h"
 #include "Collider.h"
 
 #define MAX_ACTIVE_PARTICLES 100
@@ -12,15 +12,15 @@
 struct SDL_Texture;
 struct Collider;
 
-class ModuleParticles : public Module
+class PowerWire : public Module
 {
 public:
 	// Constructor
 	// Initializes all the particles in the array to nullptr
-	ModuleParticles(bool startEnabled);
+	PowerWire(bool startEnabled);
 
 	//Destructor
-	~ModuleParticles();
+	~PowerWire();
 
 	// Called when the module is activated
 	// Loads the necessary textures for the particles
@@ -50,26 +50,31 @@ public:
 	// Param particle	- A template particle from which the new particle will be created
 	// Param x, y		- Position x,y in the screen (upper left axis)
 	// Param delay		- Delay time from the moment the function is called until the particle is displayed in screen
-	Particle* AddParticle(const Particle& particle, int x, int y, Collider::Type colliderType = Collider::Type::NONE, uint delay = 0);
+	PowerWireP* AddParticle(const PowerWireP& particle, int x, int y, Collider::Type colliderType = Collider::Type::NONE, uint delay = 0);
 
 	inline uint GetParticlesCount() const { return particlesCount; };
 
 public:
 	//Template particle for an explosion
-	Particle explosion;
+	PowerWireP explosion;
 
 	//Template particle for a laser
-	Particle laser;
+	PowerWireP powerwire;
+
+	bool yes = false;
+
+	Animation* currentAnimation = nullptr;
+	Animation idleAnim;
 
 private:
 	// Particles spritesheet loaded into an SDL Texture
 	SDL_Texture* texture = nullptr;
 
 	// An array to store and handle all the particles
-	Particle* particles[MAX_ACTIVE_PARTICLES] = { nullptr };
+	PowerWireP* particles[MAX_ACTIVE_PARTICLES] = { nullptr };
 
 	// Total amount of particles laoded into the array
 	uint particlesCount = 0;
 };
 
-#endif // !__MODULEPARTICLES_H__
+#endif // !__PowerWire_H__

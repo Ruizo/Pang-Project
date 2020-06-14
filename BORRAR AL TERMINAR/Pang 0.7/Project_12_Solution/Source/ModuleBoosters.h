@@ -12,7 +12,9 @@ enum class Booster_Type
 	INVINCIBLE,
 	STOPTIME,
 	SLOWTIME, 
-
+	VULCAN,
+	POWERWIRE,
+	DYNAMITE,
 
 };
 
@@ -71,6 +73,7 @@ public:
 	bool stoptime = false;
 
 	bool slowtime = false;
+
 
 	int tempSt = 0;
 	int tempSl = 0;

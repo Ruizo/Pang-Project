@@ -38,15 +38,38 @@ VSmall_Balls::VSmall_Balls(int x, int y) : Enemy(x, y)
 
 void VSmall_Balls::Update()
 {
-	if (App->Boosters->stoptime != true) {
-		if (B_Vy > 4.3f)
-		{
-			B_Vy = 4.0f;
+	if (App->Boosters->slowtime != true) {
+		if (App->Boosters->stoptime != true) {
+			if (B_Vy > 4.3f)
+			{
+				B_Vy = 4.0f;
+			}
+			position.x += B_Vx;
+			position.y -= (B_Vy + grav);
+			B_Vy -= grav;
 		}
-		position.x += B_Vx;
-		position.y -= (B_Vy + grav);
-		B_Vy -= grav;
 	}
+
+	if (App->Boosters->slowtime == true) {
+		if (App->Boosters->stoptime != true) {
+			App->Boosters->tempSl++;
+			grav = 0.025f;
+			if (B_Vy > 4.f)
+			{
+				B_Vy = 3.f;
+			}
+			position.x += B_Vx;
+			position.y -= (B_Vy + grav);
+			B_Vy -= grav;
+			if (App->Boosters->tempSl == 600) {
+				App->Boosters->slowtime = false;
+				App->Boosters->tempSl = 0;
+
+			}
+		}
+
+	}
+
 	if (App->Boosters->stoptime == true) {
 		App->Boosters->tempSt++;
 		if (App->Boosters->tempSt == 300) {
@@ -57,10 +80,4 @@ void VSmall_Balls::Update()
 	}
 
 	Enemy::Update();
-}
-
-void VSmall_Balls::OnCollision(Collider* c2)
-{
-	App->particles->AddParticle(App->particles->deathExplosion4, position.x, position.y);
-	App->audio->PlayFx(destroyedFx);
 }

@@ -1,5 +1,5 @@
-#ifndef __MODULE_PARTICLES_H__
-#define __MODULE_PARTICLES_H__
+#ifndef __VULCAN_H__
+#define __VULCAN_H__
 
 #include "Module.h"
 
@@ -12,23 +12,19 @@
 struct SDL_Texture;
 struct Collider;
 
-class ModuleParticles : public Module
+class Vulcan : public Module
 {
 public:
 	// Constructor
 	// Initializes all the particles in the array to nullptr
-	ModuleParticles(bool startEnabled);
+	Vulcan(bool startEnabled);
 
 	//Destructor
-	~ModuleParticles();
+	~Vulcan();
 
 	// Called when the module is activated
 	// Loads the necessary textures for the particles
 	bool Start() override;
-
-	// Called at the beginning of the application loop
-	// Removes all particles pending to delete
-	Update_Status PreUpdate() override;
 
 	// Called at the middle of the application loop
 	// Iterates all the particles and calls its Update()
@@ -50,16 +46,7 @@ public:
 	// Param particle	- A template particle from which the new particle will be created
 	// Param x, y		- Position x,y in the screen (upper left axis)
 	// Param delay		- Delay time from the moment the function is called until the particle is displayed in screen
-	Particle* AddParticle(const Particle& particle, int x, int y, Collider::Type colliderType = Collider::Type::NONE, uint delay = 0);
-
-	inline uint GetParticlesCount() const { return particlesCount; };
-
-public:
-	//Template particle for an explosion
-	Particle explosion;
-
-	//Template particle for a laser
-	Particle laser;
+	void AddParticle(const Particle& particle, int x, int y, Collider::Type colliderType = Collider::Type::NONE, uint delay = 0);
 
 private:
 	// Particles spritesheet loaded into an SDL Texture
@@ -68,8 +55,13 @@ private:
 	// An array to store and handle all the particles
 	Particle* particles[MAX_ACTIVE_PARTICLES] = { nullptr };
 
-	// Total amount of particles laoded into the array
-	uint particlesCount = 0;
+public:
+
+	//Template particle for an explosion
+	Particle explosion;
+	int aug = 11;
+	//Template particle for a laser
+	Particle laser;
 };
 
-#endif // !__MODULEPARTICLES_H__
+#endif // !__Vulcan_H__
