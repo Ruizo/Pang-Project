@@ -75,7 +75,7 @@ Here's a photo from the Team and their Github repositories.
 * Programmer, QA.
 
 # Latest version of Pang!
-[Download here!](https://github.com/Ruizo/Pang-Project/releases)
+[Download here!](https://github.com/Ruizo/Pang-Project/releases/download/1.0/TDM.Studios_Pang_v.1.0.zip)
 
 ## More!
 [Wiki](https://github.com/Ruizo/Pang-Project.wiki.git)
