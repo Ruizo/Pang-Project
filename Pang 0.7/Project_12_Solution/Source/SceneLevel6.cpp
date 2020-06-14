@@ -36,9 +36,10 @@ bool SceneLevel6::Start()
 	App->player->level5 = false;
 	App->player->level6 = true;
 
-
 	App->player->doubleshot = false;
 	App->Boosters->slowtime = false;
+	App->player->powerwireB = false;
+	App->Boosters->stoptime = false;
 
 	App->collisions->Enable();
 	bgTexture = App->textures->Load("Assets/Sprites/background_6.png");
