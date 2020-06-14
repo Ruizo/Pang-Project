@@ -415,6 +415,50 @@ Update_Status ModulePlayer::Update()
 
 				App->Boosters->AddBooster(Booster_Type::STOPTIME, position.x + 10, position.y);
 			}
+			if (App->input->keys[SDL_SCANCODE_P] == Key_State::KEY_DOWN && (debug))
+			{
+				if (level1 == true) {
+					App->sceneLevel_1->CleanUp();
+					App->player->start = true;
+					App->player->totalscore = App->player->score;
+					App->fade->FadeToBlack(this, (Module*)App->sceneLevel_2, 90);
+				}
+				else if (level2 == true) {
+						App->sceneLevel_2->CleanUp();
+						App->player->start = true;
+						App->player->totalscore = App->player->score;
+						App->fade->FadeToBlack(this, (Module*)App->sceneLevel_3, 90);
+					
+				}
+				else if (level3 == true) {
+					App->sceneLevel_3->CleanUp();
+					App->player->start = true;
+					App->player->totalscore = App->player->score;
+					App->fade->FadeToBlack(this, (Module*)App->sceneLevel_4, 90);
+
+				}
+				else if (level4 == true) {
+					App->sceneLevel_4->CleanUp();
+					App->player->start = true;
+					App->player->totalscore = App->player->score;
+					App->fade->FadeToBlack(this, (Module*)App->sceneLevel_5, 90);
+
+				}
+				else if (level5 == true) {
+					App->sceneLevel_5->CleanUp();
+					App->player->start = true;
+					App->player->totalscore = App->player->score;
+					App->fade->FadeToBlack(this, (Module*)App->sceneLevel_6, 90);
+
+				}
+				else if (level6 == true) {
+					App->sceneLevel_6->CleanUp();
+					App->player->start = true;
+					App->player->totalscore = App->player->score;
+					App->fade->FadeToBlack(this, (Module*)App->sceneWin, 90);
+				}
+
+			}
 		}
 
 	}
