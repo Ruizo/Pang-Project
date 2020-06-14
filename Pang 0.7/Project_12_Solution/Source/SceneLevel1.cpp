@@ -35,7 +35,7 @@ bool SceneLevel1::Start()
 	App->player->level5 = false;
 	App->player->level6 = false;
 
-
+	App->Boosters->slowtime = false;
 
 	App->collisions->Enable();
 	bgTexture = App->textures->Load("Assets/Sprites/background.png");
@@ -49,10 +49,10 @@ bool SceneLevel1::Start()
 
 	// Enemies ---
 	App->enemies->AddEnemy(Enemy_Type::Big_Ball, 50, 90);
-	App->Boosters->AddBooster(Booster_Type::DYNAMITE, 100, 80);
-	/*App->Boosters->AddBooster(Booster_Type::INVINCIBLE, 300, 80);
-	App->Boosters->AddBooster(Booster_Type::STOPTIME, 200, 80);
-	App->Boosters->AddBooster(Booster_Type::SLOWTIME, 250, 80);*/
+	//App->Boosters->AddBooster(Booster_Type::DYNAMITE, 100, 80);
+	//App->Boosters->AddBooster(Booster_Type::INVINCIBLE, 300, 80);
+	//App->Boosters->AddBooster(Booster_Type::STOPTIME, 200, 80);
+	App->Boosters->AddBooster(Booster_Type::SLOWTIME, 250, 80);
 
 	App->render->camera.x = 0;
 	App->render->camera.y = 0;

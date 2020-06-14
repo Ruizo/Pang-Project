@@ -48,7 +48,9 @@ void Balls::Update()
 
 
 		if (App->Boosters->slowtime != true) {
+
 			if (App->Boosters->stoptime != true) {
+				grav = 0.1f;
 				if (B_Vy > 4.8f)
 				{
 					B_Vy = 4.5f;
@@ -61,13 +63,20 @@ void Balls::Update()
 
 		if (App->Boosters->slowtime == true) {
 			if (App->Boosters->stoptime != true) {
-				if (B_Vy > 4.8f)
+				App->Boosters->tempSl++;
+				grav = 0.025f;
+				if (B_Vy > 4.f)
 				{
-					B_Vy = 4.5f;
+					B_Vy = 3.f;
 				}
 				position.x += B_Vx;
 				position.y -= (B_Vy + grav);
-				B_Vy = grav;
+				B_Vy -= grav;
+				if (App->Boosters->tempSl == 600) {
+					App->Boosters->slowtime = false;
+					App->Boosters->tempSl = 0;
+
+				}
 			}
 
 		}

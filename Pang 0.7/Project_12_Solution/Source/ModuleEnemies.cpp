@@ -202,8 +202,14 @@ void ModuleEnemies::OnCollision(Collider* c1, Collider* c2)
 		if (enemies[i] != nullptr && enemies[i]->GetCollider() == c1 && c2->type == Collider::Type::WALL2)//pared down
 		{
 
-			App->enemies->enemies[i]->position.y -= 10;
-			App->enemies->enemies[i]->B_Vy *= -1;
+			if (App->Boosters->slowtime == true) {
+				App->enemies->enemies[i]->position.y -= 10;
+				App->enemies->enemies[i]->B_Vy *= -0.6f;
+			}
+			else {
+				App->enemies->enemies[i]->position.y -= 10;
+				App->enemies->enemies[i]->B_Vy *= -1;
+			}
 		}
 		if (enemies[i] != nullptr && enemies[i]->GetCollider() == c1 && c2->type == Collider::Type::WALL3)//pared iz
 		{

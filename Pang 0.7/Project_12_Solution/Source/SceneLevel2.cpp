@@ -39,7 +39,7 @@ bool SceneLevel2::Start()
 
 	App->player->doubleshot = false;
 
-
+	App->Boosters->slowtime = false;
 
 
 	App->collisions->Enable();

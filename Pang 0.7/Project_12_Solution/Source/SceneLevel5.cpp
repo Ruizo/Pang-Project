@@ -48,6 +48,9 @@ bool SceneLevel5::Start()
 	App->collisions->AddCollider({ 0, 8, 8, 192 }, Collider::Type::WALL3);	    //RightWall
 	App->collisions->AddCollider({ 376, 9, 8, 192 }, Collider::Type::WALL4);	//LeftWall
 
+	App->player->doubleshot = false;
+	App->Boosters->slowtime = false;
+
 	// Enemies ---
 	App->enemies->AddEnemy(Enemy_Type::Big_Ball, 50, 90);
 	App->enemies->AddEnemy(Enemy_Type::Med_Ball, 50, 90);

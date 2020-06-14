@@ -39,14 +39,36 @@ void Med_Balls2::Update()
 {
 
 	if (App->player->dead != true) {
-		if (App->Boosters->stoptime != true) {
-			if (B_Vy > 4.5f)
-			{
-				B_Vy = 4.3f;
+		if (App->Boosters->slowtime != true) {
+			if (App->Boosters->stoptime != true) {
+				if (B_Vy > 4.5f)
+				{
+					B_Vy = 4.3f;
+				}
+				position.x -= B_Vx;
+				position.y -= (B_Vy + grav);
+				B_Vy -= grav;
 			}
-			position.x -= B_Vx;
-			position.y -= (B_Vy + grav);
-			B_Vy -= grav;
+		}
+
+		if (App->Boosters->slowtime == true) {
+			if (App->Boosters->stoptime != true) {
+				App->Boosters->tempSl++;
+				grav = 0.025f;
+				if (B_Vy > 4.f)
+				{
+					B_Vy = 3.f;
+				}
+				position.x -= B_Vx;
+				position.y -= (B_Vy + grav);
+				B_Vy -= grav;
+				if (App->Boosters->tempSl == 600) {
+					App->Boosters->slowtime = false;
+					App->Boosters->tempSl = 0;
+
+				}
+			}
+
 		}
 
 		if (App->Boosters->stoptime == true) {

@@ -37,7 +37,7 @@ bool SceneLevel3::Start()
 	App->player->level6 = false;
 
 	App->player->doubleshot = false;
-
+	App->Boosters->slowtime = false;
 
 
 
