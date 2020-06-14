@@ -39,6 +39,7 @@ The game is about the Buster Brothers: two guys who are requested to save the wo
 - 3 -> Spawn 1 Small Ball.
 - K -> Delete all the enemies on the screen.
 - L -> Lose instantly.
+- P -> Win instantly.
 - E -> Spawn Double Wire Booster.
 - R -> Spawn Power Wire Booster.
 - T -> Spawn Vulcan Booster.
