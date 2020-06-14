@@ -57,10 +57,13 @@ Here's a photo from the Team and their Github repositories.
 
 [Isaac Digón Donaire](https://github.com/isaac553876299)
 * QA & Buxfixing. Also helped coding some features.
+
 [Oriol Valverde Agramunt](https://github.com/Makinilla-maker)
 * Programmer, Buxfixing.
+
 [Ignasi Pardo Carbó](https://github.com/KuronoaScarlet)
 * Gameplay programmer, Art & Management.
+
 [Marc Ruiz Pastor](https://github.com/Ruizo)
 * Programmer, QA.
 
