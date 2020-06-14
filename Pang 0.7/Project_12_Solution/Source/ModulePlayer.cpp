@@ -257,6 +257,9 @@ Update_Status ModulePlayer::Update()
 		if (App->input->keys[SDL_SCANCODE_F2] == KEY_DOWN)
 			debugGamepadInfo = !debugGamepadInfo;
 
+		if (position.x >= 224 || position.x <= 161) {
+			stairs = false;
+		}
 
 
 		if (debug) {
@@ -463,6 +466,7 @@ void ModulePlayer::OnCollision(Collider* c1, Collider* c2)
 			if (position.y == 120) {
 				stairs = false;
 			}
+			
 		}
 		else if (c2->type == Collider::Type::ELEVATOR) {
 			position.y += 2;
