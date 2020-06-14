@@ -6,7 +6,12 @@
 ModuleInput::ModuleInput(bool startEnabled) : Module(startEnabled)
 {
 	name = "input";
+	for (uint i = 0; i < MAX_KEYS; ++i)
+		keys[i] = KEY_IDLE;
+
+	memset(&pads[0], 0, sizeof(GamePad) * MAX_PADS);
 }
+
 
 ModuleInput::~ModuleInput()
 {}
@@ -22,7 +27,17 @@ bool ModuleInput::Init()
 		LOG("SDL_EVENTS could not initialize! SDL_Error: %s\n", SDL_GetError());
 		ret = false;
 	}
+	if (SDL_InitSubSystem(SDL_INIT_GAMECONTROLLER) < 0)
+	{
+		LOG("SDL_INIT_GAMECONTROLLER could not initialize! SDL_Error: %s\n", SDL_GetError());
+		ret = false;
+	}
 
+	if (SDL_InitSubSystem(SDL_INIT_HAPTIC) < 0)
+	{
+		LOG("SDL_INIT_HAPTIC could not initialize! SDL_Error: %s\n", SDL_GetError());
+		ret = false;
+	}
 	return ret;
 }
 
@@ -71,7 +86,21 @@ bool ModuleInput::CleanUp()
 {
 	LOG("Quitting SDL input event subsystem");
 
+	// Stop rumble from all gamepads and deactivate SDL functionallity
+	for (uint i = 0; i < MAX_PADS; ++i)
+	{
+		if (pads[i].haptic != nullptr)
+		{
+			SDL_HapticStopAll(pads[i].haptic);
+			SDL_HapticClose(pads[i].haptic);
+		}
+		if (pads[i].controller != nullptr) SDL_GameControllerClose(pads[i].controller);
+	}
+
+	SDL_QuitSubSystem(SDL_INIT_HAPTIC);
+	SDL_QuitSubSystem(SDL_INIT_GAMECONTROLLER);
 	SDL_QuitSubSystem(SDL_INIT_EVENTS);
+
 	return true;
 }
 

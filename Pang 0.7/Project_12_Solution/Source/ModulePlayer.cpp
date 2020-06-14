@@ -69,6 +69,8 @@ ModulePlayer::ModulePlayer(bool startEnabled) : Module(startEnabled)
 	death.PushBack({ 88,145,40,29 });
 	death.loop = false;
 	death.speed = 0.1f;
+
+	shoot = true;
 }
 
 ModulePlayer::~ModulePlayer()
@@ -162,7 +164,7 @@ Update_Status ModulePlayer::Update()
 				}
 			}
 
-			if (App->input->keys[SDL_SCANCODE_SPACE] == Key_State::KEY_DOWN && (shoot) || pad.a == true)
+			if (App->input->keys[SDL_SCANCODE_SPACE] == Key_State::KEY_DOWN && (shoot) || pad.a == true && (shoot))
 			{
 
 				if (currentAnimation != &shootAnim)
@@ -209,7 +211,8 @@ Update_Status ModulePlayer::Update()
 			if (App->input->keys[SDL_SCANCODE_A] == Key_State::KEY_IDLE
 				&& App->input->keys[SDL_SCANCODE_D] == Key_State::KEY_IDLE
 				&& App->input->keys[SDL_SCANCODE_SPACE] == Key_State::KEY_IDLE
-				&& App->input->keys[SDL_SCANCODE_W] == Key_State::KEY_IDLE)
+				&& App->input->keys[SDL_SCANCODE_W] == Key_State::KEY_IDLE
+				&& pad.l_y == 0.0f && pad.l_x == 0.0f)
 			{
 				currentAnimation = &idleAnim;
 				//position.y = 168;
@@ -303,7 +306,7 @@ Update_Status ModulePlayer::Update()
 				}
 			}
 
-			if (App->input->keys[SDL_SCANCODE_SPACE] == Key_State::KEY_DOWN && (shoot))
+			if (App->input->keys[SDL_SCANCODE_SPACE] == Key_State::KEY_DOWN && (shoot)|| pad.a == true && (shoot))
 			{
 				if (currentAnimation != &shootAnim)
 				{
@@ -313,7 +316,10 @@ Update_Status ModulePlayer::Update()
 				if (doubleshot == false) {
 					if (VulcanB == true) {
 						App->vulcanB->AddParticle(App->vulcanB->vulcan, position.x + 10, position.y + 24, Collider::Type::VULCAN);
-						shoot = false;
+						shoots++;
+						if (shoots == 2) {
+							shoot = false;
+						}
 					}
 					else {
 						App->particles->AddParticle(App->particles->laser, position.x + 10, position.y + 24, Collider::Type::PLAYER_SHOT);
