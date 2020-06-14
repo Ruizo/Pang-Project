@@ -79,3 +79,4 @@ Here's a photo from the Team and their Github repositories.
 
 ## More!
 [Wiki](https://github.com/Ruizo/Pang-Project.wiki.git)
+[GitHub Page](https://github.com/Ruizo/Pang-Project)
