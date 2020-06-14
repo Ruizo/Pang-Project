@@ -33,7 +33,7 @@ bool SceneOver::Start()
 	bool ret = true;
 
 	bgTexture = App->textures->Load("Assets/Sprites/Over.png");
-
+	App->audio->PlayMusic("Assets/Music/game_over.wav", 1.0f);
 
 	App->render->camera.x = 0;
 	App->render->camera.y = 0;
@@ -48,7 +48,7 @@ Update_Status SceneOver::Update()
 	{			
 		App->fade->FadeToBlack(this, (Module*)App->sceneLevel_1, 90);		
 	}
-	App->collisions->Disable();
+	App->collisions->CleanUp();
 	App->sceneLevel_1->Disable();
 	App->sceneLevel_2->Disable();
 	App->sceneLevel_3->Disable();

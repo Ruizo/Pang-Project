@@ -66,6 +66,7 @@ bool SceneLevel2::Start()
 
 	App->player->Enable();
 	App->enemies->Enable();
+	App->Boosters->Enable();
 
 	char lookupTable[] = { "! @,_./0123456789$;< ?abcdefghijklmnopqrstuvwxyzA" };
 	scoreFont = App->fonts->Load("Assets/Fonts/rtype_font3.png", lookupTable, 2);
@@ -97,6 +98,7 @@ bool SceneLevel2::CleanUp()
 {
 	App->player->Disable();
 	App->enemies->Disable();
+	App->Boosters->Disable();
 	App->sceneLevel_2->Disable();	
 	App->collisions->CleanUp();
 	return true;

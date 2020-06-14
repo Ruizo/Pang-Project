@@ -38,8 +38,6 @@ void DoubleWire::Update()
 
 void DoubleWire::OnCollision(Collider* c2)
 {
-	App->particles->AddParticle(App->particles->explosion, position.x, position.y);
-	App->audio->PlayFx(destroyedFx);
 	if (c2->type == Collider::Type::PLAYER) {
 		powerup = true;
 		

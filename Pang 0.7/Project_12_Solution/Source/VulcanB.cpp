@@ -42,8 +42,7 @@ void VulcanB::Update()
 
 void VulcanB::OnCollision(Collider* c2)
 {
-	App->particles->AddParticle(App->particles->explosion, position.x, position.y);
-	App->audio->PlayFx(destroyedFx);
+
 	if (c2->type == Collider::Type::PLAYER) {
 		App->player->VulcanB = true;
 		App->vulcanB->Enable();

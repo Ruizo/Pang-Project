@@ -41,8 +41,7 @@ void StopTime::Update()
 
 void StopTime::OnCollision(Collider* c2)
 {
-	App->particles->AddParticle(App->particles->explosion, position.x, position.y);
-	App->audio->PlayFx(destroyedFx);
+
 	if (c2->type == Collider::Type::PLAYER) {
 		App->Boosters->stoptime = true;
 	}

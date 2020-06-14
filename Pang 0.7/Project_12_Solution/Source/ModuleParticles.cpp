@@ -29,8 +29,56 @@ bool ModuleParticles::Start()
 	texture = App->textures->Load("Assets/Sprites/entities.png");
 
 	deathExplosion1.anim.PushBack({ 63, 1095, 28, 47 });
-	deathExplosion1.anim.PushBack({ 99, 1095, 28, 47 });
-	deathExplosion1.anim.PushBack({ 63, 1095, 28, 47 });
+	deathExplosion1.anim.PushBack({ 99, 1095, 41, 47 });
+	deathExplosion1.anim.PushBack({ 148, 1095, 48, 48 });
+	deathExplosion1.lifetime = 18;
+	deathExplosion1.anim.speed = 0.15f;
+
+	deathExplosion2.anim.PushBack({ 47, 1047, 19, 14 });
+	deathExplosion2.anim.PushBack({ 75, 1044, 26, 25 });
+	deathExplosion2.anim.PushBack({ 110, 1042, 31, 29 });
+	deathExplosion2.lifetime = 18;
+	deathExplosion2.anim.speed = 0.15f;
+
+	deathExplosion3.anim.PushBack({ 31, 1006, 8, 8 });
+	deathExplosion3.anim.PushBack({ 48, 1002, 14, 10 });
+	deathExplosion3.anim.PushBack({ 71, 1002, 15, 16 });
+	deathExplosion3.lifetime = 18;
+	deathExplosion3.anim.speed = 0.15f;
+
+	deathExplosion4.anim.PushBack({ 7, 971, 4, 4 });
+	deathExplosion4.anim.PushBack({ 20, 971, 6, 5 });
+	deathExplosion4.anim.PushBack({ 35, 970, 9, 8 });
+	deathExplosion4.lifetime = 18;
+	deathExplosion4.anim.speed = 0.15f;
+
+	platformDeath1.anim.PushBack({ 48, 619, 31, 7 });
+	platformDeath1.anim.PushBack({ 88, 619, 31, 7 });
+	platformDeath1.anim.PushBack({ 128, 619, 31, 7 });
+	platformDeath1.anim.PushBack({ 166, 619, 31, 7 });
+	platformDeath1.lifetime = 18;
+	platformDeath1.anim.speed = 0.15f;
+
+	platformDeath2.anim.PushBack({ 49, 795, 31, 7 });
+	platformDeath2.anim.PushBack({ 89, 795, 31, 7 });
+	platformDeath2.anim.PushBack({ 129, 795, 31, 7 });
+	platformDeath2.anim.PushBack({ 167, 795, 31, 7 });
+	platformDeath2.lifetime = 18;
+	platformDeath2.anim.speed = 0.15f;
+
+	platformDeath3.anim.PushBack({ 24, 475, 7, 23 });
+	platformDeath3.anim.PushBack({ 40, 475, 7, 23 });
+	platformDeath3.anim.PushBack({ 56, 475, 7, 23 });
+	platformDeath3.anim.PushBack({ 71, 475, 7, 23 });
+	platformDeath3.lifetime = 18;
+	platformDeath3.anim.speed = 0.15f;
+
+	platformDeath4.anim.PushBack({ 33, 731, 15, 7 });
+	platformDeath4.anim.PushBack({ 57, 731, 15, 7 });
+	platformDeath4.anim.PushBack({ 81, 731, 15, 7 });
+	platformDeath4.anim.PushBack({ 101, 731, 15, 7 });
+	platformDeath4.lifetime = 18;
+	platformDeath4.anim.speed = 0.15f;
 
 	laser.anim.PushBack({ 8, 1146, 10, 11 });
 	laser.anim.PushBack({ 20, 1146, 10, 25 });
@@ -165,7 +213,7 @@ Particle* ModuleParticles::AddParticle(const Particle& particle, int x, int y, C
 			p->position.y = y;
 
 			//Adding the particle's collider
-			if (colliderType != Collider::Type::NONE && (App->player->dynamite == false)) 
+			/*if (colliderType != Collider::Type::NONE && (App->player->dynamite == false)) 
 			{
 				p->collider = App->collisions->AddCollider({ 0, 0, 10, 11 }, colliderType, this);
 				particles[i] = p;
@@ -177,9 +225,16 @@ Particle* ModuleParticles::AddParticle(const Particle& particle, int x, int y, C
 				App->player->dynamite = false;
 				particles[i] = p;
 				break;
-			}
-			
+			}*/
+			//Adding the particle's collider
+			if (colliderType != Collider::Type::NONE)
+				p->collider = App->collisions->AddCollider({ 0, 0, 10, 11 }, colliderType, this);
+			particles[i] = p;
+			break;
+				
 		}
+			
+		
 	}
 
 	return newParticle;

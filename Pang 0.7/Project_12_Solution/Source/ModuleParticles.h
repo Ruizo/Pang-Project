@@ -60,6 +60,10 @@ public:
 	Particle deathExplosion2;
 	Particle deathExplosion3;
 	Particle deathExplosion4;
+	Particle platformDeath1;
+	Particle platformDeath2;
+	Particle platformDeath3;
+	Particle platformDeath4;
 
 	//Template particle for a laser
 	Particle laser;

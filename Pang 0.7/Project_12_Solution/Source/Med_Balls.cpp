@@ -60,7 +60,7 @@ void Med_Balls::Update()
 
 void Med_Balls::OnCollision(Collider* c2)
 {
-	App->particles->AddParticle(App->particles->explosion, position.x, position.y);
+	App->particles->AddParticle(App->particles->deathExplosion2, position.x - 3, position.y - 2);
 	App->audio->PlayFx(destroyedFx);
 	if (c2->type == Collider::Type::PLAYER_SHOT || c2->type == Collider::Type::VULCAN || c2->type == Collider::Type::POWERWIRE) {
 		App->enemies->AddEnemy(Enemy_Type::Small_Ball, position.x + 10, position.y);

@@ -41,7 +41,7 @@ bool SceneLevel4::Start()
 
 	App->collisions->Enable();
 	bgTexture = App->textures->Load("Assets/Sprites/background_4.png");
-	App->audio->PlayMusic("Assets/Music/stage1.ogg", 1.0f);
+	App->audio->PlayMusic("Assets/Music/stage2.ogg", 1.0f);
 
 	App->collisions->AddCollider({ 0, 0, 384, 9 }, Collider::Type::WALL1);		//UpWall
 	App->collisions->AddCollider({ 0, 200, 384, 9 }, Collider::Type::WALL2);	//DownWall
@@ -74,6 +74,7 @@ bool SceneLevel4::Start()
 
 	App->player->Enable();
 	App->enemies->Enable();
+	App->Boosters->Enable();
 
 	char lookupTable[] = { "! @,_./0123456789$;< ?abcdefghijklmnopqrstuvwxyzA" };
 	scoreFont = App->fonts->Load("Assets/Fonts/rtype_font3.png", lookupTable, 2);
@@ -106,6 +107,7 @@ bool SceneLevel4::CleanUp()
 
 	App->player->Disable();
 	App->enemies->Disable();
+	App->Boosters->Disable();
 	App->sceneLevel_4->Disable();
 	App->collisions->CleanUp();
 

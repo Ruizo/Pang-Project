@@ -42,6 +42,4 @@ void Booster::Draw()
 
 void Booster::OnCollision(Collider* collider)
 {
-	/*App->particles->AddParticle(App->particles->explosion, position.x, position.y);
-	App->audio->PlayFx(destroyedFx);*/
 }

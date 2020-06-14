@@ -100,7 +100,6 @@ bool ModulePlayer::Start()
 		}
 
 		collider = App->collisions->AddCollider({ position.x, position.y, 30, 32 }, Collider::Type::PLAYER, this);
-		//App->live->AddParticle(App->live->Plife, 13, 224, Collider::Type::NONE);
 		++activeColliders; ++totalColliders;
 
 		char lookupTable[] = { "! @,_./0123456789$;< ?abcdefghijklmnopqrstuvwxyz" };

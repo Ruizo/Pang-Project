@@ -94,6 +94,7 @@ bool SceneLevel1::CleanUp()
 {
 	App->player->Disable();
 	App->enemies->Disable();
+	App->Boosters->Disable();
 	App->sceneLevel_1->Disable();
 	App->collisions->CleanUp();
 
