@@ -58,6 +58,7 @@ The game is about the Buster Brothers: two guys who are requested to save the wo
 
 # The TDM Studios Team:
 Here's a photo from the Team and their Github repositories. 
+
 ![](https://i.imgur.com/akIiQUz.jpg)
 
 [Isaac Digón Donaire](https://github.com/isaac553876299)
