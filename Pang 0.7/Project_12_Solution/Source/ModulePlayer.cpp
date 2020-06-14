@@ -393,6 +393,21 @@ Update_Status ModulePlayer::Update()
 
 				App->Boosters->AddBooster(Booster_Type::VULCAN, position.x + 10, position.y);
 			}
+			if (App->input->keys[SDL_SCANCODE_Y] == Key_State::KEY_DOWN && (debug))
+			{
+
+				App->Boosters->AddBooster(Booster_Type::DYNAMITE, position.x + 10, position.y);
+			}
+			if (App->input->keys[SDL_SCANCODE_U] == Key_State::KEY_DOWN && (debug))
+			{
+
+				App->Boosters->AddBooster(Booster_Type::SLOWTIME, position.x + 10, position.y);
+			}
+			if (App->input->keys[SDL_SCANCODE_I] == Key_State::KEY_DOWN && (debug))
+			{
+
+				App->Boosters->AddBooster(Booster_Type::STOPTIME, position.x + 10, position.y);
+			}
 		}
 
 	}
