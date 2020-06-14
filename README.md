@@ -1,20 +1,11 @@
 # Pang Project by TDM Studios!
 
-## Our github repository for this project:
-
-[Pang-Project](https://github.com/Ruizo/Pang-Project)
-
-## Team members:
-
-* [Isaac Digón Donaire](https://github.com/isaac553876299)
-* [Oriol Valverde Agramunt](https://github.com/Makinilla-maker)
-* [Ignasi Pardo Carbó](https://github.com/KuronoaScarlet)
-* [Marc Ruiz Pastor](https://github.com/Ruizo)
+Hi! We are a group of students in Developing and Design of Videogames in the university UPC CITM, Barcelona. 
+Our objective is to bring you out memories with the making of a recreation of the Arcade game Pang!
 
 ## Description of the game:
 
 The game is about the Buster Brothers: two guys who are requested to save the world from the terrifying threat that a bunch of bouncing baloons are, frightening and destroying several Earth's landmarks. The adventure will take you and our two heroes from the Mt. Fuji to Barcelona, Taj Mahal, and more iconical Earth's locations.
-
 
 ## How to play and controls:
 
@@ -26,38 +17,52 @@ The game is about the Buster Brothers: two guys who are requested to save the wo
 
 ## Controls
 ### NormalMode Keybinds
-Keyboard | Game
-:---:|:---
-**A**|Move/walk to the left
-**D**|Move/walk to the right
-**SPACE**|Shoot current weapon
-**W**|Move/walk through stairs up to a platform*
-**ALT + F4**|Close game
-**G**|GodMode
-
-*Only when stairs appear at level.
+```
+- W A S D -> Movement (Up, Left, Down, Right)
+- Space -> Shoot current weapon.
+- ALT + F4 -> Close the Game.
+- G -> Initiate God Mode.
+- H -> Return to Normal Mode.
+```
 
 ### GodMode KeyBinds
-Keyboard | Game
-:---:|:---
-**A**|Move/walk to the left
-**D**|Move/walk to the right
-**W**|Move/walk upwards
-**S**|Move/walk downwards
-**SPACE**|Shoot current weapon
-**ALT + F4**|Close game
-**H**|Normal mode
-**1**|Spawn 1 Big Ball
-**2**|Spawn 1 Medium Ball
-**3**|Spawn 1 Small Ball
-**K**| Delete all the enemies on screen
-**L**| Instant Lose
-**E**| Spawn Double Wire Booster
-**R**| Spawn Power Wire Booster
-**T**| Spawn Vulcan Booster
-**Y**| Spawn Dynamite Booster
-**U**| Spawn Slowtime Booster
-**I**| Spawn Stoptime Booster
+```
+- W A S D -> Movement (Up, Left, Down, Right)
+- Space -> Shoot current weapon.
+- ALT + F4 -> Close the Game.
+- H -> Return to Normal Mode.
+- 1 -> Spawn 1 Big Ball.
+- 2 -> Spawn 1 Medium Ball.
+- 3 -> Spawn 1 Small Ball.
+- K -> Delete all the enemies on the screen.
+- L -> Lose instantly.
+- E -> Spawn Double Wire Booster.
+- R -> Spawn Power Wire Booster.
+- T -> Spawn Vulcan Booster.
+- Y -> Spawn Dynamite Booster.
+- U -> Spawn Slowtime Booster.
+- I -> Spawn Stoptime Booster.
+```
+### Developer KeyBinds
+```
+- F1 -> Show Colission Boxes.
+- F2 -> Show all parameters related to Memory.
+- F3 -> Show active modules.
+```
+# Gameplay demonstration video!
 
+# The TDM Studios Team:
+Here's a photo from the Team and their Github repositories. 
+![](https://i.imgur.com/akIiQUz.jpg)
 
-`Hi! We are a group of students in Developing and Design of Videogames and today we'll travel in time to bring you back one classic: PANG!`
+[Isaac Digón Donaire](https://github.com/isaac553876299)
+* QA & Buxfixing. Also helped coding some features.
+[Oriol Valverde Agramunt](https://github.com/Makinilla-maker)
+* Programmer, Buxfixing.
+[Ignasi Pardo Carbó](https://github.com/KuronoaScarlet)
+* Gameplay programmer, Art & Management.
+[Marc Ruiz Pastor](https://github.com/Ruizo)
+* Programmer, QA.
+
+# Latest version of Pang!
+[Download here!](https://github.com/Ruizo/Pang-Project/releases)
