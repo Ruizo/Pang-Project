@@ -14,6 +14,9 @@
 #include "SceneLevel6.h"
 #include "ModuleCollisions.h"
 #include "ModulePlayer.h"
+#include "ModuleEnemies.h"
+#include "ModuleBoosters.h"
+
 
 SceneOver::SceneOver(bool startEnabled) : Module(startEnabled)
 {
@@ -48,6 +51,9 @@ Update_Status SceneOver::Update()
 	{			
 		App->fade->FadeToBlack(this, (Module*)App->sceneLevel_1, 90);		
 	}
+	App->Boosters->CleanUp();
+	App->player->CleanUp();
+	App->enemies->CleanUp();
 	App->collisions->CleanUp();
 	App->sceneLevel_1->Disable();
 	App->sceneLevel_2->Disable();
@@ -56,6 +62,7 @@ Update_Status SceneOver::Update()
 	App->sceneLevel_5->Disable();
 	App->sceneLevel_6->Disable();
 	App->player->lives = 2;
+	App->player->dead = false;
 	
 	return Update_Status::UPDATE_CONTINUE;
 }

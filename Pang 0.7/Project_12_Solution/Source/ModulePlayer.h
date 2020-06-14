@@ -61,6 +61,10 @@ public:
 	bool stairs = false;
 
 	bool start = true;
+
+	bool dead = false;
+
+	int tempdeath = 0;
 	
 	// The pointer to the current player animation
 	// It will be switched depending on the player's movement direction
@@ -73,6 +77,8 @@ public:
 	Animation rightAnim;
 	Animation leftAnim;
 	Animation shootAnim;
+	Animation death;
+
 
 
 	SDL_Texture* livess;

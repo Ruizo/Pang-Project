@@ -38,22 +38,27 @@ VSmall_Balls2::VSmall_Balls2(int x, int y) : Enemy(x, y)
 
 void VSmall_Balls2::Update()
 {
-	if (App->Boosters->stoptime != true) {
-		if (B_Vy > 4.3f)
-		{
-			B_Vy = 4.0f;
+	if (App->player->dead != true) {
+		if (App->Boosters->stoptime != true) {
+			if (B_Vy > 4.3f)
+			{
+				B_Vy = 4.0f;
+			}
+			position.x -= B_Vx;
+			position.y -= (B_Vy + grav);
+			B_Vy -= grav;
 		}
-		position.x -= B_Vx;
-		position.y -= (B_Vy + grav);
-		B_Vy -= grav;
-	}
 
-	if (App->Boosters->stoptime == true) {
-		App->Boosters->tempSt++;
-		if (App->Boosters->tempSt == 300) {
-			App->Boosters->stoptime = false;
-			App->Boosters->tempSt = 0;
+		if (App->Boosters->stoptime == true) {
+			App->Boosters->tempSt++;
+			if (App->Boosters->tempSt == 300) {
+				App->Boosters->stoptime = false;
+				App->Boosters->tempSt = 0;
+			}
+
 		}
+	}
+	else {
 
 	}
 

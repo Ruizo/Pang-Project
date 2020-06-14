@@ -40,32 +40,39 @@ Balls::Balls(int x, int y) : Enemy(x, y)
 
 void Balls::Update()
 {
-	if (App->Boosters->slowtime != true) {
-		if (App->Boosters->stoptime != true) {
-			if (B_Vy > 4.8f)
-			{
-				B_Vy = 4.5f;
-			}
-			position.x += B_Vx;
-			position.y -= (B_Vy + grav);
-			B_Vy -= grav;
-		}
-	}
 
-	if (App->Boosters->slowtime == true) {
-		if (App->Boosters->stoptime != true) {
-			if (B_Vy > 4.8f)
-			{
-				B_Vy = 4.5f;
+	if (App->player->dead != true) {
+
+
+
+
+
+		if (App->Boosters->slowtime != true) {
+			if (App->Boosters->stoptime != true) {
+				if (B_Vy > 4.8f)
+				{
+					B_Vy = 4.5f;
+				}
+				position.x += B_Vx;
+				position.y -= (B_Vy + grav);
+				B_Vy -= grav;
 			}
-			position.x += B_Vx;
-			position.y -= (B_Vy + grav);
-			B_Vy = grav;
 		}
-		
-	}
-	
-	if (App->Boosters->stoptime == true) {
+
+		if (App->Boosters->slowtime == true) {
+			if (App->Boosters->stoptime != true) {
+				if (B_Vy > 4.8f)
+				{
+					B_Vy = 4.5f;
+				}
+				position.x += B_Vx;
+				position.y -= (B_Vy + grav);
+				B_Vy = grav;
+			}
+
+		}
+
+		if (App->Boosters->stoptime == true) {
 			App->Boosters->tempSt++;
 			if (App->Boosters->tempSt == 300) {
 				App->Boosters->stoptime = false;
@@ -73,6 +80,11 @@ void Balls::Update()
 			}
 
 		}
+	}
+	else {
+
+	}
+	
 
 	
 	// Call to the base class. It must be called at the end
