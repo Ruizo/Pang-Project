@@ -380,6 +380,11 @@ void ModuleCollisions::DebugDraw()
 		case Collider::Type::DYNAMITE:
 			App->render->DrawQuad(colliders[i]->rect, 255, 0, 0, alpha);
 			break;
+		
+		case Collider::Type::ELEVATOR:
+			App->render->DrawQuad(colliders[i]->rect, 69, 69, 69, alpha);
+			break;
+			
 		}
 	}
 }

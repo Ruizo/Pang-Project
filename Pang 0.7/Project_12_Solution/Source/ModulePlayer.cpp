@@ -465,6 +465,7 @@ void ModulePlayer::OnCollision(Collider* c1, Collider* c2)
 			}
 		}
 		else if (c2->type == Collider::Type::ELEVATOR) {
+			stairs = false;
 			position.y += 2;
 		}
 		else if (c2->type == Collider::Type::NONE) {
