@@ -265,7 +265,7 @@ void ModuleEnemies::OnCollision(Collider* c1, Collider* c2)
 				App->player->start = true;
 				App->player->totalscore = App->player->score;
 				App->Boosters->CleanUp();
-				App->fade->FadeToBlack(this, (Module*)App->sceneLevel_4, 90);
+				App->fade->FadeToBlack(this, (Module*)App->sceneLevel_2, 90);
 			}
 			if (c == 15 && App->player->level2 == true)
 			{
