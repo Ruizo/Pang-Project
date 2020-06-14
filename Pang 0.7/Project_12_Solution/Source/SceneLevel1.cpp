@@ -48,7 +48,7 @@ bool SceneLevel1::Start()
 	App->collisions->AddCollider({ 376, 9, 8, 192 }, Collider::Type::WALL4);	//LeftWall
 
 	// Enemies ---
-	App->enemies->AddEnemy(Enemy_Type::Big_Ball, 50, 80);
+	App->enemies->AddEnemy(Enemy_Type::Big_Ball, 50, 90);
 	App->Boosters->AddBooster(Booster_Type::DYNAMITE, 100, 80);
 	/*App->Boosters->AddBooster(Booster_Type::INVINCIBLE, 300, 80);
 	App->Boosters->AddBooster(Booster_Type::STOPTIME, 200, 80);

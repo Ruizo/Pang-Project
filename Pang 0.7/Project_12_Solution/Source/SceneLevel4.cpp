@@ -65,7 +65,7 @@ bool SceneLevel4::Start()
 
 
 	// Enemies ---
-	App->enemies->AddEnemy(Enemy_Type::Big_Ball, 50, 80);
+	App->enemies->AddEnemy(Enemy_Type::Big_Ball, 50, 90);
 
 	//Platforms ---
 

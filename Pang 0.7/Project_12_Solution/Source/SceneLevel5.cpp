@@ -49,8 +49,8 @@ bool SceneLevel5::Start()
 	App->collisions->AddCollider({ 376, 9, 8, 192 }, Collider::Type::WALL4);	//LeftWall
 
 	// Enemies ---
-	App->enemies->AddEnemy(Enemy_Type::Big_Ball, 50, 80);
-	App->enemies->AddEnemy(Enemy_Type::Med_Ball, 50, 80);
+	App->enemies->AddEnemy(Enemy_Type::Big_Ball, 50, 90);
+	App->enemies->AddEnemy(Enemy_Type::Med_Ball, 50, 90);
 
 	//Platforms ---
 	App->enemies->AddEnemy(Enemy_Type::BreakablePlatform, SCREEN_WIDTH / 2 - 3, 50);
