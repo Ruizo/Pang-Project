@@ -30,12 +30,22 @@ ModulePlayer::ModulePlayer(bool startEnabled) : Module(startEnabled)
 	// idle animation - just one sprite
 	idleAnim.PushBack({ 19, 145, 25, 32 });
 
+	godIdle.PushBack({ 14, 306, 34, 40 });
+	godIdle.PushBack({ 52, 306, 32, 40 });
+	godIdle.loop = true;
+	godIdle.speed = 0.09f;
+
 	// move upwards
-	
+
 	upAnim.PushBack({ 20, 69, 25, 32 });
 	upAnim.PushBack({ 56, 69, 25, 32 });
 	upAnim.loop = true;
 	upAnim.speed = 0.09f;
+
+	godUp.PushBack({ 14, 262, 34, 40 });
+	godUp.PushBack({ 51, 263, 32, 39 });
+	godUp.loop = true;
+	godUp.speed = 0.09f;
 
 	// Move down
 	downAnim.PushBack({ 33, 1, 32, 14 });
@@ -52,6 +62,13 @@ ModulePlayer::ModulePlayer(bool startEnabled) : Module(startEnabled)
 	rightAnim.loop = true;
 	rightAnim.speed = 0.1f;
 
+	godRight.PushBack({ 15,178,34,40 });
+	godRight.PushBack({ 50,179,32,39 });
+	godRight.PushBack({ 84,178,34,40 });
+	godRight.PushBack({ 118,179,32,39 });
+	godRight.loop = true;
+	godRight.speed = 0.1f;
+
 	// Move left
 	leftAnim.PushBack({ 149,34,30,32 });
 	leftAnim.PushBack({ 115,34,30,32 });
@@ -60,10 +77,21 @@ ModulePlayer::ModulePlayer(bool startEnabled) : Module(startEnabled)
 	leftAnim.loop = true;
 	leftAnim.speed = 0.1f;
 
+	godLeft.PushBack({ 115,220,32,39 });
+	godLeft.PushBack({ 81,219,34,40 });
+	godLeft.PushBack({ 48,220,32,39 });
+	godLeft.PushBack({ 13,219,34,40 });
+	godLeft.loop = true;
+	godLeft.speed = 0.1f;
+
 	// Shoot
 	shootAnim.PushBack({ 51,145,30,32 });
 	shootAnim.loop = false;
 	shootAnim.speed = 0.1f;
+
+	godShoot.PushBack({ 92,307,34,40 });
+	godShoot.loop = false;
+	godShoot.speed = 0.1f;
 
 	//death animation
 	death.PushBack({ 88,145,40,29 });
@@ -145,10 +173,21 @@ Update_Status ModulePlayer::Update()
 			if ((App->input->keys[SDL_SCANCODE_W] == Key_State::KEY_REPEAT || pad.l_y < 0.0f) && stairs == true)
 			{
 				position.y -= speed;
-				if (currentAnimation != &upAnim)
+				if (godmode)
 				{
-					upAnim.Reset();
-					currentAnimation = &upAnim;
+					if (currentAnimation != &godUp)
+					{
+						godUp.Reset();
+						currentAnimation = &godUp;
+					}
+				}
+				else if (!godmode)
+				{
+					if (currentAnimation != &upAnim)
+					{
+						upAnim.Reset();
+						currentAnimation = &upAnim;
+					}
 				}
 				if (position.y == 150) {
 					stairs = false;
@@ -157,29 +196,61 @@ Update_Status ModulePlayer::Update()
 			if (App->input->keys[SDL_SCANCODE_A] == Key_State::KEY_REPEAT || pad.l_x < 0.0f)
 			{
 				position.x -= speed;
-				if (currentAnimation != &leftAnim)
+				if (godmode)
 				{
-					leftAnim.Reset();
-					currentAnimation = &leftAnim;
+					if (currentAnimation != &godLeft)
+					{
+						godLeft.Reset();
+						currentAnimation = &godLeft;
+					}
+				}
+				else if (!godmode)
+				{
+					if (currentAnimation != &leftAnim)
+					{
+						godLeft.Reset();
+						currentAnimation = &leftAnim;
+					}
 				}
 			}
 			if (App->input->keys[SDL_SCANCODE_D] == Key_State::KEY_REPEAT || pad.l_x > 0.0f)
 			{
 				position.x += speed;
-				if (currentAnimation != &rightAnim)
+				if (godmode)
 				{
-					rightAnim.Reset();
-					currentAnimation = &rightAnim;
+					if (currentAnimation != &godRight)
+					{
+						godRight.Reset();
+						currentAnimation = &godRight;
+					}
+				}
+				else if (!godmode)
+				{
+					if (currentAnimation != &rightAnim)
+					{
+						rightAnim.Reset();
+						currentAnimation = &rightAnim;
+					}
 				}
 			}
 
 			if (App->input->keys[SDL_SCANCODE_SPACE] == Key_State::KEY_DOWN && (shoot) || pad.a == true && (shoot))
 			{
-
-				if (currentAnimation != &shootAnim)
+				if (godmode)
 				{
-					shootAnim.Reset();
-					currentAnimation = &shootAnim;
+					if (currentAnimation != &godShoot)
+					{
+						godShoot.Reset();
+						currentAnimation = &godShoot;
+					}
+				}
+				else if (!godmode)
+				{
+					if (currentAnimation != &shootAnim)
+					{
+						shootAnim.Reset();
+						currentAnimation = &shootAnim;
+					}
 				}
 
 				if (doubleshot == false) {
@@ -216,15 +287,29 @@ Update_Status ModulePlayer::Update()
 
 				}
 			}
-
-			if (App->input->keys[SDL_SCANCODE_A] == Key_State::KEY_IDLE
-				&& App->input->keys[SDL_SCANCODE_D] == Key_State::KEY_IDLE
-				&& App->input->keys[SDL_SCANCODE_SPACE] == Key_State::KEY_IDLE
-				&& App->input->keys[SDL_SCANCODE_W] == Key_State::KEY_IDLE
-				&& pad.l_y == 0.0f && pad.l_x == 0.0f)
+			if (godmode)
 			{
-				currentAnimation = &idleAnim;
-				//position.y = 168;
+				if (App->input->keys[SDL_SCANCODE_A] == Key_State::KEY_IDLE
+					&& App->input->keys[SDL_SCANCODE_D] == Key_State::KEY_IDLE
+					&& App->input->keys[SDL_SCANCODE_SPACE] == Key_State::KEY_IDLE
+					&& App->input->keys[SDL_SCANCODE_W] == Key_State::KEY_IDLE
+					&& pad.l_y == 0.0f && pad.l_x == 0.0f)
+				{
+					currentAnimation = &godIdle;
+					//position.y = 168;
+				}
+			}
+			else if (!godmode)
+			{
+				if (App->input->keys[SDL_SCANCODE_A] == Key_State::KEY_IDLE
+					&& App->input->keys[SDL_SCANCODE_D] == Key_State::KEY_IDLE
+					&& App->input->keys[SDL_SCANCODE_SPACE] == Key_State::KEY_IDLE
+					&& App->input->keys[SDL_SCANCODE_W] == Key_State::KEY_IDLE
+					&& pad.l_y == 0.0f && pad.l_x == 0.0f)
+				{
+					currentAnimation = &idleAnim;
+					//position.y = 168;
+				}
 			}
 
 				collider->SetPos(position.x, position.y);
@@ -237,6 +322,7 @@ Update_Status ModulePlayer::Update()
 				if (tempIn == 300) {
 					godmode = false;
 					tempIn = 0;
+					position.y = 168;
 				}
 			}
 

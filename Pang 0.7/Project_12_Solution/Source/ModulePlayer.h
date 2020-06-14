@@ -79,6 +79,11 @@ public:
 	Animation shootAnim;
 	Animation death;
 
+	Animation godIdle;
+	Animation godUp;
+	Animation godRight;
+	Animation godLeft;
+	Animation godShoot;
 
 
 	SDL_Texture* livess;

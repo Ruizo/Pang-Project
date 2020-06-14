@@ -48,6 +48,6 @@ void Invincibility::OnCollision(Collider* c2)
 {
 	if (c2->type == Collider::Type::PLAYER) {
 		App->player->godmode = true;
-
+		App->player->position.y = 164;
 	}
 }
