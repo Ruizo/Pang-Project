@@ -34,11 +34,7 @@ Invincibility::Invincibility(int x, int y) : Booster(x, y)
 
 void Invincibility::Update()
 {
-
 	position.y = position.y + 1;
-
-
-
 	// Call to the base class. It must be called at the end
 	// It will update the collider depending on the position
 	Booster::Update();

@@ -316,8 +316,7 @@ Update_Status ModulePlayer::Update()
 
 				currentAnimation->Update();
 
-			
-			if (godmodetime = true) {
+			if (godmode == true) {
 				tempIn++;
 				if (tempIn == 300) {
 					godmode = false;
@@ -685,8 +684,7 @@ void ModulePlayer::OnCollision(Collider* c1, Collider* c2)
 		}
 		else if (c2->type == Collider::Type::ENEMY) {
 			if (!debug) {
-				if (godmode == false || debug == false) {
-
+				if (godmode == false) {
 					if (lives == 0) {
 						dead = true;
 						collider->SetPos(10000, 10000);
@@ -694,14 +692,11 @@ void ModulePlayer::OnCollision(Collider* c1, Collider* c2)
 
 					}
 					else if (lives != 0) {
-
 						lives--;
 						dead = true;
 						if (level1 == true) {
-
 							collider->SetPos(10000, 10000);
 							App->fade->FadeToBlack(this, (Module*)App->death, 50);
-
 						}
 						else if (level2 == true) {
 							collider->SetPos(10000, 10000);
@@ -726,7 +721,7 @@ void ModulePlayer::OnCollision(Collider* c1, Collider* c2)
 
 					}
 				}
-				else {
+				else if (godmode == true){
 					godmodetime = true;
 				}
 
