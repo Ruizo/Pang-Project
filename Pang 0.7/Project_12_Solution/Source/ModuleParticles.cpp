@@ -227,11 +227,20 @@ Particle* ModuleParticles::AddParticle(const Particle& particle, int x, int y, C
 				break;
 			}*/
 			//Adding the particle's collider
-			if (colliderType != Collider::Type::NONE)
+			if ((colliderType != Collider::Type::NONE) && (App->player->dynamite == false)) {
 				p->collider = App->collisions->AddCollider({ 0, 0, 10, 11 }, colliderType, this);
-			particles[i] = p;
-			break;
-				
+				particles[i] = p;
+				break;
+			}
+			else //((colliderType != Collider::Type::NONE) && (App->player->dynamite == true))
+			{
+				if (App->player->dynamite == true) {
+					p->collider = App->collisions->AddCollider({ 0, 0, 1000, 1000 }, colliderType, this);
+				}
+				App->player->dynamite = false;
+				particles[i] = p;
+				break;
+			}
 		}
 			
 		
