@@ -263,15 +263,16 @@ void ModuleEnemies::OnCollision(Collider* c1, Collider* c2)
 			if (c == 15 && App->player->level1 == true) {
 				App->sceneLevel_1->CleanUp();
 				App->player->start = true;
-				App->player->totalscore = App->player->score;
+				App->player->totalscore = App->player->score;				
+				App->fade->FadeToBlack(this, (Module*)App->sceneLevel_4, 90);
 				App->Boosters->CleanUp();
-				App->fade->FadeToBlack(this, (Module*)App->sceneLevel_2, 90);
 			}
 			if (c == 15 && App->player->level2 == true)
 			{
 				App->sceneLevel_2->CleanUp();
 				App->player->start = true;
 				App->fade->FadeToBlack(this, (Module*)App->sceneLevel_3, 50);
+				App->Boosters->CleanUp();
 				App->player->totalscore = App->player->score;
 			}
 			if (c == 18 && App->player->level3 == true)
@@ -279,6 +280,7 @@ void ModuleEnemies::OnCollision(Collider* c1, Collider* c2)
 				App->sceneLevel_3->CleanUp();
 				App->player->start = true;
 				App->fade->FadeToBlack(this, (Module*)App->sceneLevel_4, 50);
+				App->Boosters->CleanUp();
 				App->player->totalscore = App->player->score;
 			}
 			if (c == 15 && App->player->level4 == true)
@@ -286,6 +288,7 @@ void ModuleEnemies::OnCollision(Collider* c1, Collider* c2)
 				App->sceneLevel_4->CleanUp();
 				App->player->start = true;
 				App->fade->FadeToBlack(this, (Module*)App->sceneLevel_5, 50);
+				App->Boosters->CleanUp();
 				App->player->totalscore = App->player->score;
 			}
 			if (c == 22 && App->player->level5 == true)
@@ -293,6 +296,7 @@ void ModuleEnemies::OnCollision(Collider* c1, Collider* c2)
 				App->sceneLevel_5->CleanUp();
 				App->player->start = true;
 				App->fade->FadeToBlack(this, (Module*)App->sceneLevel_6, 50);
+				App->Boosters->CleanUp();
 				App->player->totalscore = App->player->score;
 			}
 			if (c == 30 && App->player->level6 == true)
@@ -300,6 +304,7 @@ void ModuleEnemies::OnCollision(Collider* c1, Collider* c2)
 				App->sceneLevel_6->CleanUp();
 				App->player->start = true;
 				App->fade->FadeToBlack(this, (Module*)App->sceneWin, 50);
+				App->Boosters->CleanUp();
 				App->player->totalscore = App->player->score;
 			}
 			break;

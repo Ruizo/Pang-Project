@@ -38,8 +38,14 @@ bool SceneLevel2::Start()
 	App->player->level6 = false;
 
 	App->player->doubleshot = false;
-
 	App->Boosters->slowtime = false;
+	App->player->powerwireB = false;
+	App->Boosters->stoptime = false;
+	App->player->VulcanB = false;
+	App->player->godmode = false;
+	App->player->doubleshot = false;
+	App->player->shoot = true;
+
 	App->Boosters->CleanUp();
 
 	App->collisions->Enable();

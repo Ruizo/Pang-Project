@@ -50,6 +50,12 @@ bool SceneLevel5::Start()
 
 	App->player->doubleshot = false;
 	App->Boosters->slowtime = false;
+	App->player->powerwireB = false;
+	App->Boosters->stoptime = false;
+	App->player->VulcanB = false;
+	App->player->godmode = false;
+	App->player->doubleshot = false;
+	App->player->shoot = true;
 
 	// Enemies ---
 	App->enemies->AddEnemy(Enemy_Type::Big_Ball, 50, 90);
