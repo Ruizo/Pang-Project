@@ -85,6 +85,9 @@ bool ModulePlayer::Start()
 	if (start == true) {
 		LOG("Loading player textures");
 
+		//timer setup
+		t = 99;
+
 		livess = App->textures->Load("Assets/Sprites/lives.png");
 		
 
@@ -501,6 +504,45 @@ Update_Status ModulePlayer::PostUpdate()
 
 	App->fonts->BlitText(43, 226, scoreFont, scoreText);
 
+	//Draw time left
+	if (ms < 60) ms++;
+	else {
+		ms = 0;
+		if (t > 0 && !debug) t--;
+	}
+	sprintf_s(time, 4, "%3d", t);
+	App->fonts->BlitText(300, 27, scoreFont, time);
+	App->fonts->BlitText(270, 27, scoreFont, "time");
+	if (t == 0) {
+		lives--;
+		dead = true;
+		if (level1 == true) {
+
+			collider->SetPos(10000, 10000);
+			App->fade->FadeToBlack(this, (Module*)App->death, 50);
+
+		}
+		else if (level2 == true) {
+			collider->SetPos(10000, 10000);
+			App->fade->FadeToBlack(this, (Module*)App->death, 50);
+		}
+		else if (level3 == true) {
+			collider->SetPos(10000, 10000);
+			App->fade->FadeToBlack(this, (Module*)App->death, 50);
+		}
+		else if (level4 == true) {
+			collider->SetPos(10000, 10000);
+			App->fade->FadeToBlack(this, (Module*)App->death, 50);
+		}
+		else if (level5 == true) {
+			collider->SetPos(10000, 10000);
+			App->fade->FadeToBlack(this, (Module*)App->death, 50);
+		}
+		else if (level6 == true) {
+			collider->SetPos(10000, 10000);
+			App->fade->FadeToBlack(this, (Module*)App->death, 50);
+		}
+	}
 
 	return Update_Status::UPDATE_CONTINUE;
 }

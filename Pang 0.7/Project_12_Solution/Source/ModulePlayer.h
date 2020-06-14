@@ -113,6 +113,10 @@ public:
 	bool VulcanB = false;
 	bool powerwireB = false;
 	bool dynamite = false;
+
+	int ms = 0;
+	int t = 0;
+	char time[3] = { "\0" };
 };
 
 #endif //!__MODULE_PLAYER_H__
