@@ -233,13 +233,10 @@ void ModuleBoosters::OnCollision(Collider* c1, Collider* c2)
 		if (Boosters[i] != nullptr && Boosters[i]->GetCollider() == c1 && c2->type == Collider::Type::PLAYER)
 		{
 			Boosters[i]->OnCollision(c2); //Notify the Booster of a collision
-			for (int i = 0; i < MAX_BOOSTERS; i++)
-			{
-				delete Boosters[i];
-				Boosters[i] = nullptr;
+			delete Boosters[i];
+			Boosters[i] = nullptr;
 
-
-			}
+			
 
 		}
 	}
